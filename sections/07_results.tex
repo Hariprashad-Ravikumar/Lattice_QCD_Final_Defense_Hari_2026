@@ -1,0 +1,91 @@
+% ===================== VI. Results =====================
+\section{Results}
+
+% Slide 25
+\begin{frame}{From $\bvec\tcdot P$ to $x$ at $P_L=-3$}
+  \centering
+  \includegraphics[width=0.95\linewidth, trim=0 0 0 280, clip]{FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf}
+  \begin{columns}[t]
+    \begin{column}{0.55\textwidth}
+      \[ \tilde f_1^{(0)} = 2\big[\tAmp^{[x]\text{Re}}_{2B}-\tAmp^{[x]\text{Im}}_{2B}\big], \qquad \tilde f_{1T}^{\perp(1)} = -2\tAmp^{[x]\text{Re}}_{12B} \]
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \begin{itemize}
+        \item Continuous $x$-dependence at $b^2=9a^2$; bands: Jackknife.
+        \item $x$-integrated check: $\mN\!\int\! dx\,\tilde f_{1T}^{\perp(1)}/\!\int\! dx\,\tilde f_1^{(0)} = 0.236(32)$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 26
+\begin{frame}{All four momenta: the result drifts with $\zetahat$}
+  \centering
+  \includegraphics[width=0.9\linewidth]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Sivers.pdf}
+  \begin{itemize}
+    \item $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $b^2=9a^2$ change systematically from $P_L=-1$ to $-4$.
+    \item The light-cone limit needs an \textbf{extrapolation} $\zetahat\to\infty$ (black dashed band, next slide).
+  \end{itemize}
+\end{frame}
+
+% Slide 27
+\begin{frame}{Extrapolating the parameters, not the curves}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Extrapolate each of the 12 model parameters $\{a,c,d,j\}\times$3 amplitudes ($c$ rescaled by $1/P_L^2$, $a_{\text{im}}$ by $1/P_L$): \ $p(\zetahat) = c + d/\zetahat^2$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Use $P_L=-2,-3,-4$. $P_L=-1$ sits at $1/\zetahat=11.02$, far from the others ($3.40,\,1.85,\,1.27$).
+        \item $c+d/\zetahat^2$ gave a lower $\chi^2/\text{dof}$ than $c+d/\zetahat$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \centering
+  \includegraphics[width=\linewidth, trim=0 576 0 0, clip]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}\\
+  {\scriptsize Parameters of $\tAmp_{2B}^{\text{Re}}$ vs $1/\zetahat$; blue: extrapolated value (all 12 in backup)}
+\end{frame}
+
+% Slide 28
+\begin{frame}{Result: the $x$-dependent Sivers shift at $\zetahat\to\infty$}
+  \centering
+  \includegraphics[width=\linewidth]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf}
+  \begin{itemize}
+    \item At $|\vprp b| = 3a \approx 0.34$ fm, $\langle k_y\rangle_{TU}$ peaks at about $0.21$ GeV at small $x$ and falls to near zero by $x\approx0.5$.
+    \item $x\langle k_y\rangle_{TU}$ peaks at about $0.02$ GeV near $x\approx0.15$.
+    \item Isovector ($u-d$), extrapolated from $P_L=-2,-3,-4$; bands: Jackknife (statistical).
+  \end{itemize}
+\end{frame}
+
+% Slide 29
+\begin{frame}{Dependence on $|\vprp b|$: is it factorized, $F(x)\,G(|\vprp b|)$?}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.85\linewidth, trim=0 0 400 0, clip]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf}\\
+      {\scriptsize $\langle k_y\rangle_{TU}(x,|\vprp b|)$ at $\zetahat\to\infty$, $|\vprp b|\in[0.34,0.94]$ fm}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \centering
+      relative distance from $F(x)G(|\vprp b|)$ $=\sqrt{J/N}$\\[1mm]
+      {\small
+      \begin{tabular}{cc}
+        \toprule
+        $x$-window & relative distance \\
+        \midrule
+        $[0.0,1.0]$ & $0.0568(78)$ \\
+        $[0.1,0.9]$ & $0.0714(95)$ \\
+        $[0.2,0.8]$ & $0.0758(75)$ \\
+        $[0.3,0.8]$ & $0.0620(88)$ \\
+        \bottomrule
+      \end{tabular}}
+      \begin{itemize}
+        \item Sivers shift: $5.7$--$7.6\%$ from factorized; the amplitudes themselves: $8$--$19\%$.
+        \item $j_{\text{re}}\approx j_{\text{reA12B}}\approx2$, but $j_{\text{im}}\approx1$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \keymsg{Close to factorized, but \textbf{not exactly}.}
+\end{frame}

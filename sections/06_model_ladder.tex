@@ -1,0 +1,171 @@
+% ===================== V. Model ladder =====================
+\section{Fitting}
+
+% Slide 18
+\begin{frame}{The lattice data at $P_L=-3$ \ ($\zetahat=0.539684$)}
+  \centering
+  \includegraphics[width=\linewidth, trim=0 388 0 0, clip]{Combined_Pb_bsq_eta8_PL-3_WithFit_2D.pdf}
+  \vspace{-1mm}
+  \begin{itemize}
+    \item Points: lattice data vs $(P\cdot b)\,\hat L/(2\pi)$ at $\eta|v|/a=8$, colored by $b^2/a^2\ge 9$. \ (Bands: the final global fit, shown later.)
+    \item $\tAmp_{2B}^{\text{Re}}$: even and precise. \quad $\tAmp_{2B}^{\text{Im}}$: odd. \quad $\tAmp_{12B}^{\text{Re}}$: negative, noisier.
+    \item The data cover a \textbf{finite} $P\cdot b$ window. To Fourier transform we need a model over \textbf{all} $P\cdot b$.
+  \end{itemize}
+\end{frame}
+
+% Slide 19
+\begin{frame}{Choosing a model: the ladder}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{A model must}
+      \begin{itemize}
+        \item describe all data with $|\vect b|\ge 3a$, $\eta\in[6,10]$;
+        \item decay in $P\cdot b$ (Fourier transform exists);
+        \item respect parity (Re even, Im odd in $P\cdot b$);
+        \item share the staple factor $e^{-f\eta}$, which cancels in the ratio;
+        \item suppress antiquarks ($x\lesssim-0.2$) and reproduce the $x$-integrated ($\bvec\tcdot P=0$) Sivers shift.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \centering
+      \begin{tikzpicture}[rung/.style={draw, rounded corners, minimum width=5.6cm, minimum height=0.62cm, font=\small, align=left, text width=5.4cm}]
+        \node[rung, fill=badred!10]  (r1) at (0,0)    {\textcolor{badred}{\textbf{\ding{55}}}\ \ Gaussian: not integrable in $P\cdot b$};
+        \node[rung, fill=blue!8]     (r2) at (0,-0.85) {\textbf{?}\ \ PySR: points to a power-law tail};
+        \node[rung, fill=badred!10]  (r3) at (0,-1.70) {\textcolor{badred}{\textbf{\ding{55}}}\ \ Exponential / separable forms};
+        \node[rung, fill=okgreen!12] (r4) at (0,-2.55) {\textcolor{okgreen}{\textbf{\ding{51}}}\ \ Coupled power law in $(P\cdot b, b^2)$};
+        \node[rung, fill=okgreen!12] (r5) at (0,-3.40) {\textcolor{okgreen}{\textbf{\ding{51}}}\ \ Simultaneous correlated fit};
+        \foreach \a/\b in {r1/r2,r2/r3,r3/r4,r4/r5} \draw[-latex, thick] (\a.south) -- (\b.north);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 20
+\begin{frame}{Rung 1: the Gaussian fails}
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \[ \tAmp_{2B}^{\text{Re}} = \gamma\, e^{-\alpha b_L^2-\beta b_T^2} = \gamma \exp\!\left[-\frac{\alpha-\beta}{P_{L}^2} (P\cdot b)^{2}-\beta\, b^{2}\right] \]
+      \begin{itemize}
+        \item The Fourier transform over $P\cdot b$ needs $\alpha-\beta>0$.
+        \item Fit at $P_L=-1$: \ $\alpha-\beta = -0.0427(27)$, \ $\chi^2/\text{dof}\approx 235$.
+      \end{itemize}
+      \keymsg{The data are \textbf{wider along $\vect P$ than across it}: the Gaussian \textbf{grows} in $P\cdot b$, so there is no Fourier transform.}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Gaussian_A2B_Re_P1_FailedFit.pdf}\\
+      {\scriptsize Gaussian fit to $\tAmp_{2B}^{\text{Re}}$, $P_L=-1$}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 21
+\begin{frame}{Rung 2: let the data choose (physics-informed PySR)}
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item Symbolic regression on $\tAmp_{2B}^{\text{Re}}$ ($P_L=-1$, $|\vect b|\ge3a$) with a custom loss that penalizes growth at large $b_L$:
+      \end{itemize}
+      \[ \mathcal{L}_{\text{custom}} = \frac{\chi^2}{\text{dof}} + \epsilon\, \mathcal{P}_{\text{asymptotic}} \]
+      \begin{itemize}
+        \item The Pareto front never returns a Gaussian. At complexity $C=14$:
+      \end{itemize}
+      \[ \tAmp_{2B}^{\text{Re}} = \frac{39.71}{(1 + b_L^2 + b_T^2)^{1.39}}\, e^{-0.534\eta} \]
+      \begin{itemize}
+        \item Caveat: the front depends on $b^2$ only; it \textbf{guides} the form, it is not the final model.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{02_Gaussian_StraightLine_Test.pdf}\\
+      {\scriptsize On $\log\tAmp$ vs $b^2$ a Gaussian is a straight line; the data bend upward.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 22
+\begin{frame}{Rung 3: exponential and separable forms fail}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{itemize}
+        \item $e^{-c|\vect b|}$ describes $\tAmp_{2B}^{\text{Re}}$ alone over $3\le|\vect b|/a\le8.2$ about as well as the power law.
+        \item Separable longitudinal $\times$ transverse forms, fit to all three amplitudes, lose the longitudinal decay:
+      \end{itemize}
+      \vspace{1mm}
+      \centering
+      {\tiny
+      \begin{tabular}{lccc}
+        \toprule
+        Model ($P_L=-1$) & $c_{\text{im}}$ & $c_{\text{reA12B}}$ & $a_{\text{im}}$ \\
+        \midrule
+        \texttt{ExpPb\_Expb}           & $0.0010(262)$ & $0.045(23)$  & $-0.167(16)$ \\
+        \texttt{ExpPb\_PowerLawb}      & $0.0045(248)$ & $0.028(24)$  & $-0.167(31)$ \\
+        \texttt{GaussianPb\_Expb}      & $0.568(171)$  & $0.0038(69)$ & $+0.050(121)$ \\
+        \texttt{GaussianPb\_PowerLawb} & $0.602(48)$   & $0.0016(61)$ & $+0.168(92)$ \\
+        \midrule
+        \textbf{coupled power law}     & $\mathbf{0.2253(69)}$ & $\mathbf{0.0773(46)}$ & $\mathbf{+0.267(13)}$ \\
+        \bottomrule
+      \end{tabular}}
+      \begin{itemize}
+        \item $e^{-c|P\cdot b|}$ has a cusp at $P\cdot b=0$, which conflicts with $\tAmp_{2B}^{\text{Im}}\propto b_L$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{03_Exponential_b_StraightLine_Test.pdf}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 23
+\begin{frame}{Rung 4: a coupled power law}
+  \begin{itemize}
+    \item One denominator couples $(P\cdot b)^2$ and $b^2$: \ $D = \big[1 + c(\eta)\,\tfrac{(P\cdot b)^2}{P_L^2} + d\,b^2\big]^j$. Smooth at $P\cdot b=0$; the even amplitudes are absolutely integrable in $P\cdot b$ for $j>1/2$.
+  \end{itemize}
+  \vspace{-2mm}
+  \begin{align*}
+    \tAmp_{2B}^{\text{Re}}&=\frac{a\, e^{-f \eta}}{\left[1 + \left(d + c\left(1 - \frac{k_1}{\eta} - \frac{k_2}{\eta^2}\right)\right) b_L^2 + d\, b_T^2\right]^j}, &
+    \tAmp_{12B}^{\text{Re}}&=\frac{-a^{\prime} e^{-f \eta}}{\left[1 + (c^{\prime} + d^{\prime}) b_L^2 + d^{\prime} b_T^2\right]^{j^{\prime}}}, \\
+    \tAmp_{2B}^{\text{Im}}&=\frac{a^{\prime\prime} b_L\, e^{-f \eta}}{\left[1 + (c^{\prime\prime} + d^{\prime\prime}) b_L^2 + d^{\prime\prime}b_T^2\right]^{j^{\prime\prime}}}
+  \end{align*}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.85\linewidth]{A2B_c_eta_AllAsymptoticModels_P1.pdf}\\
+      {\scriptsize $c(\eta)$ for $\tAmp_{2B}^{\text{Re}}$ approaches an asymptote; candidate models $c_1,\ldots,c_{10}$}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item $d(\eta)$ is flat (slope $0.00122(87)$); for $\tAmp_{2B}^{\text{Im}}$, $\tAmp_{12B}^{\text{Re}}$, $c$ and $d$ show no $\eta$ dependence.
+        \item $c_2(\eta)$ chosen: lowest AIC, suppresses antiquarks, reproduces the $x$-integrated Sivers shift.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 24
+\begin{frame}{One fit for all three amplitudes}
+  \centering
+  \includegraphics[width=\linewidth, trim=0 0 0 450, clip]{Combined_Pb_bsq_eta8_PL-3_WithFit_2D.pdf}\\
+  {\scriptsize $P_L=-3$, $\eta|v|/a=8$: data and global fit vs $b^2/a^2$ at fixed $(P\cdot b)\hat L/(2\pi)$}
+  \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Simultaneous fit with the full Jackknife covariance:\\
+        $\chi^2=\sum_{ij}(\bar y-F)_i\, C^{-1}_{ij}\,(\bar y-F)_j$
+        \item Common $e^{-f\eta}$: cancels in the Sivers ratio.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.53\textwidth}
+      \centering
+      {\scriptsize
+      \begin{tabular}{ccccc}
+        \toprule
+        $P_L$ & $-1$ & $-2$ & $-3$ & $-4$ \\
+        \midrule
+        $\chi^2/\text{DoF}$ & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ \\
+        \bottomrule
+      \end{tabular}}
+    \end{column}
+  \end{columns}
+\end{frame}

@@ -1,0 +1,132 @@
+% ===================== IV. Kinematics =====================
+\section{Kinematics}
+
+% Slide 13
+\begin{frame}{The Collins--Soper parameter $\zetahat$}
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \[ \zetahat \equiv \frac{v \cdot P}{\sqrt{|v^2|}\, \sqrt{P^2}} = \sinh(y_P - y_v) \]
+      \begin{itemize}
+        \item TMDs need a \textbf{light-like} staple: $v\to\nminus$, i.e.\ $\zetahat\to\infty$.
+        \item On the lattice $v$ is purely spatial (space-like), so $\zetahat$ is finite.
+        \item Larger $\zetahat$ $\Leftrightarrow$ larger nucleon momentum $\vect P$.
+        \item We compute at several $\zetahat$ and \textbf{extrapolate} $\zetahat\to\infty$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.1]
+        \fill[gray!12] (0,0) -- (2,2) -- (-2,2) -- cycle;
+        \draw[gray, dashed] (-2,-2) -- (2,2) node[above right, font=\scriptsize] {light cone};
+        \draw[gray, dashed] (2,-2) -- (-2,2);
+        \draw[-latex] (-2.2,0) -- (2.3,0) node[right] {$z$};
+        \draw[-latex] (0,-1.6) -- (0,2.3) node[above] {$t$};
+        \draw[-latex, very thick, blue] (0,0) -- (0.9,1.9) node[above, font=\small] {$P$};
+        \draw[-latex, very thick, badred] (0,0) -- (-1.9,0.3) node[left, font=\small] {$v$};
+        \draw[-latex, thick, badred!50, dashed] (0,0) -- (-1.6,1.35);
+        \node[badred, font=\scriptsize, align=center] at (-1.1,-1.0) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
+      \end{tikzpicture}
+      \\[1mm]
+      \includegraphics[width=0.8\linewidth]{staple_geometry.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 14
+\begin{frame}{The central obstacle: the invariants are not independent}
+  \begin{itemize}
+    \item In the TMD frame ($\bvec^+=0$, $\vprp v = \vprp P = 0$) the third argument of $\tAmp_i$ is fixed by the others:
+  \end{itemize}
+  \begin{block}{}
+  \[ \boxed{\ \frac{v \tcdot \bvec}{v \tcdot P} = \bvec \tcdot P\, \frac{R(\zetahat^2)}{\mN^2}\ }, \qquad R(\zetahat^2) \equiv 1- \sqrt{1 + \zetahat^{-2}} \]
+  \end{block}
+  \begin{itemize}
+    \item The lattice geometry ($\bvec$, $v$, $\vect P$) must satisfy this for every $\bvec\tcdot P$ we want to scan.
+    \item With $P = (E, P_1, 0, 0)$ it becomes
+  \end{itemize}
+  \[ b_{1}|v|\left[\frac{P_{1}}{\mN}\left(\zetahat-\sqrt{\zetahat^2+1}\right)+\zetahat\,\frac{\mN}{P_{1}}\right]=\vec{v}_{T}\cdot\vec{b}_{T} \]
+  \keymsg{You cannot simply slide $\bvec$ along $\vect P$: changing $b_1$ (i.e.\ $\bvec\tcdot P$) forces the staple to change too.}
+\end{frame}
+
+% Slide 15
+\begin{frame}{Key idea 2: make the right-hand side vanish}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \begin{itemize}
+        \item Choose $\vec v_T=(0,v_3)$ and $\vec b_T=(b_2,0)$ $\Rightarrow$ $\vec v_T\cdot\vec b_T=0$.
+        \item Then the bracket must vanish: this \textbf{fixes $\zetahat$} for each momentum, and $b_1$ (so $\bvec\tcdot P$) is \textbf{free}.
+        \item Price: the staple direction $v$ is \textbf{off-axis}.
+      \end{itemize}
+      \vspace{1mm}
+      \centering
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{ccc}
+        \toprule
+        $\vect{P}\cdot a\hat{L}/(2\pi)$ & $\zetahat$ & $v_1$ \\
+        \midrule
+        $(-1,0,0)$ & $0.090772$ & $0.301\,v_3$ \\
+        $(-2,0,0)$ & $0.294367$ & $0.531\,v_3$ \\
+        $(-3,0,0)$ & $0.539684$ & $0.689\,v_3$ \\
+        $(-4,0,0)$ & $0.785756$ & $0.786\,v_3$ \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[x={(-0.45cm,-0.35cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.85]
+        \draw[-latex] (0,0,0) -- (2.4,0,0) node[below left] {$1$};
+        \draw[-latex] (0,0,0) -- (0,2.2,0) node[right] {$2$};
+        \draw[-latex] (0,0,0) -- (0,0,1.8) node[above] {$3$};
+        \draw[-latex, very thick, blue] (0,0,0) -- (-1.6,0,0) node[above right, font=\small] {$\vect P$};
+        \draw[-latex, very thick, okgreen] (0,0,0) -- (1.2,1.5,0) node[right, font=\small] {$\vect b=(b_1,b_2,0)$};
+        \draw[-latex, very thick, badred] (0,0,0) -- (0.7,0,1.4) node[above right, font=\small] {$v=(v_1,0,v_3)$};
+        \draw[dashed, okgreen] (1.2,1.5,0) -- (0,1.5,0);
+        \draw[dashed, badred] (0.7,0,1.4) -- (0,0,1.4);
+      \end{tikzpicture}
+      \\[1mm]
+      \includegraphics[width=0.85\linewidth]{v1_v2_allzetahat_plot.pdf}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 16
+\begin{frame}{Building off-axis staples}
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}
+        \item Staple legs $\eta\,(v_1,0,v_3)$, $\eta=0,\ldots,10$: the required $v_1/v_3$ is not a lattice direction.
+        \item Build the closest lattice paths as staircases and \textbf{average over degenerate step orderings}.
+        \item \textbf{Interpolate} (quadratic) to the constraint, $\Delta v_1 = (v_1^{\rm constraint}-v_1^{\rm lattice})/a = 0$, inside each Jackknife sample.
+      \end{itemize}
+      \centering
+      \includegraphics[width=0.75\linewidth]{v1_v2_withPath_forP-3_plot.pdf}\\
+      {\tiny Paths for $P_L=-3$}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=0.95\linewidth, trim=0 873 0 0, clip]{Interpolation_Ex_b120_eta7_P-1.pdf}\\
+      {\scriptsize Example: interpolation of the lattice ratios $R_{\Gamma}$ to $\Delta v_1=0$\\ ($\vect b=(1,2,0)$, $\eta=7$, $P_L=-1$); grey band: quadratic fit}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 17
+\begin{frame}{From lattice vectors to invariants, and the $|\vect b|\ge 3a$ cut}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \begin{itemize}
+        \item Lattice components along / across $\vect P$:
+        \ \ $b_L = \dfrac{P\cdot b}{-P_L}, \quad b_T^2 = b^2 - b_L^2$
+        \item Mirrored $\pm b_1$ paths separate the even (Re) and odd (Im) parts.
+        \item Keep only $|\vect b| = \sqrt{b_L^2+b_T^2}\ \ge 3a$ to remove UV discretization artifacts.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{Pb_bsq_plot.pdf}
+    \end{column}
+  \end{columns}
+  \centering
+  \includegraphics[width=0.8\linewidth]{A2B_Re_b_lessthan3_and_ge3.pdf}
+  \keymsg{At $b^2/a^2=5$, $\tAmp_{2B}^{\text{Re}}$ rises by about 14\% with $|P\cdot b|$; at $b^2/a^2=20$ and $45$ it is flat within uncertainties.}
+\end{frame}

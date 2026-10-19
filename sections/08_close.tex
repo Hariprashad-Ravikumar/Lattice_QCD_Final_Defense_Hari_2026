@@ -1,0 +1,74 @@
+% ===================== VII. Close =====================
+\section{Conclusions}
+
+% Slide 30
+\begin{frame}{What this calculation does and does not establish}
+  \begin{columns}[t]
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Established}
+        \begin{itemize}
+          \item The method works at $\bvec\tcdot P\neq0$: off-axis staples satisfy the kinematic constraint.
+          \item The Gaussian ansatz is excluded; a coupled power law describes all three amplitudes.
+          \item The $x$-integrated limit reproduces the $\bvec\tcdot P=0$ ratio.
+          \item The Sivers shift is close to factorized in $x$ and $|\vprp b|$ (about 6--8\%).
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{alertblock}{Limitations}
+        \begin{itemize}
+          \item Bands are statistical (Jackknife); model spread is shown but not added.
+          \item Small $x$ depends on the fitted large-$\bvec\tcdot P$ tail.
+          \item Limits by extrapolation: $\eta\to\infty$ from $\eta|v|\le10a$; $\zetahat\to\infty$ from three momenta, $\zetahat\le0.79$.
+          \item One ensemble ($32^3\times96$, $a=0.114$ fm, $\mN=1.08$ GeV): no continuum or physical-mass extrapolation.
+          \item Results at $|\vprp b|\ge 3a\approx0.34$ fm; $\tAmp_{12B}^{\text{Im}}$ set to zero.
+        \end{itemize}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 31
+\begin{frame}{Summary}
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \begin{enumerate}
+        \item \textbf{$x$ lives in $\bvec\tcdot P$.} Earlier lattice work at $\bvec\tcdot P=0$ was $x$-integrated; we scan $\bvec\tcdot P\neq0$.
+        \item \textbf{The kinematics push back.} $\displaystyle\frac{v \tcdot \bvec}{v \tcdot P} = \bvec \tcdot P\, \frac{R(\zetahat^2)}{\mN^2}$; choosing $\vec v_T\perp\vec b_T$ fixes $\zetahat$ per momentum, at the cost of off-axis staples.
+        \item \textbf{The Fourier transform picks the model.} Gaussian fails; a coupled power law in $(P\cdot b, b^2)$ works.
+      \end{enumerate}
+      \keymsg{It is feasible to obtain the $x$-dependence of TMD ratios from lattice QCD.}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf}\\
+      {\scriptsize $\langle k_y\rangle_{TU}(x)$ at $\zetahat\to\infty$, $|\vprp b|=0.34$ fm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 32
+\begin{frame}{Outlook}
+  \begin{itemize}
+    \item The same method applies to the other leading-twist shifts. Each needs the amplitudes over a range of $\bvec\tcdot P$:
+  \end{itemize}
+  \vspace{1mm}
+  \centering
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{lll}
+    \toprule
+    Observable & Amplitude & Property \\
+    \midrule
+    Boer--Mulders shift $\langle k_y\rangle_{UT}(x)$ & $\tAmp_{4B}$ & T-odd: sign change SIDIS $\leftrightarrow$ DY \\
+    Worm-gear shift $\langle k_x\rangle_{TL}(x)$ ($g_{1T}$) & $\tAmp_{7B}$ & T-even \\
+    Generalized tensor charge $\tilde h_1^{(0)}/\tilde f_1^{(0)}(x)$ & $\tAmp_{9Bm}$ & T-even \\
+    \bottomrule
+  \end{tabular}
+  \raggedright
+  \begin{itemize}
+    \item Larger momenta, more ensembles, a model-averaged systematic, and general $\vec v_T\cdot\vec b_T\neq0$ geometries.
+  \end{itemize}
+  \vspace{6mm}
+  \centering
+  {\Large \textbf{Thank you!}}
+\end{frame}
