@@ -8,7 +8,7 @@
       \begin{itemize}
         \item Euclidean space-time grid with spacing $a$.
         \item Quarks live on sites; gluons are \textbf{link variables} $U_\mu(x)\in SU(3)$.
-        \item Path integral evaluated by Monte Carlo sampling of gauge configurations:
+        \item Path integral evaluated by Monte Carlo sampling of gauge configurations; statistical errors from Jackknife resampling.
       \end{itemize}
       \[ \langle O\rangle = \frac{1}{Z}\int \mathcal{D}U\, O[U]\, e^{-S[U]} \]
       \begin{block}{Ensemble used here}
@@ -20,6 +20,7 @@
     \begin{column}{0.46\textwidth}
       \centering
       \includegraphics[width=0.85\linewidth]{LM_fig1_1_plaquette.png}
+      \figsrc{Adapted from Lin \& Meyer (eds.), \emph{Lattice QCD for Nuclear Physics}, Springer (2015), Fig.~1.1}
     \end{column}
   \end{columns}
 \end{frame}
@@ -30,17 +31,14 @@
     \begin{column}{0.48\textwidth}
       \begin{itemize}
         \item Three-point function: nucleon source, staple operator $\bar q(0)\,\Gamma\,\mathcal{U}\,q(\bvec)$ at time $\tau$, nucleon sink at momentum $\vect P$.
-        \item The plateau of the ratio to the two-point function gives the matrix element:
-      \end{itemize}
-      \[ R_{\Gamma}(\vect P;\mathcal C^{\rm lat})\equiv\mathrm{plateau}\left[\frac{C^{\rm 3pt}_{\Gamma}(\tau,\vect P;\mathcal C^{\rm lat})}{C^{\rm 2pt}(t_{\rm snk}-t_{\rm src},\vect P)}\right] \]
-      \begin{itemize}
-        \item Isovector $u-d$: disconnected diagrams cancel.
-        \item Staple: legs of length $\eta|v|$ along $v$, separation $\bvec$.
+        \item The plateau of the ratio \textbf{three-point / two-point} gives the matrix element for each $\Gamma$.
+        \item Isovector $u-d$: disconnected diagrams cancel (isospin limit).
+        \item Staple: legs of length $\eta|v|$ along $v$, quark separation $\bvec$.
       \end{itemize}
     \end{column}
     \begin{column}{0.50\textwidth}
       \centering
-      \includegraphics[width=0.55\linewidth]{lattice_3pt_staple_Engelhardt.png}
+      \includegraphics[width=0.62\linewidth]{lattice_3pt_staple_Engelhardt.png}
       \figsrc{Figure credit: M.~Engelhardt (NMSU)}
       \vspace{1mm}
       \includegraphics[width=0.45\linewidth]{StapleLink2.pdf}

@@ -6,11 +6,12 @@
 \end{frame}
 
 % B1
-\begin{frame}{Backup: lattice ensemble and $\zetahat$ at $P_1=-1$}
+\begin{frame}{Backup: lattice ensemble and $\zetahat$ at $P_L=-1$}
   \begin{columns}[t]
     \begin{column}{0.48\textwidth}
       \begin{block}{From the thesis}
         \begin{itemize}
+          \item $n_f=2+1$ clover-improved Wilson fermions (Yoon \emph{et al.} 2017)
           \item $\hat L^3\times\hat T = 32^3\times 96$, \ $a=0.11403$ fm, \ $L\approx3.65$ fm
           \item $\mN = 0.6228(28)/a = 1077.8(48)$ MeV
           \item $P_1=-2\pi/L=-339.8$ MeV
@@ -18,7 +19,7 @@
         \end{itemize}
       \end{block}
       \begin{alertblock}{Not stated in the thesis}
-        \todo{fill in from the collaboration: $m_\pi$, $N_f$, number of configurations and Jackknife bins, $t_{\rm snk}-t_{\rm src}$, smearing}
+        \todo{fill in: $m_\pi$, number of configurations and Jackknife bins, $t_{\rm snk}-t_{\rm src}$, smearing}
       \end{alertblock}
     \end{column}
     \begin{column}{0.50\textwidth}
@@ -30,17 +31,17 @@
 \end{frame}
 
 % B2
-\begin{frame}{Backup: coverage in $(P\cdot b,\ b_L, b_T)$}
+\begin{frame}{Backup: coverage in $(b_L, b_T)$ and $(P\cdot b,\ b^2)$}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[width=0.85\linewidth]{bL_bT_plot.pdf}\\
+      \includegraphics[width=0.8\linewidth]{bL_bT_plot.pdf}\\
       {\scriptsize Lattice $\vect b$ vectors in the $(b_L,b_T)$ plane}
     \end{column}
     \begin{column}{0.48\textwidth}
       \centering
       \includegraphics[width=\linewidth]{Pb_bsq_plot.pdf}\\
-      {\scriptsize Coverage in $(P\cdot b,\ b^2)$}
+      {\scriptsize Coverage in $(P\cdot b,\ b^2)$ for the four momenta}
     \end{column}
   \end{columns}
   \begin{itemize}
@@ -50,38 +51,56 @@
 \end{frame}
 
 % B3
-\begin{frame}{Backup: the $|\vect b|\ge3a$ cut for $\tAmp_{12B}^{\text{Re}}$, and $\tAmp_{12B}^{\text{Im}}\approx0$}
+\begin{frame}{Backup: the $|\vect b|\ge3a$ cut for $\tAmp_{12B}^{\text{Re}}$}
+  \vspace{2mm}
   \centering
-  \includegraphics[width=0.9\linewidth]{A12B_Re_b_lessthan3_and_ge3.pdf}\\[2mm]
-  \includegraphics[width=0.9\linewidth]{ImA12B_Pb_bsq_eta8_PL-3_2D.pdf}\\
-  {\scriptsize $\tAmp_{12B}^{\text{Im}}$ at $P_L=-3$, $\eta|v|/a=8$: consistent with zero, so dropped from the analysis}
+  \includegraphics[width=\linewidth]{A12B_Re_b_lessthan3_and_ge3.pdf}
+\end{frame}
+
+% B3b
+\begin{frame}{Backup: $\tAmp_{12B}^{\text{Im}}$ is consistent with zero}
+  \centering
+  \includegraphics[width=\linewidth]{ImA12B_Pb_bsq_eta8_PL-3_2D.pdf}\\
+  {\scriptsize $\tAmp_{12B}^{\text{Im}}$ at $P_L=-3$, $\eta|v|/a=8$ (all $b^2$, including $|\vect b|<3a$): consistent with zero, so dropped.}
 \end{frame}
 
 % B4
 \begin{frame}{Backup: PySR benchmark fits}
-  \centering
-  \includegraphics[width=0.75\linewidth]{01_A2B_PySR_Benchmark_Fits.pdf}
-  \begin{itemize}
-    \item Run on $\tAmp_{2B}^{\text{Re}}$ at $P_L=-1$ only. The penalty $\mathcal{P}_{\text{asymptotic}}$ sums $|\tAmp^{\text{model}}|$ at large $b_L$.
-    \item Every expression on the front depends on $b^2$ alone, with no separate $P\cdot b$ information: a guide, not the final model.
-  \end{itemize}
+  \begin{columns}[c]
+    \begin{column}{0.62\textwidth}
+      \centering
+      \includegraphics[height=0.8\textheight, width=\linewidth, keepaspectratio]{01_A2B_PySR_Benchmark_Fits.pdf}
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \begin{itemize}
+        \item Run on $\tAmp_{2B}^{\text{Re}}$ at $P_L=-1$ only.
+        \item $\mathcal{P}_{\text{asymptotic}}$ sums $|\tAmp^{\text{model}}|$ at large $b_L$.
+        \item Every formula with spatial dependence depends on $b_L, b_T$ only through $b^2$: a guide, not the final model.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % B5
-\begin{frame}{Backup: $c(\eta)$ choice and the Fourier-transform width}
+\begin{frame}{Backup: $c(\eta)$ candidates and the Fourier-transform width}
+  \centering
+  \includegraphics[height=0.82\textheight, keepaspectratio]{A2BfitFT_eta_Asymptotic_P1.pdf}
+\end{frame}
+
+% B5b
+\begin{frame}{Backup: $\eta$-independence of $d$, and the $c(\eta)$ choice}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{A2BfitFT_eta_Asymptotic_P1.pdf}
+      \includegraphics[width=0.9\linewidth]{A2B_d_eta_Independence_P1.pdf}\\
+      {\scriptsize $d(\eta)$ for $\tAmp_{2B}^{\text{Re}}$: slope $0.00122(87)$}
     \end{column}
     \begin{column}{0.50\textwidth}
-      \centering
-      \includegraphics[width=0.8\linewidth]{A2B_d_eta_Independence_P1.pdf}\\
-      {\scriptsize $d(\eta)$: slope $0.00122(87)$}
       \begin{itemize}
-        \item The $x$-width of $\tAmp_{2B}^{\text{Re}}$ moves with the choice of $c(\eta)$.
+        \item The $x$-width of $\tAmp_{2B}^{\text{Re}}$ moves with the choice of $c(\eta)$ (previous slide).
         \item $c_2(\eta)=c\big(1-\tfrac{k_1}{\eta}-\tfrac{k_2}{\eta^2}\big)$: lowest AIC, suppresses antiquarks at $x\lesssim-0.2$, consistent with the $x$-integrated results.
-        \item \todo{state how $c(\eta)$ with $k_1,k_2$ is evaluated in the Fourier transform and the $\zetahat$ extrapolation (open TODO in Ch.~7)}
+        \item The $b_L^2$ coefficient is $d+c_2(\eta)$, which stays positive over $\eta\in[6,10]$.
+        \item \todo{how $c(\eta)$ with $k_1,k_2$ enters the transform and the $\zetahat$ extrapolation}
       \end{itemize}
     \end{column}
   \end{columns}
@@ -92,15 +111,14 @@
   \begin{itemize}
     \item Even amplitudes: $\big[1+C\,(P\cdot b)^2+\ldots\big]^{-j}\sim|P\cdot b|^{-2j}$ $\Rightarrow$ absolutely integrable for $j>1/2$.
     \item $\tAmp_{2B}^{\text{Im}}\propto b_L\,[\ldots]^{-j}\sim|P\cdot b|^{1-2j}$ $\Rightarrow$ absolutely integrable only for $j>1$.
-    \item Extrapolated values:
+    \item $j_{\text{im}}$ at the simulated momenta $P_L=-1,-2,-3,-4$: \ $1.108(21)$, $1.141(20)$, $1.057(15)$, $1.0084(79)$, all $>1$.
+    \item Extrapolated to $\zetahat\to\infty$:
   \end{itemize}
   \[ j_{\text{re}} = 2.0667(69), \quad j_{\text{im}} = 0.9921(92), \quad j_{\text{reA12B}} = 2.0026(40) \]
-  \[ d_{\text{re}} = 0.139(12), \quad d_{\text{im}} = 0.183(14), \quad d_{\text{reA12B}} = 0.105(18) \]
   \begin{itemize}
-    \item With $j_{\text{im}}\approx1$ the sine transform of $\tAmp_{2B}^{\text{Im}}$ converges only conditionally; this shows up as the sharp structure of $\tAmp_{2B}^{[x]\text{Im}}$ near $x=0$.
+    \item At $j_{\text{im}}\approx1$ the sine transform converges only conditionally; this is the sharp structure of $\tAmp_{2B}^{[x]\text{Im}}$ near $x=0$.
     \item Power laws are not entire functions, so support extends beyond $|x|\le1$; numerically $\int_{-\infty}^{\infty}$ and $\int_{-1}^{1}$ agree within errors (next slide).
   \end{itemize}
-  \todo{Hari: confirm this integrability argument before the defense}
 \end{frame}
 
 % B7
@@ -121,15 +139,15 @@
   \end{tabular}}
   \raggedright
   \begin{itemize}
-    \item First four rows unrenormalized; the multiplicative factor cancels only in the ratio (last row).
-    \item $\int_{-\infty}^{\infty}dx$ of the transform equals the amplitude at $\bvec\tcdot P=0$: a consistency identity. The content is the split into $[-1,0]$ and $[0,1]$.
+    \item First four rows are unrenormalized; only the ratio (last row) is quoted as a physical quantity.
+    \item $\int_{-\infty}^{\infty}dx$ of the transform equals the amplitude at $\bvec\tcdot P=0$ (an identity). The content is the split into $[-1,0]$ and $[0,1]$.
   \end{itemize}
 \end{frame}
 
 % B8
 \begin{frame}{Backup: all twelve parameter extrapolations}
   \centering
-  \includegraphics[width=0.82\linewidth]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}\\
+  \includegraphics[height=0.8\textheight, keepaspectratio]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}\\
   {\scriptsize Rows: $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$, $\tAmp_{12B}^{\text{Re}}$. Each fit: 3 points, 2 parameters.}
 \end{frame}
 
@@ -142,39 +160,59 @@
 % B10
 \begin{frame}{Backup: extrapolated amplitudes and TMDs}
   \centering
-  \includegraphics[width=0.8\linewidth]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Amps.pdf}
+  \includegraphics[height=0.82\textheight, keepaspectratio]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Amps.pdf}
 \end{frame}
 
 % B11
 \begin{frame}{Backup: full $x$-dependence at $P_L=-3$}
   \centering
-  \includegraphics[width=0.9\linewidth]{FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf}\\
+  \includegraphics[width=0.75\linewidth]{FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf}\\
   {\scriptsize Top: $\tAmp^{[x]\text{Re}}_{2B}$, $\tAmp^{[x]\text{Im}}_{2B}$, $\tilde f_1^{(0)}$. Bottom: $\tilde f_{1T}^{\perp(1)}$, $\langle k_y\rangle_{TU}$, $x\langle k_y\rangle_{TU}$.}
 \end{frame}
 
 % B12
 \begin{frame}{Backup: global fit at $P_L=-3$}
   \centering
-  \includegraphics[width=0.95\linewidth]{Combined_Pb_bsq_eta8_PL-3_WithFit_2D.pdf}
+  \includegraphics[height=0.82\textheight, keepaspectratio]{Combined_Pb_bsq_eta8_PL-3_WithFit_2D.pdf}
+\end{frame}
+
+% B12b
+\begin{frame}{Backup: separable models vs the coupled power law}
+  \centering
+  {\scriptsize
+  \renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
+  \begin{tabular}{lccccccc}
+    \toprule
+    Model: longitudinal $\times$ transverse & \multicolumn{4}{c}{$\chi^2/\text{dof}$ at $P_L=-1,-2,-3,-4$} & $c^{\text{Im}}_{2B}$ & $c^{\text{Re}}_{12B}$ & $a^{\text{Im}}_{2B}$ \\
+    \midrule
+    $e^{-c|P\cdot b|}\times e^{-d|\vect b|}$ & $1.406(92)$ & $0.956(75)$ & $0.622(61)$ & $0.455(53)$ & $0.0010(262)$ & $0.045(23)$ & $-0.167(16)$ \\
+    $e^{-c|P\cdot b|}\times(1+d\,b^2)^{-j}$ & $1.286(89)$ & $0.938(75)$ & $0.623(61)$ & $0.447(53)$ & $0.0045(248)$ & $0.028(24)$ & $-0.167(31)$ \\
+    $e^{-c(P\cdot b)^2}\times e^{-d|\vect b|}$ & $2.389(121)$ & $2.005(111)$ & $0.945(76)$ & $0.453(52)$ & $0.568(171)$ & $0.0038(69)$ & $+0.050(121)$ \\
+    $e^{-c(P\cdot b)^2}\times(1+d\,b^2)^{-j}$ & $2.316(120)$ & $1.981(111)$ & $0.948(76)$ & $0.448(52)$ & $0.602(48)$ & $0.0016(61)$ & $+0.168(92)$ \\
+    \midrule
+    \textbf{coupled power law in $(P\cdot b, b^2)$} & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ & $\mathbf{0.2253(69)}$ & $\mathbf{0.0773(46)}$ & $\mathbf{+0.267(13)}$ \\
+    \bottomrule
+  \end{tabular}}
+  \raggedright
+  \begin{itemize}
+    \item Parameters shown at $P_L=-1$. Separable models: $c^{\text{Im}}_{2B}$ or $c^{\text{Re}}_{12B}$ consistent with zero, $a^{\text{Im}}_{2B}$ sign flips, or poor $\chi^2$.
+  \end{itemize}
 \end{frame}
 
 % B13
-\begin{frame}{Backup: factorization ratios}
-  \begin{columns}[c]
-    \begin{column}{0.5\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf}\\
-      {\scriptsize Ratio at $\zetahat\to\infty$: not flat in $x$}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf}\\
-      {\scriptsize Ratio test directly on lattice data, $P_L=-1$}
-    \end{column}
-  \end{columns}
+\begin{frame}{Backup: factorization ratio at $\zetahat\to\infty$}
+  \centering
+  \includegraphics[height=0.68\textheight, keepaspectratio]{Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf}\\
+  {\scriptsize $R_b(x)=\langle k_y\rangle_{TU}(x,|\vprp b|)/\langle k_y\rangle_{TU}(x,0.34\,\text{fm})$: not flat in $x$}
   \begin{itemize}
-    \item The $\zetahat\to\infty$ test is a test of the extrapolated fitted model; the raw-data ratio test is too sparse to decide on its own.
+    \item This tests the extrapolated fitted model; the raw-data ratio test (next slide) is too sparse to decide on its own.
   \end{itemize}
+\end{frame}
+
+% B13a
+\begin{frame}{Backup: ratio test directly on lattice data ($P_L=-1$)}
+  \centering
+  \includegraphics[height=0.82\textheight, keepaspectratio]{Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf}
 \end{frame}
 
 % B13b
@@ -187,10 +225,10 @@
 % B14
 \begin{frame}{Backup: soft factor and renormalization}
   \begin{itemize}
-    \item At $\bvec\tcdot P=0$: under the assumption of $\Gamma$-independent multiplicative renormalization, the soft factor and $Z$ cancel in $\tAmp_{12B}/\tAmp_{2B}$ at the same $(\bvec, P, \eta v)$.
+    \item At fixed geometry: under $\Gamma$-independent multiplicative renormalization, the soft factor and $Z$ cancel in $\tAmp_{12B}/\tAmp_{2B}$ at the same $(\bvec, P, \eta v)$.
     \item This work: ratios of amplitudes at fixed geometry, with $\bvec\tcdot P$ scanned and Fourier transformed.
-    \item The $x$-integrated ratio (last row of the integral table) equals the $\bvec\tcdot P=0$ ratio.
-    \item \todo{Hari: prepare the oral answer on what changes with $b_L$ at fixed $|\vprp b|$ (link length vs cusp angles)}
+    \item The $(-\infty,\infty)$ entry of the last row of the integral table equals the $\bvec\tcdot P=0$ ratio (an identity).
+    \item \todo{prepare the oral answer on what changes with $b_L$ at fixed $|\vprp b|$ (link length vs cusp angles)}
   \end{itemize}
 \end{frame}
 

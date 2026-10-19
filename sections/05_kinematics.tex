@@ -24,10 +24,10 @@
         \draw[-latex, very thick, blue] (0,0) -- (0.9,1.9) node[above, font=\small] {$P$};
         \draw[-latex, very thick, badred] (0,0) -- (-1.9,0.3) node[left, font=\small] {$v$};
         \draw[-latex, thick, badred!50, dashed] (0,0) -- (-1.6,1.35);
-        \node[badred, font=\scriptsize, align=center] at (-1.1,-1.0) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
+        \node[badred, font=\scriptsize, align=right, anchor=north east] at (-0.3,-0.25) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
       \end{tikzpicture}
       \\[1mm]
-      \includegraphics[width=0.8\linewidth]{staple_geometry.png}
+      {\scriptsize Generic frame ($\zetahat$ is Lorentz invariant)}
     \end{column}
   \end{columns}
 \end{frame}
@@ -78,13 +78,13 @@
         \draw[-latex] (0,0,0) -- (0,2.2,0) node[right] {$2$};
         \draw[-latex] (0,0,0) -- (0,0,1.8) node[above] {$3$};
         \draw[-latex, very thick, blue] (0,0,0) -- (-1.6,0,0) node[above right, font=\small] {$\vect P$};
-        \draw[-latex, very thick, okgreen] (0,0,0) -- (1.2,1.5,0) node[right, font=\small] {$\vect b=(b_1,b_2,0)$};
-        \draw[-latex, very thick, badred] (0,0,0) -- (0.7,0,1.4) node[above right, font=\small] {$v=(v_1,0,v_3)$};
+        \draw[-latex, very thick, okgreen] (0,0,0) -- (1.2,1.5,0) node[below right=1pt, font=\small] {$\vect b=(b_1,b_2,0)$};
+        \draw[-latex, very thick, badred] (0,0,0) -- (0.7,0,1.4) node[left=2pt, font=\small] {$v=(v_1,0,v_3)$};
         \draw[dashed, okgreen] (1.2,1.5,0) -- (0,1.5,0);
         \draw[dashed, badred] (0.7,0,1.4) -- (0,0,1.4);
       \end{tikzpicture}
       \\[1mm]
-      \includegraphics[width=0.85\linewidth]{v1_v2_allzetahat_plot.pdf}
+      \includegraphics[width=0.95\linewidth]{v1_v2_allzetahat_plot.pdf}
     \end{column}
   \end{columns}
 \end{frame}
@@ -112,21 +112,12 @@
 
 % Slide 17
 \begin{frame}{From lattice vectors to invariants, and the $|\vect b|\ge 3a$ cut}
-  \begin{columns}[c]
-    \begin{column}{0.58\textwidth}
-      \begin{itemize}
-        \item Lattice components along / across $\vect P$:
-        \ \ $b_L = \dfrac{P\cdot b}{-P_L}, \quad b_T^2 = b^2 - b_L^2$
-        \item Mirrored $\pm b_1$ paths separate the even (Re) and odd (Im) parts.
-        \item Keep only $|\vect b| = \sqrt{b_L^2+b_T^2}\ \ge 3a$ to remove UV discretization artifacts.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.40\textwidth}
-      \centering
-      \includegraphics[width=0.8\linewidth]{Pb_bsq_plot.pdf}
-    \end{column}
-  \end{columns}
+  \begin{itemize}
+    \item Lattice components along / across $\vect P$: \quad $b_L = \dfrac{P\cdot b}{-P_L}, \qquad b_T^2 = b^2 - b_L^2$
+    \item Mirrored $\pm b_1$ paths separate the even (Re) and odd (Im) parts.
+    \item Keep only $|\vect b| = \sqrt{b_L^2+b_T^2}\ \ge 3a$ to remove UV discretization artifacts.
+  \end{itemize}
   \centering
-  \includegraphics[width=0.8\linewidth]{A2B_Re_b_lessthan3_and_ge3.pdf}
-  \keymsg{At $b^2/a^2=5$, $\tAmp_{2B}^{\text{Re}}$ rises by about 14\% with $|P\cdot b|$; at $b^2/a^2=20$ and $45$ it is flat within uncertainties.}
+  \includegraphics[width=0.78\linewidth]{A2B_Re_b_lessthan3_and_ge3.pdf}
+  \keymsg{$P_L=-1$, $\eta|v|/a=9$: at $b^2/a^2=5$, $\tAmp_{2B}^{\text{Re}}$ rises by about 14\% with $|P\cdot b|$; at $b^2/a^2=20$, $45$ it is flat.}
 \end{frame}

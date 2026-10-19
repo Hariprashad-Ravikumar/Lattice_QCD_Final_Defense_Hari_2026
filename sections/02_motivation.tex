@@ -16,7 +16,7 @@
     \begin{column}{0.58\textwidth}
       \centering
       \includegraphics[width=\linewidth]{EIC_WP_Fig2p2_distributions.png}
-      \figsrc{Reproduced from A.~Accardi \emph{et al.}, Eur.\ Phys.\ J.\ A \textbf{52}, 268 (2016) [EIC White Paper]}
+      \figsrc{Adapted from Accardi \emph{et al.}, EPJA \textbf{52}, 268 (2016)}
     \end{column}
   \end{columns}
 \end{frame}
@@ -52,13 +52,14 @@
           \draw[dashed, gray] (0,0) circle (1.2);
           \draw[thick] (0.45,0) circle (1.2);
           \fill (0.45,0) circle (1.5pt);
-          \draw[-latex, thick] (0,-1.55) -- (0.45,-1.55);
-          \node[below] at (0.8,-1.6) {\small $\langle k_x\rangle > 0$};
+          \draw[-latex, thick] (0.05,-1.55) -- (0.5,-1.55);
+          \node[below] at (0.9,-1.6) {\small $\langle k_x\rangle > 0$};
           \node at (0,-2.65) {\small quark density in the $\vprp{k}$ plane};
         \end{scope}
       \end{tikzpicture}
       \\[1mm]
-      {\scriptsize $\vect{P}$ out of the page, $\vprp{S}\parallel\hat y$: the shift is along $\hat x$ (shown: $f_{1T}^\perp<0$).}
+      {\scriptsize $\vect{P}$ out of the page, $\vprp{S}\parallel\hat y$: the shift is along $\hat x$ (shown: $f_{1T}^\perp<0$).\\
+      On the lattice we take $\vprp{S}\parallel\hat x$ and measure the shift $\langle k_y\rangle$.}
     \end{column}
   \end{columns}
 \end{frame}
@@ -67,7 +68,8 @@
 \begin{frame}{Why it is not zero: the gauge link}
   \begin{itemize}
     \item Collins (1993): time reversal forces $f_{1T}^\perp=0$ \quad (``naively T-odd'').
-    \item Brodsky--Hwang--Schmidt, Collins (2002): a gauge-invariant TMD needs a \textbf{Wilson line}. Its path depends on the process, and T-reversal swaps the two paths:
+    \item Brodsky--Hwang--Schmidt (2002): final-state interactions give a nonzero asymmetry.
+    \item Collins (2002): a gauge-invariant TMD needs a \textbf{Wilson line}. Its path depends on the process, and T-reversal swaps the two paths:
   \end{itemize}
   \[ f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{SIDIS}} = - f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{DY}} \]
   \centering
@@ -95,20 +97,20 @@
       \node at (-1.8,-0.6) {\small (b) Drell--Yan: past-pointing};
     \end{scope}
   \end{tikzpicture}
-  \keymsg{This \textbf{staple-shaped link} is exactly the operator we put on the lattice.}
+  \keymsg{We put this \textbf{staple-shaped link} on the lattice.}
 \end{frame}
 
 % Slide 6
 \begin{frame}{What experiments know}
   \begin{itemize}
-    \item \textbf{SIDIS:} $\sin(\phi_h-\phi_S)$ modulation. HERMES: first clear nonzero Sivers asymmetry ($\pi^+$, proton). COMPASS: $\approx 0$ on deuteron, nonzero on proton. JLab: polarized $^3$He.
-    \item \textbf{Drell--Yan-like:} STAR ($W^\pm$, $Z^0$), COMPASS ($\pi^- p^\uparrow$). Both favor the sign change, with limited significance.
-    \item \textbf{Phenomenology:} up-quark Sivers function negative, down-quark positive (in SIDIS).
+    \item \textbf{SIDIS} (HERMES, COMPASS, JLab): nonzero Sivers asymmetries on the proton.
+    \item \textbf{Drell--Yan-like} (STAR, COMPASS): favor the predicted sign change, with limited significance.
+    \item \textbf{Phenomenology:} up-quark Sivers function negative, down-quark positive (SIDIS).
   \end{itemize}
   \vspace{2mm}
-  \begin{block}{But the \emph{shape} is uncertain}
-    The data cover a limited $x$ range, and fits assume functional forms in $x$ and $\vprp{k}$, so the extracted shapes carry a model bias. \\
-    JLab 12 GeV and the EIC are coming $\Rightarrow$ a \textbf{first-principles $x$-dependence} is a useful benchmark.
+  \begin{block}{But the \emph{shape in $x$} is uncertain}
+    The data cover a limited $x$ range, and fits assume functional forms in $x$ and $\vprp{k}$, so the extracted shapes carry a model bias.
+    JLab 12 GeV and the EIC are coming: a \textbf{first-principles $x$-dependence} is a useful benchmark.
   \end{block}
 \end{frame}
 
@@ -118,9 +120,8 @@
     \begin{column}{0.52\textwidth}
       \begin{itemize}
         \item Light-like separations cannot be placed at a single Euclidean time.
-        \item Lorentz-invariant amplitude method (H\"agler, Musch, Negele, Sch\"afer; Musch \emph{et al.} 2012): staple links, first lattice Sivers shift and its sign change.
-        \item Published results sit at $\bvec\tcdot P=0$. Since $\bvec\tcdot P$ is Fourier-conjugate to $x$, these are \textbf{$x$-integrated}.
-        \item TMD Handbook (2023): scans in $\bvec\tcdot P$ are a necessary next step.
+        \item Lorentz-invariant amplitude method with staple links (Musch \emph{et al.} 2012): first lattice Sivers shift and its sign change.
+        \item Published results sit at $\bvec\tcdot P=0$. Since $\bvec\tcdot P$ is Fourier-conjugate to $x$, they are \textbf{$x$-integrated}.
       \end{itemize}
     \end{column}
     \begin{column}{0.46\textwidth}
@@ -128,20 +129,19 @@
       \begin{tikzpicture}[scale=0.9]
         \draw[-latex, thick] (-3,0) -- (3.2,0) node[right] {$\bvec\tcdot P$};
         \fill[badred] (0,0) circle (3pt);
-        \node[badred, above, align=center, font=\scriptsize] at (0,0.15) {earlier work:\\$\bvec\tcdot P=0$ $\Rightarrow\int dx$};
+        \node[badred, above, align=center, font=\footnotesize] at (0,0.15) {earlier work:\\$\bvec\tcdot P=0$ $\Rightarrow\int dx$};
         \draw[okgreen, line width=4pt, opacity=0.6] (-2.4,-0.45) -- (2.4,-0.45);
-        \node[okgreen!70!black, below, font=\scriptsize, align=center] at (0,-0.6) {this thesis: scan $\bvec\tcdot P\neq0$\\$\xrightarrow{\ \int d(\bvec\tcdot P)\,e^{ix\,\bvec\cdot P}\ }$ function of $x$};
+        \node[okgreen!70!black, below, font=\footnotesize, align=center] at (0,-0.6) {this thesis: scan $\bvec\tcdot P\neq0$,\\Fourier transform $\Rightarrow$ function of $x$};
       \end{tikzpicture}
     \end{column}
   \end{columns}
   \vspace{2mm}
   \begin{block}{This thesis}
-    \small
     \begin{enumerate}
-      \item Kinematic constraint for $\bvec\tcdot P\neq0$ $\Rightarrow$ off-axis staples, built by interpolation.
-      \item Map lattice data to $(\bvec\tcdot P,\ \bvec^2)$ with $|\vect b|\ge 3a$.
-      \item Gaussian fails; physics-informed symbolic regression points to a power law; simultaneous fit.
-      \item Fourier transform to $x$, extrapolate $\zetahat\to\infty$, test factorization in $x$ and $|\vprp{b}|$.
+      \item Kinematic constraint at $\bvec\tcdot P\neq0$ $\Rightarrow$ off-axis staples, built by interpolation.
+      \item Map the data to $(\bvec\tcdot P,\ \bvec^2)$, keeping $|\vect b|\ge 3a$.
+      \item Find a model that can be Fourier transformed: a power law, fit to all amplitudes at once.
+      \item Fourier transform to $x$, extrapolate to the light-cone limit, test factorization.
     \end{enumerate}
   \end{block}
 \end{frame}

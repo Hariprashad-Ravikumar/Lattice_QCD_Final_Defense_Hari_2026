@@ -6,16 +6,14 @@
   \begin{itemize}
     \item Decompose the $\bvec$-space correlator into Lorentz-invariant amplitudes. For $\Gamma=\gamma^+$, two of them carry $f_1$ and the Sivers function:
   \end{itemize}
-  \[ \frac{1}{2 P^+}\widetilde \Phi^{[\gamma^+]}_{\unsub} = \textcolor{red}{\tAmp_{2B}} + i \mN \epsilon_{ij}\, \vect{\bvec}_i \vect{S}_j\, \textcolor{red}{\tAmp_{12B}}, \qquad
-     \tAmp_{2B} \equiv \tAmp_2 + R(\zetahat^2) \tBmp_1, \quad \tAmp_{12B} \equiv \tAmp_{12} - R(\zetahat^2) \tBmp_8 \]
+  \[ \frac{1}{2 P^+}\widetilde \Phi^{[\gamma^+]} = \textcolor{red}{\tAmp_{2B}} + i \mN \epsilon_{ij}\, \vect{\bvec}_i \vect{S}_j\, \textcolor{red}{\tAmp_{12B}} \]
   \begin{itemize}
-    \item The amplitudes depend only on invariants, so they can be computed in a convenient lattice frame:
+    \item The amplitudes depend only on invariants ($\bvec^2$, $\bvec\tcdot P$, $\zetahat$, $\eta v\tcdot P$), so we compute them in a convenient lattice frame.
+    \item $\zetahat$: \textbf{Collins--Soper parameter}, how close the staple direction $v$ is to the light cone. The physical limit is $\zetahat\to\infty$.
+    \item $\eta v\tcdot P\to+\infty$ / $-\infty$: SIDIS / Drell--Yan staple.
   \end{itemize}
-  \[ \tAmp_i\big(\bvec^2,\ \bvec \tcdot P,\ (\bvec \tcdot P) R(\zetahat^2)/\mN^2,\ -1/(\mN\zetahat)^2,\ \eta v \tcdot P\big) \]
-  \begin{itemize}
-    \item $\zetahat$: Collins--Soper parameter (how close $v$ is to the light cone). \quad $\eta v\tcdot P\to\pm\infty$: SIDIS / Drell--Yan staple.
-  \end{itemize}
-  \keymsg{At $\bvec\tcdot P=0$: \quad $\displaystyle\langle k_y\rangle_{TU}(\vprp{b}^2) = -\mN\,\frac{\tAmp_{12B}(-\vprp{b}^2,0,0,\ldots)}{\tAmp_{2B}(-\vprp{b}^2,0,0,\ldots)}$ \quad --- the $x$-\textbf{integrated} Sivers shift}
+  \keymsg{At $\bvec\tcdot P=0$: \quad $\displaystyle\langle k_y\rangle_{TU} = -\mN\,\frac{\tAmp_{12B}}{\tAmp_{2B}}$ \quad the $x$-\textbf{integrated} Sivers shift\\
+  {\scriptsize ($T$: transversely polarized nucleon, $U$: unpolarized quark)}}
 \end{frame}
 
 % Slide 11
@@ -37,15 +35,11 @@
 % Slide 12
 \begin{frame}{What the Fourier transform needs}
   \begin{itemize}
-    \item Hermiticity: $\tAmp^{\text{Re}}$ is even, $\tAmp^{\text{Im}}$ is odd in $\bvec\tcdot P$. They separate quark and antiquark combinations:
-  \end{itemize}
-  \[ \myRe\,\tAmp_{2B} = \tfrac{\tilde{\softf}}{2}\!\int_0^1\! dx\, \cos(x\,\bvec\tcdot P)\big[\tilde f_1^q - \tilde f_1^{\bar q}\big], \qquad
-     \myIm\,\tAmp_{2B} = -\tfrac{\tilde{\softf}}{2}\!\int_0^1\! dx\, \sin(x\,\bvec\tcdot P)\big[\tilde f_1^q + \tilde f_1^{\bar q}\big] \]
-  \[ \Rightarrow\quad \langle \vect{k}_y \rangle_{TU}(x) = -\mN \frac{\tAmp_{12B}^{[x]\text{Re}}-\tAmp_{12B}^{[x]\text{Im}}}{\tAmp_{2B}^{[x]\text{Re}}-\tAmp_{2B}^{[x]\text{Im}}},
-     \qquad \begin{aligned} \tAmp^{[x]\text{Re}} &= \!\textstyle\int\! d(\bvec\tcdot P)\cos(x\,\bvec\tcdot P)\,\tAmp^{\text{Re}} \\ \tAmp^{[x]\text{Im}} &= \!\textstyle\int\! d(\bvec\tcdot P)\sin(x\,\bvec\tcdot P)\,\tAmp^{\text{Im}} \end{aligned} \]
-  \begin{itemize}
+    \item Hermiticity: $\tAmp^{\text{Re}}$ is even, $\tAmp^{\text{Im}}$ is odd in $\bvec\tcdot P$. \ Re $\leftrightarrow$ quark $-$ antiquark, \ Im $\leftrightarrow$ quark $+$ antiquark.
     \item $\tAmp_{12B}^{\text{Im}}$ is consistent with zero in our data and is dropped $\Rightarrow$ three amplitudes: $\tAmp_{2B}^{\text{Re}},\ \tAmp_{2B}^{\text{Im}},\ \tAmp_{12B}^{\text{Re}}$.
   \end{itemize}
+  \[ \langle \vect{k}_y \rangle_{TU}(x) = -\mN \frac{\tAmp_{12B}^{[x]\text{Re}}}{\tAmp_{2B}^{[x]\text{Re}}-\tAmp_{2B}^{[x]\text{Im}}},
+     \qquad \begin{aligned} \tAmp^{[x]\text{Re}} &= \textstyle\int \frac{d(\bvec\tcdot P)}{2\pi}\cos(x\,\bvec\tcdot P)\,\tAmp^{\text{Re}} \\ \tAmp^{[x]\text{Im}} &= \textstyle\int \frac{d(\bvec\tcdot P)}{2\pi}\sin(x\,\bvec\tcdot P)\,\tAmp^{\text{Im}} \end{aligned} \]
   \begin{alertblock}{Two requirements to remember}
     \begin{enumerate}
       \item The amplitude must \textbf{decay in $\bvec\tcdot P$} fast enough for the integral to exist.
