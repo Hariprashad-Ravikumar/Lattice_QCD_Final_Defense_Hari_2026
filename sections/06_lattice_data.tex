@@ -22,10 +22,12 @@
   \begin{block}{}
   \[ \langle \vect{k}_y \rangle_{TU}(x) = -\mN\, \frac{\tAmp_{12B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{12B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)}{\tAmp_{2B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{2B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)} \]
   \end{block}
+  {\scriptsize with $\tAmp^{[x]\text{Re}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\cos(x\,\bvec\cdot P)\,\tAmp^{\text{Re}}$, \ $\tAmp^{[x]\text{Im}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\sin(x\,\bvec\cdot P)\,\tAmp^{\text{Im}}$}
 \end{frame}
 
 % Slide 21
 \begin{frame}{The Collins--Soper parameter $\zetahat$}
+  \quick
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
       \[ \zetahat = \frac{v \cdot P}{\sqrt{|v^2|}\, \sqrt{P^2}} \]
@@ -47,7 +49,7 @@
         \draw[-latex, very thick, blue] (0,0) -- (0.9,1.9) node[above, font=\small] {$P$};
         \draw[-latex, very thick, badred] (0,0) -- (-1.9,0.3) node[left, font=\small] {$v$};
         \draw[-latex, thick, badred!50, dashed] (0,0) -- (-1.6,1.35);
-        \node[badred, font=\scriptsize, align=right, anchor=north east] at (-0.3,-0.25) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
+        \node[badred, font=\scriptsize, align=right, anchor=north east, fill=white, inner sep=1pt] at (-0.9,-0.95) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
       \end{tikzpicture}
       \\[1mm]
       {\scriptsize Generic frame ($\zetahat$ is Lorentz invariant)}
@@ -99,6 +101,7 @@
       \raggedright
       \begin{itemize}
         \item Lattice parameters: $\vect{\bvec}/a=(b_{1},b_{2},0)$; \ $\eta \vect{v}/a=\eta\,(v_{1},0,v_{3})$, $\eta=0,\ldots,10$; \ $\vect{P}\cdot a\hat{L}/(2\pi)=(n,0,0)$, $n=-1,\ldots,-4$.
+        \item $P_L\equiv n$: nucleon momentum in units of $2\pi/(\hat L a)$, $\hat L=32$.
         \item $v$ is \textbf{off-axis} in the $v_1$--$v_3$ plane: not a lattice direction.
       \end{itemize}
     \end{column}
@@ -168,7 +171,7 @@
       \[ \Delta v_1 = \frac{v_1^{\text{constraint}} - v_1^{\text{lattice}}}{a} \]
       \begin{itemize}
         \item Path-averaged correlators at three or more bounding sites (red).
-        \item Quadratic interpolation in $\Delta v_1$ inside each Jackknife sample (grey band).
+        \item Quadratic interpolation in $\Delta v_1$ inside each Jackknife (leave-one-out resampling) sample (grey band).
         \item Read off the value at $\Delta v_1 = 0$ (blue).
         \item All 8 inputs: Re and Im of $R_{\Gamma}$ for $\Gamma=\gamma_1,\gamma_2,\gamma_3,\gamma_4$.
       \end{itemize}
@@ -219,6 +222,7 @@
 
 % Slide 30
 \begin{frame}{Symmetry improvement: path averaging for $\vect b$}
+  \quick
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \centering
@@ -250,8 +254,8 @@
   \[ R^{[b^1\text{-even}]}=\tfrac{1}{2}\big(R^{[+b]} + R^{[-b]}\big)\ \Rightarrow\ \text{real parts}, \qquad
      R^{[b^1\text{-odd}]}=\tfrac{1}{2}\big(R^{[+b]} - R^{[-b]}\big)\ \Rightarrow\ \text{imaginary parts} \]
   \begin{itemize}
-    \item Each projection gives 8 linear equations (Re, Im of 4 Dirac structures) for $\tilde a_i^{\text{Re}}$, $\tilde b_i^{\text{Re}}$ (even) or $\tilde a_i^{\text{Im}}$, $\tilde b_i^{\text{Im}}$ (odd).
-    \item Convert back: $\tAmp_i = \tilde a_i$, \ $\tBmp_i = (\eta v \tcdot P)^n\ \tilde b_i$, with $v \tcdot P = v^1 |P^1|$.
+    \item Each projection gives 8 linear equations (Re, Im of 4 Dirac structures). The even projection isolates the real parts of $\tilde a_2,\tilde b_1,\tilde a_{12},\tilde b_8$, the odd one their imaginary parts (some rows also carry $b^1\times$ cross terms).
+    \item Convert back: $\tAmp_i = \tilde a_i$, \ $\tBmp_i = (\eta v \tcdot P)^n\ \tilde b_i$ ($n$: power of $1/v\tcdot P$ in front of $\tBmp_i$), with $v \tcdot P = v^1 |P^1|$; $E_N$: nucleon energy.
   \end{itemize}
 \end{frame}
 
@@ -264,8 +268,8 @@
       \begin{align*}
         \tAmp^{\text{Re}}_2 &= \tfrac{1}{2}\text{Re}\{ R_{\Gamma(8)}\}^{\text{even}} \\
         \tBmp^{\text{Re}}_1 &= \tfrac{E_{N}|P^1|v^1}{2\mN^2  v^3} \text{Im}\{ R_{\Gamma(4)}\}^{\text{even}} \\
-        \tAmp^{\text{Re}}_{12} &= \tfrac{-1}{2\mN  \bvec^2}\Big[\text{Re}\{ R_{\Gamma(1)}\}^{\text{even}}+\tfrac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}}\Big] \\
-        \tBmp^{\text{Re}}_8 &= \tfrac{-E_N |P^1|}{ 2\mN^3 \bvec^2 }\Big[\text{Im}\{ R_{\Gamma(8)}\}^{\text{even}}+\tfrac{|P^1|v^3}{E_N v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}} \\ &\qquad + 2\mN  \tfrac{|P^1|}{E_N} \bvec^2  \tAmp^{\text{Re}}_{12}\Big]
+        \tAmp^{\text{Re}}_{12} &= \tfrac{-1}{2\mN  b^{(2)}}\Big[\text{Re}\{ R_{\Gamma(1)}\}^{\text{even}}+\tfrac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}}\Big] \\
+        \tBmp^{\text{Re}}_8 &= \tfrac{-E_N |P^1|}{ 2\mN^3 b^{(2)} }\Big[\text{Im}\{ R_{\Gamma(8)}\}^{\text{even}}+\tfrac{|P^1|v^3}{E_N v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}} \\ &\qquad + 2\mN  \tfrac{|P^1|}{E_N} b^{(2)}  \tAmp^{\text{Re}}_{12}\Big]
       \end{align*}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -273,8 +277,8 @@
       \begin{align*}
         \tAmp^{\text{Im}}_2 &= \tfrac{1}{2}\text{Im}\{ R_{\Gamma(8)}\}^{\text{odd}} \\
         \tBmp^{\text{Im}}_1 &= \tfrac{-E_{N}|P^1|v^1}{2\mN^2 v^3} \text{Re}\{ R_{\Gamma(4)}\}^{\text{odd}} \\
-        \tAmp^{\text{Im}}_{12} &= \tfrac{-1}{2\mN  \bvec^2}\Big[\text{Im}\{ R_{\Gamma(1)}\}^{\text{odd}}+\tfrac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}}\Big] \\
-        \tBmp^{\text{Im}}_8 &= \tfrac{E_N|P^1|}{ 2\mN^3 \bvec^2  }\Big[\text{Re}\{ R_{\Gamma(8)}\}^{\text{odd}}-\tfrac{|P^1|v^3}{E_N v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}} \\ &\qquad - 2\mN  \tfrac{|P^1|}{E_N} \bvec^2  \tAmp^{\text{Im}}_{12}\Big]
+        \tAmp^{\text{Im}}_{12} &= \tfrac{-1}{2\mN  b^{(2)}}\Big[\text{Im}\{ R_{\Gamma(1)}\}^{\text{odd}}+\tfrac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}}\Big] \\
+        \tBmp^{\text{Im}}_8 &= \tfrac{E_N|P^1|}{ 2\mN^3 b^{(2)}  }\Big[\text{Re}\{ R_{\Gamma(8)}\}^{\text{odd}}-\tfrac{|P^1|v^3}{E_N v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}} \\ &\qquad - 2\mN  \tfrac{|P^1|}{E_N} b^{(2)}  \tAmp^{\text{Im}}_{12}\Big]
       \end{align*}
     \end{column}
   \end{columns}
@@ -283,6 +287,7 @@
     \centering
     $\tAmp_{2B}^{\text{Re/Im}} = \tAmp_2^{\text{Re/Im}} + R(\zetahat^2)\, \tBmp_1^{\text{Re/Im}}, \qquad
      \tAmp_{12B}^{\text{Re/Im}} = \tAmp_{12}^{\text{Re/Im}} - R(\zetahat^2)\, \tBmp_8^{\text{Re/Im}}$\\[1mm]
+    {\scriptsize $b^{(1)}, b^{(2)}$: components of $\vect b$ along $\hat 1$ (longitudinal) and $\hat 2$ (transverse).}\\
     then map $b_L = \dfrac{P\cdot b}{-P_L}$, \ $\bvec^2=b_L^2+b_T^2$: \quad $\tAmp_{iB}(b_L, b_T, \zetahat)\ \to\ \tAmp_{iB}(P \cdot b, \bvec^2, \zetahat)$
   \end{block}
 \end{frame}
@@ -292,10 +297,10 @@
   \quick
   \centering
   \begin{tabular}{cc}
-    \includegraphics[height=0.36\textheight, trim=0 0 487 0, clip]{ReA2B_Pb_bsq_PL-1_3D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 487 0, clip]{ImA2B_Pb_bsq_PL-1_3D.pdf} \\
-    \includegraphics[height=0.36\textheight, trim=0 0 487 0, clip]{ReA12B_Pb_bsq_PL-1_3D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 487 0, clip]{ImA12B_Pb_bsq_PL-1_3D.pdf}
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA2B_Pb_bsq_PL-1_3D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA2B_Pb_bsq_PL-1_3D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA12B_Pb_bsq_PL-1_3D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA12B_Pb_bsq_PL-1_3D.pdf}
   \end{tabular}\\
   {\scriptsize $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$ (top); $\tAmp_{12B}^{\text{Re}}$, $\tAmp_{12B}^{\text{Im}}$ (bottom) vs $\eta|v|/a$ and $(P\cdot b)\hat L/(2\pi)$, colored by $b^2/a^2$}
 \end{frame}
@@ -304,10 +309,10 @@
 \begin{frame}{Amplitudes at $P_L=-1$: slices at $\eta|v|/a=8$}
   \centering
   \begin{tabular}{cc}
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-1_2D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-1_2D.pdf} \\
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-1_2D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-1_2D.pdf}
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-1_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-1_2D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-1_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-1_2D.pdf}
   \end{tabular}
   \begin{itemize}
     \item Parity checks pass: Re even, Im odd in $P\cdot b$. \ $\tAmp_{12B}^{\text{Im}}$ is consistent with zero $\Rightarrow$ dropped.
@@ -319,10 +324,10 @@
   \quick
   \centering
   \begin{tabular}{cc}
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-4_2D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-4_2D.pdf} \\
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-4_2D.pdf} &
-    \includegraphics[height=0.36\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-4_2D.pdf}
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-4_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-4_2D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-4_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-4_2D.pdf}
   \end{tabular}\\
   {\scriptsize Same layout as $P_L=-1$; the highest momentum reaches the widest range in $P\cdot b$. ($P_L=-2,-3$ in backup.)}
 \end{frame}

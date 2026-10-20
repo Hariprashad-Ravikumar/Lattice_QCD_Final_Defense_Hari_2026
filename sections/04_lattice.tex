@@ -13,7 +13,7 @@
       \begin{itemize}
         \item Wilson gauge action:
       \end{itemize}
-      \[ \begin{aligned} S_{G}&=\frac{2}{g^2}\sum_{x}\sum_{\mu<\nu}\mathrm{Re}\,\Tr\big[1-P_{\mu\nu}(x)\big] \\ &= \frac{a^4}{2g^2}\sum_{x}\sum_{\mu<\nu}\Tr\big[F_{\mu\nu}^2\big]+\mathcal{O}(a^2) \end{aligned} \]
+      \[ \begin{aligned} S_{G}&=\frac{2}{g^2}\sum_{x}\sum_{\mu<\nu}\mathrm{Re}\,\Tr\big[1-P_{\mu\nu}(x)\big] \\ &= \frac{a^4}{2g^2}\sum_{x}\sum_{\mu,\nu}\Tr\big[F_{\mu\nu}^2\big]+\mathcal{O}(a^2) \end{aligned} \]
       \begin{itemize}
         \item Quarks: Wilson--clover fermions (removes doublers, $\mathcal O(a)$ improvement).
       \end{itemize}
@@ -52,6 +52,7 @@
 
 % Slide 10
 \begin{frame}{Path integral, Wick contractions and Monte Carlo}
+  \quick
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
       \begin{itemize}
@@ -60,7 +61,7 @@
       \[ \langle \mathcal{O} \rangle =\frac{\int \mathcal{D}[U]\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]\ \mathcal{O}\ e^{-S_{G}[U]-\bar{\psi}\mathcal{M}[U]\psi}}{\int\mathcal{D}[U]\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]\ e^{-S_{G}[U]-\bar{\psi}\mathcal{M}[U]\psi}} \]
       \begin{itemize}
         \item Integrating out the Grassmann quark fields gives $\det\mathcal{M}$ and \textbf{Wick contractions}: quark pairs become propagators $S=\mathcal{M}^{-1}$.
-        \item Monte Carlo: sample configurations $U_n$ with probability $\propto \det\mathcal M\; e^{-S_G[U]}$:
+        \item Monte Carlo: sample configurations $U_n$ with probability $\propto \prod_f\det\mathcal M_f\; e^{-S_G[U]}$:
       \end{itemize}
       \[ \langle \mathcal O\rangle \approx \frac{1}{N}\sum_{n=1}^{N} \widetilde{\mathcal O}[U_n] \]
     \end{column}
@@ -93,13 +94,14 @@
         \node[font=\scriptsize, anchor=north] at (image.south) {$u,\ u,\ d$ propagators $\mathcal{M}^{-1}$};
       \end{tikzpicture}\\[3mm]
       \includegraphics[width=\linewidth]{proton3.eps}\\
-      {\scriptsize $C_{\Gamma^+}(t,\vect 0)$, $32^3\times94$, $a=0.11967$ fm (2023 example)}
+      {\scriptsize $C_{\Gamma^+}(t,\vect 0)$ on a different lattice ($32^3\times94$, $a=0.11967$ fm; 2023 study), not the ensemble used in this thesis}
     \end{column}
   \end{columns}
 \end{frame}
 
 % Slide 12
 \begin{frame}{Nucleon three-point function of a local operator}
+  \quick
   \begin{itemize}
     \item Insert $\mathcal O_\Gamma(x)=\bar q(x)\,\Gamma\,q(x)$ at time $\tau$ between source ($0$) and sink ($t$):
   \end{itemize}
@@ -116,7 +118,7 @@
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
       \begin{itemize}
-        \item TMD operator: $\bar q(0)\,\Gamma\,\mathcal U[0,\eta v,\eta v+\bvec,\bvec]\,q(\bvec)$, with $\bvec$, $v$ purely spatial so the operator sits in one time slice.
+        \item TMD operator: $\bar q(0)\,\Gamma\,\mathcal U[0,\eta v,\eta v+\bvec,\bvec]\,q(\bvec)$: quark separation $\bvec$, staple direction $v$, staple length $\eta|v|$. Both purely spatial, so the operator sits in one time slice.
         \item On the lattice the staple is a step-wise path $\mathcal C^{\rm lat}$:
       \end{itemize}
       \[ \begin{aligned} C^{\rm 3pt}_{\Gamma}(\tau,\vect P;\mathcal C^{\rm lat})=\frac{1}{\hat L^3}\sum_{z}\Gamma^{\rm 3pt}_{\beta\alpha}\big\langle&\chi_\alpha(t_{\rm snk},\vect P)\,O^{\rm lat}_{\Gamma}(\mathcal C^{\rm lat};z,\tau)\\ &\times\bar\chi_\beta(t_{\rm src},\vect P)\big\rangle \end{aligned} \]
