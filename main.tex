@@ -195,14 +195,14 @@
 \usepackage{booktabs}
 \usepackage{pifont}
 \usepackage{xcolor}
-\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,shapes.geometric}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,decorations.markings,shapes.geometric}
 \graphicspath{{figures/thesis/}{figures/template/}}
 \newcommand{\keymsg}[1]{\begin{block}{}\centering #1\end{block}}
-\newcommand{\figsrc}[1]{\par\vspace{-1mm}{\tiny\color{gray}#1}}
+\newcommand{\figsrc}[1]{\par\vspace{1mm}{\tiny\color{gray}#1}}
 \definecolor{okgreen}{RGB}{0,128,60}
 \definecolor{badred}{RGB}{190,30,30}
 % small grey tag for slides meant to be shown quickly
-\newcommand{\quick}{\begin{tikzpicture}[remember picture,overlay]\node[anchor=north east, font=\tiny, text=gray, inner sep=2pt] at ([xshift=-1mm,yshift=-1mm]current page.north east) {quick};\end{tikzpicture}}
+\newcommand{\quick}{}
 
 \title[\texorpdfstring{$x$}{x}-dependence of the Sivers shift from lattice QCD]{\textbf{Dependence of the Sivers TMD Shift on\\ Quark Longitudinal Momentum Fraction \texorpdfstring{$x$}{x}\\ from Lattice QCD}}
 \subtitle{~\\ PhD Dissertation Defense}
@@ -234,7 +234,6 @@
 \input{sections/08_extrapolation}
 \input{sections/09_close}
 
-\appendix
-\input{sections/10_backup}
+% Previous backup material is retained in sections/10_backup.tex; thesis evidence is now in the main talk.
 
 \end{document}

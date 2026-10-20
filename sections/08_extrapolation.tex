@@ -1,82 +1,608 @@
-% ===================== Extrapolations to the physical limit (thesis Ch. 7) =====================
-\section{Extrapolation}
+% Complete main-talk coverage of thesis Chapters/EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT.tex.
+% Original figures are retained; row crops partition dense multipanel figures.
+\section{Extrapolation and factorization}
 
-% Slide 44
-\begin{frame}{All four momenta: the result drifts with $\zetahat$}
-  \centering
-  \includegraphics[width=0.9\linewidth]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Sivers.pdf}
-  \begin{itemize}
-    \item $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $|\vprp b|=3a\approx0.34$ fm change systematically from $P_L=-1$ to $-4$.
-    \item The light-cone limit needs an extrapolation $\zetahat\to\infty$ (black dashed band).
-  \end{itemize}
+\begin{frame}{Finite rapidity and the extrapolation target}
+\[
+ \zetahat^2=-\frac{(v\cdot P)^2}{v^2m_N^2},\qquad
+ \zetahat\longrightarrow\infty\quad\text{(light-cone limit)}.
+\]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$P_L$ & $-1$ & $-2$ & $-3$ & $-4$\\
+\midrule
+$\zetahat$ & $0.090772$ & $0.294367$ & $0.539684$ & $0.785756$\\
+$1/\zetahat$ & $11.02$ & $3.40$ & $1.85$ & $1.27$\\
+\bottomrule
+\end{tabular}
+\begin{itemize}
+\item Every simulated $\zetahat$ is below one; the data do not directly reach the asymptotic region $\zetahat\gg1$.
+\item The following results extrapolate the selected model from $P_L=-2,-3,-4$. They retain dependence on the fit and extrapolation assumptions.
+\item Write $\rho=|\vprp b|_{\rm TMD}$, with $\rho^2=b^2$ in the invariant reconstruction. This is distinct from the lattice component $b_T^2=b^2-(P\cdot b)^2/P_L^2$.
+\end{itemize}
+\figsrc{Thesis, Extrapolation motivation and parameter-level extrapolation.}
 \end{frame}
 
-% Slide 45
-\begin{frame}{Extrapolation $\zetahat\to\infty$}
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item Extrapolate each of the 12 model parameters $p\in\{a,c,d,j\}\times$3 amplitudes ($c$ rescaled by $1/P_L^2$, $a_{\text{im}}$ by $1/P_L$): \ $p(\zetahat) = p_\infty + p_2/\zetahat^2$.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{itemize}
-        \item Use $P_L=-2,-3,-4$. $P_L=-1$ sits at $1/\zetahat=11.02$, far from the others ($3.40,\,1.85,\,1.27$).
-        \item The $1/\zetahat^2$ form gave a lower $\chi^2/\text{dof}$ than $1/\zetahat$.
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \centering
-  \includegraphics[width=\linewidth, trim=0 576 0 0, clip]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}\\
-  {\scriptsize Parameters of $\tAmp_{2B}^{\text{Re}}$ vs $1/\zetahat$; blue: extrapolated value (all 12 in backup)}
+
+\begin{frame}{Four momenta: Fourier amplitudes and TMD combinations (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 309.400 0 0,clip]{SimulFit_Distinct_1_over_PL_bmin3_eta610_b29.0_Amps.pdf}
+\par\small Even and odd Fourier contributions at $\rho=3a\simeq0.34$ fm. Each ribbon is one simulated momentum.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
 \end{frame}
 
-% Slide 46
-\begin{frame}{Result: the $x$-dependent Sivers shift at $\zetahat\to\infty$}
-  \centering
-  \includegraphics[width=\linewidth]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf}
-  \begin{itemize}
-    \item At $|\vprp b| = 3a \approx 0.34$ fm, $\langle k_y\rangle_{TU}$ peaks at about $0.21$ GeV at small $x$ and falls to near zero by $x\approx0.5$.
-    \item $x\langle k_y\rangle_{TU}$ peaks at about $0.02$ GeV near $x\approx0.15$.
-    \item Isovector ($u-d$), extrapolated from $P_L=-2,-3,-4$; bands: Jackknife (statistical).
-  \end{itemize}
+\begin{frame}{Four momenta: Fourier amplitudes and TMD combinations (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 309.400,clip]{SimulFit_Distinct_1_over_PL_bmin3_eta610_b29.0_Amps.pdf}
+\par\small Unpolarized and Sivers combinations at $\rho=3a$. All four finite momenta are retained in the comparison.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
 \end{frame}
 
-% Slide 47
-\begin{frame}{The Sivers shift in $x$ and $|\vprp b|$}
-  \quick
-  \centering
-  \includegraphics[width=0.95\linewidth]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf}\\
-  {\scriptsize $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $\zetahat\to\infty$ for $|\vprp b|\in[0.34,0.94]$ fm}
+\begin{frame}{Four momenta: the Sivers shift}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{SimulFit_Distinct_1_over_PL_bmin3_eta610_b29.0_Sivers.pdf}
+\par\small $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $\rho=3a$; the visible momentum dependence motivates extrapolation.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
 \end{frame}
 
-% Slide 48
-\begin{frame}{Ratio tests: is it factorized, $F(x)\,G(|\vprp b|)$?}
-  \begin{columns}[c]
-    \begin{column}{0.5\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf}\\
-      {\scriptsize $R_b(x)=\langle k_y\rangle_{TU}(x,|\vprp b|)/\langle k_y\rangle_{TU}(x,0.34\,\text{fm})$: flat if factorized}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \centering
-      relative distance $=\sqrt{J/N}$ of the best $F(x)G(|\vprp b|)$\\[1mm]
-      {\small
-      \begin{tabular}{cc}
-        \toprule
-        $x$-window & relative distance \\
-        \midrule
-        $[0.0,1.0]$ & $0.0568(78)$ \\
-        $[0.1,0.9]$ & $0.0714(95)$ \\
-        $[0.2,0.8]$ & $0.0758(75)$ \\
-        $[0.3,0.8]$ & $0.0620(88)$ \\
-        \bottomrule
-      \end{tabular}}
-      \begin{itemize}
-        \item Sivers shift: $5.7$--$7.6\%$ from factorized; amplitudes: $8$--$19\%$ (for $x\in[0,1]$).
-        \item The power $j$ is $\approx2$ for both real amplitudes but $\approx1$ for $\tAmp_{2B}^{\text{Im}}$.
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \keymsg{Close to factorized, but \textbf{not exactly}.}
+\begin{frame}{Extrapolating all twelve spatial parameters}
+For each of $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$, and $\tAmp_{12B}^{\text{Re}}$, extrapolate the parameters $a,c,d,j$.
+\[
+ \nu=P\cdot b,\qquad b_L=\frac{\nu}{-P_L},\qquad
+ c\,b_L^2=\frac{c}{P_L^2}\nu^2,\qquad
+ a_{\rm im}b_L=-\frac{a_{\rm im}}{P_L}\nu.
+\]
+\begin{itemize}
+\item Compare momenta using $c/P_L^2$ and $a_{\rm im}/P_L$, as in the thesis parameter-extrapolation plots.
+\item Exclude $P_L=-1$, whose $1/\zetahat=11.02$ lies far from the other points.
+\end{itemize}
+\[
+ p(\zetahat)=p_\infty+\frac{p_1}{\zetahat}
+ \qquad\text{or}\qquad
+ p(\zetahat)=p_\infty+\frac{p_2}{\zetahat^2}.
+\]
+The thesis selects the quadratic form using correlated Jackknife fits: three momenta and two fit parameters. The source uses broad Bayesian priors; its reported \texttt{lsqfit} statistic has three degrees of freedom, rather than the nominal frequentist $3-2=1$.
+\figsrc{Thesis, parameter-level extrapolation; comparison motivated there by Musch et al. (2012).}
+\end{frame}
+
+\begin{frame}{Parameter extrapolations: $\tAmp_{2B}^{\text{Re}}$}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 576 0 0,clip]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}
+\par\small All four extrapolations: $a$, $c/P_L^2$, $j$, $d$. Blue squares are intercepts at $1/\zetahat=0$.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Parameter extrapolations: $\tAmp_{2B}^{\text{Im}}$}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 288 0 288,clip]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}
+\par\small The source reports $\chi^2/\mathrm{dof}=12.1(4.0)$ for $a_{\rm im}/P_L$: the chosen extrapolation does not describe every parameter equally well.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Parameter extrapolations: $\tAmp_{12B}^{\text{Re}}$}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 576,clip]{Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf}
+\par\small The original panel titles retain every Jackknife $\chi^2/\mathrm{dof}$. Bands describe statistical propagation within the selected ansatz.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+
+\begin{frame}{Staple dependence in the extrapolated reconstruction}
+The global models contain a common factor and a longitudinal correction,
+\[
+ e^{-f\eta},\qquad
+ c(\eta)=c\left(1-\frac{k_1}{\eta}-\frac{k_2}{\eta^2}\right),
+ \qquad \lim_{\eta\to\infty}c(\eta)=c.
+\]
+\begin{itemize}
+\item The reconstruction code uses $a,c,d,j$ for each amplitude. It uses the asymptotic coefficient $c$ and omits the common $e^{-f\eta}$ factor.
+\item That common factor cancels in the Sivers ratio. No extrapolation of $f,k_1,k_2$ is needed for this asymptotic ratio within the selected model.
+\item Individual amplitude plots therefore show spatial profiles with the common staple suppression removed. They are unrenormalized, and are not the literal $\eta\to\infty$ limits of $e^{-f\eta}$ times the profiles.
+\end{itemize}
+\figsrc{Thesis global ansatz; analysis notebook Extrapolation\_para\_level.ipynb, reconstruction of the twelve extrapolated parameters.}
+\end{frame}
+
+\begin{frame}{Real Fourier quantities and the reconstructed shift}
+At fixed invariant $b^2=\rho^2$, define real quantities
+\begin{align*}
+ E(x,\rho)&=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\,
+ \cos(x\nu)\,\tAmp_{2B}^{\text{Re}}(\nu,\rho^2),\\
+ O(x,\rho)&=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\,
+ \sin(x\nu)\,\tAmp_{2B}^{\text{Im}}(\nu,\rho^2),\\
+ S(x,\rho)&=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\,
+ \cos(x\nu)\,\tAmp_{12B}^{\text{Re}}(\nu,\rho^2).
+\end{align*}
+\[
+ \tilde f_1^{(0)}=2(E-O),\qquad
+ \tilde f_{1T}^{\perp(1)}=-2S,\qquad
+ \langle k_y\rangle_{TU}=-m_N\frac{S}{E-O}.
+\]
+$E,S$ are even in $x$; $O$ is odd. Amplitude normalizations are unrenormalized.
+\figsrc{Thesis Fourier convention $e^{+ix\nu}$; notation made explicit to distinguish a sine transform from an imaginary-valued quantity.}
+\end{frame}
+
+\begin{frame}{Extrapolated Fourier amplitudes and TMD combinations (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 281.762 0 0,clip]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Amps.pdf}
+\par\small $E$ and $O$ reconstructed at $\rho=3a$ from the twelve extrapolated parameters.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Extrapolated Fourier amplitudes and TMD combinations (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 281.762,clip]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Amps.pdf}
+\par\small $\tilde f_1^{(0)}=2(E-O)$ and $\tilde f_{1T}^{\perp(1)}=-2S$; bands propagate the Jackknife samples.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Extrapolated $x$-dependent Sivers shift}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf}
+\par\small Isovector $u-d$, $\rho=3a$: $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ for $x\ge0$. This is the selected-model extrapolation, with statistical bands.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Numerical integrals in $x$ at $\rho=3a$}
+\centering
+\small\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lcccc}
+\toprule
+Integral & $(-\infty,\infty)$ & $[-1,1]$ & $[-1,0]$ & $[0,1]$\\
+\midrule
+$\int dx\,E$ & $0.751(79)$ & $0.751(80)$ & $0.375(40)$ & $0.375(40)$\\
+$\int dx\,O$ & $6(96)\!\times\!10^{-17}$ & $3(24)\!\times\!10^{-16}$ & $0.165(27)$ & $-0.169(29)$\\
+$\int dx\,\tilde f_1^{(0)}$ & $1.50(16)$ & $1.50(16)$ & $0.421(81)$ & $1.09(11)$\\
+$\int dx\,\tilde f_{1T}^{\perp(1)}$ & $0.302(53)$ & $0.302(53)$ & $0.151(27)$ & $0.151(27)$\\
+$m_N\dfrac{\int dx\,\tilde f_{1T}^{\perp(1)}}{\int dx\,\tilde f_1^{(0)}}$ & $0.217(38)$ & $0.217(38)$ & $0.387(89)$ & $0.150(26)$\\
+\bottomrule
+\end{tabular}
+\raggedright\normalsize
+\begin{itemize}
+\item First four rows: unrenormalized quantities; last row: ratio in GeV.
+\item These are ratios of integrals, not integrals of the $x$-dependent ratio.
+\item Oddness requires equal and opposite exact half-range integrals of $O$.
+\end{itemize}
+\figsrc{Thesis, numerical Fourier-integral table; the small half-range mismatch is numerical, not a physical asymmetry of the odd contribution.}
+\end{frame}
+
+\begin{frame}{What the integral comparison establishes}
+\[
+ \int_{-\infty}^{\infty}dx\,E(x,\rho)
+   =\tAmp_{2B}^{\text{Re}}(0,\rho^2),\qquad
+ \int_{-\infty}^{\infty}dx\,S(x,\rho)
+   =\tAmp_{12B}^{\text{Re}}(0,\rho^2).
+\]
+\begin{itemize}
+\item The full-range ratio reduces to the $\nu=0$ amplitude ratio by Fourier inversion.
+\item The full-range and $[-1,1]$ integrals agree at the reported precision. This tests the integrated tails of this model; it does not prove exact support in $|x|\le1$.
+\item The $[-1,0]$ and $[0,1]$ columns display negative- and positive-$x$ contributions. The odd term changes their unpolarized weights.
+\item The bands do not quantify the full uncertainty from model selection, finite rapidity, or extrapolation.
+\end{itemize}
+\figsrc{Thesis, numerical Fourier-integral table; Fourier inversion with the stated $1/(2\pi)$ convention.}
+\end{frame}
+
+\begin{frame}{Extrapolated amplitudes in $x$ and transverse separation (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 373.125 0 0,clip]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Amps.pdf}
+\par\small Even and odd Fourier contributions over $3a\le\rho\le\sqrt{68}\,a$ ($0.34$--$0.94$ fm).
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Extrapolated amplitudes in $x$ and transverse separation (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 373.125,clip]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Amps.pdf}
+\par\small Unpolarized and Sivers combinations over the same $x$--$\rho$ domain.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Extrapolated Sivers shift in $x$ and transverse separation}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf}
+\par\small $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ for $x\ge0$, $\rho\in[0.34,0.94]$ fm.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Four momenta compared with the extrapolated amplitudes (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 306.572 0 0,clip]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Amps.pdf}
+\par\small Each colored curve uses its own finite-momentum parameters. Black dashed: extrapolation using $P_L=-2,-3,-4$.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Four momenta compared with the extrapolated amplitudes (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 306.572,clip]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Amps.pdf}
+\par\small The same comparison for the unpolarized and Sivers combinations, at $\rho=3a$.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Four momenta compared with the extrapolated shift}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Sivers.pdf}
+\par\small The extrapolated curves differ from the largest simulated momentum; the available points do not directly demonstrate a rapidity plateau.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Factorization on the lattice data}
+At finite momentum, test the hypothesis
+\[
+ \tAmp(\nu,b^2)=F(\nu)G(b^2),\qquad \nu=P\cdot b.
+\]
+\begin{align*}
+ T(\nu,b^2)&=\frac{\tAmp(\nu,b^2)}{\tAmp(4,b^2)}
+       \overset{\rm fact.}{=}\frac{F(\nu)}{F(4)},\\
+ B(\nu,b^2)&=\frac{\tAmp(\nu,b^2)}{\tAmp(\nu,18)}
+       \overset{\rm fact.}{=}\frac{G(b^2)}{G(18)}.
+\end{align*}
+\begin{itemize}
+\item $T$ must be independent of $b^2$; $B$ must be independent of $\nu$, wherever the denominators are nonzero.
+\item Form each ratio on each Jackknife sample, after averaging the two lattice $\pm b_T$ measurements.
+\item The sparse geometry requires interpolation before these ratios can be compared.
+\end{itemize}
+\figsrc{Thesis, finite-momentum ratio test; $b^2$ values in lattice units in the ratios.}
+\end{frame}
+
+\begin{frame}{The available geometry for the ratio test}
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\centering\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{cl}
+\toprule
+$\nu$ & $b^2/a^2$\\
+\midrule
+$0$ & \textcolor{gray}{0, 1, 4}, \textbf{9, 16, 25, 36, 49}\\
+$\pm1$ & \textcolor{gray}{2, 5}\\
+$\pm2$ & \textcolor{gray}{5, 8}, 20\\
+$\pm3$ & \textbf{18, 45}\\
+$\pm4$ & \textbf{17, 20, 32}\\
+$\pm5$ & 50\\
+$\pm6$ & 45\\
+$\pm8$ & 68\\
+\bottomrule
+\end{tabular}
+\end{column}
+\begin{column}{0.52\textwidth}
+$P_L=-1$, $\eta|v|/a=8$.
+\begin{itemize}
+\item All 34 pairs are listed; negative-$\nu$ rows are fixed by even/odd symmetry.
+\item Gray entries fail the spatial cut $|\vect b|\ge3a$.
+\item Bold entries support interpolation: only $\nu=0,3,4$ have multiple surviving $b^2$ values.
+\item No two selected rows share two $b^2$ values. A direct rectangular data grid is unavailable.
+\end{itemize}
+\end{column}
+\end{columns}
+\figsrc{Thesis, table of $(P\cdot b,b^2)$ pairs.}
+\end{frame}
+
+\begin{frame}{Interpolation grid: four data values and eight interpolations}
+\centering\small\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c|cccc}
+\toprule
+$\nu$ & $b^2/a^2=18$ & $20$ & $25$ & $32$\\
+\midrule
+$0$ & \shortstack{lin. $[16,25]$\\quad. $(9,16,25)$}
+& \shortstack{lin. $[16,25]$\\quad. $(9,16,25)$} & \textbf{data}
+& \shortstack{lin. $[25,36]$\\quad. $(16,25,36)$}\\
+$3$ & \textbf{data} & lin. $[18,45]$ & lin. $[18,45]$ & lin. $[18,45]$\\
+$4$ & \shortstack{lin. $[17,20]$\\quad. $(17,20,32)$} & \textbf{data}
+& \shortstack{lin. $[20,32]$\\quad. $(17,20,32)$} & \textbf{data}\\
+\bottomrule
+\end{tabular}
+\raggedright\normalsize
+\begin{itemize}
+\item Linear interpolation: neighboring points bracket each target. Quadratic interpolation: three nearest same-row points; no extrapolation.
+\item The $\nu=3$ row has only two points, so both methods remain linear there.
+\item For the odd amplitude, use $\nu=3,4$ only; $\tAmp_{2B}^{\text{Im}}(0,b^2)=0$.
+\end{itemize}
+\figsrc{Thesis, factorization interpolation-grid table.}
+\end{frame}
+
+\begin{frame}{Lattice-data ratio test: linear and quadratic interpolation (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 339.600 0 0,clip]{Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf}
+\par\small $T$: compare rows at fixed $b^2$. Filled circles: linear interpolation; open triangles: quadratic where available.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Lattice-data ratio test: linear and quadratic interpolation (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 388.800,clip]{Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf}
+\par\small $B$: compare separations at fixed $\nu$. Jackknife bars omit interpolation uncertainty; this sparse-data test is qualitative.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Factorization after Fourier transformation}
+The second hypothesis concerns the reconstructed shift,
+\[
+ f(x,\rho)\equiv K(x,\rho)
+       \overset{?}{=}g(x)h(\rho).
+\]
+\begin{itemize}
+\item This is a different test from separability of $\tAmp(\nu,b^2)$ on the lattice.
+\item A coupled power law naturally correlates $x$ and $\rho$: the Fourier-transform width changes with $1+d\rho^2$.
+\item A ratio can cancel some of the correlations in its numerator and denominator. Parameter differences alone are not a proof of nonfactorization.
+\item Test the full reconstructed functions numerically, on the same domain for every Jackknife sample.
+\end{itemize}
+\figsrc{Thesis, $x$--$|b_T|$ factorization tests; conclusions below apply to the fitted functions.}
+\end{frame}
+
+\begin{frame}{The complete power-law transform and its width}
+For $D=1+d\rho^2>0$, $C>0$, and $j>1/2$, define
+\[
+ I_j(x;C,D)=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}
+     \frac{e^{ix\nu}}{(D+C\nu^2)^j}.
+\]
+\[
+ I_j(x;C,D)=\frac{1}{\sqrt{\pi C}\,\Gamma(j)}
+ \left(\frac{|x|}{2\sqrt{CD}}\right)^{j-1/2}
+ K_{j-1/2}\!\left(|x|\sqrt{D/C}\right),\qquad x\ne0.
+\]
+\[
+ I_j(0;C,D)=\frac{\Gamma(j-1/2)}{2\sqrt{\pi C}\,\Gamma(j)}D^{1/2-j}.
+\]
+$D$ enters both the prefactor and the $x$-dependent Bessel argument. Thus a separable product is not automatic, even for one amplitude.
+\figsrc{Exact transform of the thesis power-law ansatz, using the $1/(2\pi)$ Fourier convention; obtained with a Gamma integral and a Gaussian transform.}
+\end{frame}
+
+\begin{frame}{Odd-amplitude transform and the $x=0$ limit}
+For an odd amplitude $a_\nu\nu(D+C\nu^2)^{-j}$ and $x\ne0$,
+\begin{align*}
+ O(x;C,D)&=-a_\nu\,\frac{d}{dx}I_j(x;C,D)\\
+ &=\frac{a_\nu\,\operatorname{sgn}(x)\sqrt{D/C}}
+ {\sqrt{\pi C}\,\Gamma(j)}
+ \left(\frac{|x|}{2\sqrt{CD}}\right)^{j-1/2}
+ K_{j-3/2}\!\left(|x|\sqrt{D/C}\right).
+\end{align*}
+\begin{itemize}
+\item Here $a_\nu=-a_{\rm im}/P_L$. The odd numerator shifts the Bessel order by one; it is not the same transform as an even amplitude.
+\item Absolute integrability of the odd amplitude requires $j>1$; for $1/2<j\le1$, the sine transform at nonzero $x$ is conditionally convergent.
+\item The extrapolated $j_{\rm im}=0.9921(92)$ makes behavior near $x=0$ delicate. A symmetric value at $x=0$ need not equal the one-sided limit.
+\end{itemize}
+\figsrc{Exact derivative of the preceding transform. The extrapolated exponent is from the thesis.}
+\end{frame}
+
+\begin{frame}{Least-squares distance from a separable function}
+For real $f(x,\rho)$, minimize
+\[
+ J[g,h]=\int dx\,d\rho\,[f(x,\rho)-g(x)h(\rho)]^2.
+\]
+Stationarity gives the full functional derivatives
+\begin{align*}
+ \frac{\delta J}{\delta g(x)}
+ &=-2\int d\rho\,f(x,\rho)h(\rho)
+       +2g(x)\int d\rho\,h^2(\rho)=0,\\
+ \frac{\delta J}{\delta h(\rho)}
+ &=-2\int dx\,f(x,\rho)g(x)
+       +2h(\rho)\int dx\,g^2(x)=0.
+\end{align*}
+Hence
+\[
+ h(\rho)=\frac{\int dx\,f(x,\rho)g(x)}{\int dx\,g^2(x)},\qquad
+ g(x)=\frac{\int d\rho\,f(x,\rho)h(\rho)}{\int d\rho\,h^2(\rho)}.
+\]
+\figsrc{Thesis, factorization metric; derivative factors restored explicitly.}
+\end{frame}
+
+\begin{frame}{Iteration and the normalized residual}
+Define, at iteration $n$,
+\[
+ Q_n=\int dx\,g_n^2(x),\qquad
+ H_n(\rho)=\frac{\int dx'\,f(x',\rho)g_n(x')}{Q_n}.
+\]
+The full self-consistent update is
+\[
+ g_{n+1}(x)=
+ \frac{\displaystyle\int d\rho\,f(x,\rho)
+      \frac{\int dx'\,f(x',\rho)g_n(x')}{Q_n}}
+ {\displaystyle\int d\rho\,
+      \left[\frac{\int dx'\,f(x',\rho)g_n(x')}{Q_n}\right]^2},
+ \qquad g_0(x)=1.
+\]
+\[
+ N=\int dx\,d\rho\,f^2(x,\rho),\qquad
+ \epsilon=\sqrt{J_{\min}/N}.
+\]
+Iterate to convergence independently on every Jackknife sample. Normalize the displayed factors with $\operatorname{mean}[g^2]=1$; $g\to\lambda g$, $h\to h/\lambda$ leaves their product unchanged.
+\figsrc{Thesis, self-consistent factorization iteration and relative-distance definition.}
+\end{frame}
+
+\begin{frame}{Equivalent singular-value definition on the grid}
+For quadrature weights $w_i$ in $x$ and $v_j$ in $\rho$, form
+\[
+ M_{ij}=\sqrt{w_i}\,f(x_i,\rho_j)\sqrt{v_j},\qquad
+ M=U\Sigma V^{T},\quad \sigma_1\ge\sigma_2\ge0.
+\]
+The optimal product corresponds to the leading singular mode:
+\[
+ M_{(1)}=\sigma_1u_1v_1^T,\qquad
+ N=\sum_{k=1}^{r}\sigma_k^2,\qquad
+ J_{\min}=\sum_{k=2}^{r}\sigma_k^2.
+\]
+\[
+ \boxed{\epsilon=\sqrt{1-\frac{\sigma_1^2}{\sum_{k=1}^{r}\sigma_k^2}}}
+\]
+This is the relative $L_2$ reconstruction error, not the fraction of the sum of singular values. On a uniform grid the constant weights cancel in $\epsilon$.
+\figsrc{Linear-algebra characterization of the thesis least-squares objective; the thesis reports its iterative evaluation.}
+\end{frame}
+
+\begin{frame}{Extrapolated shape parameters}
+\centering\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lcc}
+\toprule
+Amplitude & $j$ & $d$\\
+\midrule
+$\tAmp_{2B}^{\text{Re}}$ & $2.0667(69)$ & $0.139(12)$\\
+$\tAmp_{2B}^{\text{Im}}$ & $0.9921(92)$ & $0.183(14)$\\
+$\tAmp_{12B}^{\text{Re}}$ & $2.0026(40)$ & $0.105(18)$\\
+\bottomrule
+\end{tabular}
+\raggedright
+\begin{itemize}
+\item Both real-amplitude powers are near two; they are not numerically equal within the quoted uncertainties.
+\item The odd-amplitude power is near one and has a different small-$x$ transform behavior.
+\item The widths differ in central value. Their pairwise significance requires the parameter covariance; the quoted errors do not establish that all pairs are well separated.
+\item The following residual tests quantify the actual separability of the model functions.
+\end{itemize}
+\figsrc{Thesis, extrapolated $j_X,d_X$ values; statements limited to what those estimates establish.}
+\end{frame}
+
+\begin{frame}{Sivers-shift distance from the optimal product}
+\centering\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{cc}
+\toprule
+$x$ window & $\epsilon=\sqrt{J_{\min}/N}$\\
+\midrule
+$[0.0,1.0]$ & $0.0568(78)$\\
+$[0.1,0.9]$ & $0.0714(95)$\\
+$[0.2,0.8]$ & $0.0758(75)$\\
+$[0.3,0.8]$ & $0.0620(88)$\\
+\bottomrule
+\end{tabular}
+\raggedright
+\begin{itemize}
+\item Same 60-point transverse grid in every window: $\rho\in[0.3421,0.9403]$ fm.
+\item Residuals of $5.7$--$7.6\%$ are nonzero relative to the reported Jackknife errors, and persist when the small-$x$ region is excluded.
+\item These are residuals of the extrapolated fitted functions, not a model-independent measurement of factorization breaking.
+\end{itemize}
+\figsrc{Thesis, Sivers-shift factorization table.}
+\end{frame}
+
+\begin{frame}{Optimal Sivers-shift factors and reconstruction}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{Factorization_gh_and_Reconstruction_bmin3_eta610.pdf}
+\par\small Left: $g(x)$; center: $h(\rho)$ for all four windows. Right: $g(x)h(\rho)$ (dashed) versus the extrapolated function (solid) at the two extreme separations.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Ratio tests of the reconstructed Sivers shift}
+For $f(x,\rho)=K(x,\rho)$,
+\begin{align*}
+ R_b(x;\rho)&=\frac{f(x,\rho)}{f(x,\rho_{\rm ref})}
+      \overset{\rm fact.}{=}\frac{h(\rho)}{h(\rho_{\rm ref})},\\
+ R_x(\rho;x)&=\frac{f(x,\rho)}{f(x_{\rm ref},\rho)}
+      \overset{\rm fact.}{=}\frac{g(x)}{g(x_{\rm ref})}.
+\end{align*}
+\begin{itemize}
+\item Choose $\rho_{\rm ref}=0.34$ fm and $x_{\rm ref}=0.3$.
+\item Exact factorization makes $R_b$ flat in $x$ and $R_x$ flat in $\rho$, wherever the reference denominators are nonzero.
+\item Non-flat reconstructed ratios test the selected fit continuously; they do not supply new lattice measurements between the sampled points.
+\end{itemize}
+\figsrc{Thesis, reconstructed-function ratio tests.}
+\end{frame}
+
+\begin{frame}{Transverse-separation ratios as functions of $x$}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf}
+\par\small $R_b(x;\rho)$ for four separations: the reconstructed $x$ dependence is incompatible with a constant ratio.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{$x$ ratios as functions of transverse separation}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{Factorization_Ratio_vs_bT_4curves_P234_bmin3_eta610.pdf}
+\par\small $R_x(\rho;x)$ for four $x$ values: the shape in $\rho$ changes with $x$ in the extrapolated model.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Finite-momentum check: $R_b(x;\rho)$ (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 349.884 0 0,clip]{Factorization_Ratio_vs_x_AllPL_bmin3_eta610.pdf}
+\par\small $P_L=-1,-2$: use each momentum\textquotesingle s unextrapolated fit parameters.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Finite-momentum check: $R_b(x;\rho)$ (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 358.500,clip]{Factorization_Ratio_vs_x_AllPL_bmin3_eta610.pdf}
+\par\small $P_L=-3,-4$: non-flat ratios are already present before rapidity extrapolation.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Finite-momentum check: $R_x(\rho;x)$ (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 348.332 0 0,clip]{Factorization_Ratio_vs_bT_AllPL_bmin3_eta610.pdf}
+\par\small $P_L=-1,-2$: the ratio test is repeated at finite momentum.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Finite-momentum check: $R_x(\rho;x)$ (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 358.500,clip]{Factorization_Ratio_vs_bT_AllPL_bmin3_eta610.pdf}
+\par\small $P_L=-3,-4$: the same qualitative pattern persists in the fitted functions.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Factorization residuals for each Fourier amplitude}
+\centering\small\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lcccc}
+\toprule
+Quantity / $x$ window & $[0.0,1.0]$ & $[0.1,0.9]$ & $[0.2,0.8]$ & $[0.3,0.8]$\\
+\midrule
+$S$ & $0.0804(18)$ & $0.0573(26)$ & $0.0397(24)$ & $0.0303(21)$\\
+$E$ & $0.08138(65)$ & $0.0718(36)$ & $0.0581(55)$ & $0.0478(56)$\\
+$O$ & $0.107(18)$ & $0.0868(30)$ & $0.0578(28)$ & $0.0425(23)$\\
+$E-O$ & $0.1943(63)$ & $0.0926(59)$ & $0.0594(40)$ & $0.0470(47)$\\
+\bottomrule
+\end{tabular}
+\raggedright\normalsize
+\begin{itemize}
+\item Same $\rho$ grid and relative $L_2$ definition as for the Sivers shift.
+\item On $x\in[0,1]$, the individual residuals are $8$--$19\%$, compared with $5.7\%$ for the shift. This is consistent with partial cancellation in the ratio.
+\item Every row decreases when the window excludes small $x$; the amplitude normalizations remain unrenormalized.
+\end{itemize}
+\figsrc{Thesis, amplitude-factorization table. Multiplying one quantity by a nonzero constant or phase does not change this residual.}
+\end{frame}
+
+\begin{frame}{Amplitude factors $g(x)$ (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 341.884 0 0,clip]{Factorization_Amplitudes_g_of_x_bmin3_eta610.pdf}
+\par\small Optimal longitudinal factors for all four windows; normalization $\operatorname{mean}[g^2]=1$.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Amplitude factors $g(x)$ (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 366.500,clip]{Factorization_Amplitudes_g_of_x_bmin3_eta610.pdf}
+\par\small The remaining amplitude combinations, with the same normalization and window choices.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Amplitude factors $h(\rho)$ (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 341.832 0 0,clip]{Factorization_Amplitudes_h_of_bT_bmin3_eta610.pdf}
+\par\small Optimal transverse factors for all four windows.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Amplitude factors $h(\rho)$ (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 365.000,clip]{Factorization_Amplitudes_h_of_bT_bmin3_eta610.pdf}
+\par\small The remaining amplitude combinations: magnitude and shape vary with the fitting window.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Amplitude reconstruction against the extrapolated functions (1/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 343.384 0 0,clip]{Factorization_Amplitudes_Reconstruction_bmin3_eta610.pdf}
+\par\small $g(x)h(\rho)$ (dashed) and the extrapolated functions (solid), at the smallest and largest fitted separations.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Amplitude reconstruction against the extrapolated functions (2/2)}
+\centering
+\includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio,trim=0 0 0 365.000,clip]{Factorization_Amplitudes_Reconstruction_bmin3_eta610.pdf}
+\par\small The remaining amplitude combinations. The reconstruction gaps correspond to the reported $L_2$ residuals.
+\figsrc{Thesis, Extrapolations to the Physical Limit; original figure, Jackknife uncertainties.}
+\end{frame}
+
+\begin{frame}{Scope of the extrapolation and factorization results}
+\begin{itemize}
+\item The thesis workflow carries finite-momentum fits through all twelve parameter extrapolations, Fourier reconstruction, and factorization tests.
+\item The selected extrapolated Sivers shift admits an approximate product $g(x)h(\rho)$ with a $5.7$--$7.6\%$ relative $L_2$ residual on the tested domains.
+\item The finite-momentum fitted functions also give non-flat ratios; the pattern is not created solely by rapidity extrapolation.
+\item The direct lattice-data test remains limited by sparse sampling and interpolation. Statistical bands do not cover the full model and extrapolation uncertainty.
+\item Larger momenta and denser geometry are needed to test these conclusions without relying as strongly on the selected ansatz.
+\end{itemize}
+\figsrc{Thesis, Extrapolations to the Physical Limit; distinction between raw-data tests and reconstructed-model tests retained.}
 \end{frame}

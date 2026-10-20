@@ -1,0 +1,1547 @@
+[
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/v1_v2_allzetahat_plot.pdf",
+    "slides": [
+      32
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/v1_v2_withPath_forP-1_plot.pdf",
+    "slides": [
+      33,
+      34
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/eta_gauge_links_forP-1_table.pdf",
+    "slides": [
+      34
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/v1_v2_withPath_forP-2_plot.pdf",
+    "slides": [
+      33
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/eta_gauge_links_forP-2_table.pdf",
+    "slides": [
+      35
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/v1_v2_withPath_forP-3_plot.pdf",
+    "slides": [
+      33
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/eta_gauge_links_forP-3_table.pdf",
+    "slides": [
+      36
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/v1_v2_withPath_forP-4_plot.pdf",
+    "slides": [
+      33
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/eta_gauge_links_forP-4_table.pdf",
+    "slides": [
+      37
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/Example_v_plot_with_2path.pdf",
+    "slides": [
+      58
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/Interpolation_Ex_b120_eta7_P-1.pdf",
+    "slides": [
+      59
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/bL_bT_plot.pdf",
+    "slides": [
+      60
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/Pb_bsq_plot.pdf",
+    "slides": [
+      60
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/b_gauge_links_for_table1.pdf",
+    "slides": [
+      61,
+      62,
+      63,
+      64
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/b_gauge_links_for_table2.pdf",
+    "slides": [
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/b_gauge_links_for_table3.pdf",
+    "slides": [
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/Example_b_plot_with_2path.pdf",
+    "slides": [
+      79
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/kinematics_interpolation/bL_bT_plot_with_path.pdf",
+    "slides": [
+      79
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_PL-1_3D.pdf",
+    "slides": [
+      104
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-1_3D.pdf",
+    "slides": [
+      105
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_PL-1_3D.pdf",
+    "slides": [
+      106
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-1_3D.pdf",
+    "slides": [
+      107
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_PL-1_3D.pdf",
+    "slides": [
+      108
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-1_3D.pdf",
+    "slides": [
+      109
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_PL-1_3D.pdf",
+    "slides": [
+      110
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_PL-1_3D.pdf",
+    "slides": [
+      111
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-1_2D.pdf",
+    "slides": [
+      112
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-1_2D.pdf",
+    "slides": [
+      113
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-1_2D.pdf",
+    "slides": [
+      114
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-1_2D.pdf",
+    "slides": [
+      115
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-1_2D.pdf",
+    "slides": [
+      116
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-1_2D.pdf",
+    "slides": [
+      117
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_eta8_PL-1_2D.pdf",
+    "slides": [
+      118
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_eta8_PL-1_2D.pdf",
+    "slides": [
+      119
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_PL-2_3D.pdf",
+    "slides": [
+      120
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-2_3D.pdf",
+    "slides": [
+      121
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_PL-2_3D.pdf",
+    "slides": [
+      122
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-2_3D.pdf",
+    "slides": [
+      123
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_PL-2_3D.pdf",
+    "slides": [
+      124
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-2_3D.pdf",
+    "slides": [
+      125
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_PL-2_3D.pdf",
+    "slides": [
+      126
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_PL-2_3D.pdf",
+    "slides": [
+      127
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-2_2D.pdf",
+    "slides": [
+      128
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-2_2D.pdf",
+    "slides": [
+      129
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-2_2D.pdf",
+    "slides": [
+      130
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-2_2D.pdf",
+    "slides": [
+      131
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-2_2D.pdf",
+    "slides": [
+      132
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-2_2D.pdf",
+    "slides": [
+      133
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_eta8_PL-2_2D.pdf",
+    "slides": [
+      134
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_eta8_PL-2_2D.pdf",
+    "slides": [
+      135
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_PL-3_3D.pdf",
+    "slides": [
+      136
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-3_3D.pdf",
+    "slides": [
+      137
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_PL-3_3D.pdf",
+    "slides": [
+      138
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-3_3D.pdf",
+    "slides": [
+      139
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_PL-3_3D.pdf",
+    "slides": [
+      140
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-3_3D.pdf",
+    "slides": [
+      141
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_PL-3_3D.pdf",
+    "slides": [
+      142
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_PL-3_3D.pdf",
+    "slides": [
+      143
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-3_2D.pdf",
+    "slides": [
+      144
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-3_2D.pdf",
+    "slides": [
+      145
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-3_2D.pdf",
+    "slides": [
+      146
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-3_2D.pdf",
+    "slides": [
+      147
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-3_2D.pdf",
+    "slides": [
+      148
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-3_2D.pdf",
+    "slides": [
+      149
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_eta8_PL-3_2D.pdf",
+    "slides": [
+      150
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_eta8_PL-3_2D.pdf",
+    "slides": [
+      151
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_PL-4_3D.pdf",
+    "slides": [
+      152
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-4_3D.pdf",
+    "slides": [
+      153
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_PL-4_3D.pdf",
+    "slides": [
+      154
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-4_3D.pdf",
+    "slides": [
+      155
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_PL-4_3D.pdf",
+    "slides": [
+      156
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-4_3D.pdf",
+    "slides": [
+      157
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_PL-4_3D.pdf",
+    "slides": [
+      158
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_PL-4_3D.pdf",
+    "slides": [
+      159
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-4_2D.pdf",
+    "slides": [
+      160
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-4_2D.pdf",
+    "slides": [
+      161
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-4_2D.pdf",
+    "slides": [
+      162
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-4_2D.pdf",
+    "slides": [
+      163
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-4_2D.pdf",
+    "slides": [
+      164
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-4_2D.pdf",
+    "slides": [
+      165
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_eta8_PL-4_2D.pdf",
+    "slides": [
+      166
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRACTING_THE_x-DEPENDENCE",
+    "source": "plots/Amps_Fit/ImA12B_Pb_bsq_eta8_PL-4_2D.pdf",
+    "slides": [
+      167
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/SimulFit_Distinct_1_over_PL_bmin3_eta610_b29.0_Amps.pdf",
+    "slides": [
+      331,
+      332
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/SimulFit_Distinct_1_over_PL_bmin3_eta610_b29.0_Sivers.pdf",
+    "slides": [
+      333
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/Param_Extrapolations_1byZetahat_sq_P234_bmin3_eta610_b29.0.pdf",
+    "slides": [
+      335,
+      336,
+      337
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Amps.pdf",
+    "slides": [
+      340,
+      341
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf",
+    "slides": [
+      2,
+      342
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Amps.pdf",
+    "slides": [
+      345,
+      346
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf",
+    "slides": [
+      347
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Amps.pdf",
+    "slides": [
+      348,
+      349
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/extrapolation_para_level/All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Sivers.pdf",
+    "slides": [
+      350
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "plots/Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf",
+    "slides": [
+      354,
+      355
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_gh_and_Reconstruction_bmin3_eta610.pdf",
+    "slides": [
+      364
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf",
+    "slides": [
+      366
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Ratio_vs_bT_4curves_P234_bmin3_eta610.pdf",
+    "slides": [
+      367
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Ratio_vs_x_AllPL_bmin3_eta610.pdf",
+    "slides": [
+      368,
+      369
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Ratio_vs_bT_AllPL_bmin3_eta610.pdf",
+    "slides": [
+      370,
+      371
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Amplitudes_g_of_x_bmin3_eta610.pdf",
+    "slides": [
+      373,
+      374
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Amplitudes_h_of_bT_bmin3_eta610.pdf",
+    "slides": [
+      375,
+      376
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "EXTRAPOLATIONS-TO-THE-PHYSICAL-LIMIT",
+    "source": "SimultaneousFitsCov/factorization_test/Factorization_Amplitudes_Reconstruction_bmin3_eta610.pdf",
+    "slides": [
+      377,
+      378
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A2B_Re_P1_FailedFit.pdf",
+    "slides": [
+      171
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A2B_Re_P1_FailedFit_details1.pdf",
+    "slides": [
+      172
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A2B_Re_P1_FailedFit_details2.pdf",
+    "slides": [
+      172
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A12B_Re_P1_FailedFit.pdf",
+    "slides": [
+      173
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A12B_Re_P1_FailedFit_details1.pdf",
+    "slides": [
+      174
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Gaussian_fit_all_b/Gaussian_A12B_Re_P1_FailedFit_details2.pdf",
+    "slides": [
+      174
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/short_distance/A2B_Re_b_lessthan3_and_ge3.pdf",
+    "slides": [
+      175
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PySR_outputs/01_A2B_PySR_Benchmark_Fits.pdf",
+    "slides": [
+      186,
+      187
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PySR_outputs/02_Gaussian_StraightLine_Test.pdf",
+    "slides": [
+      188
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PySR_outputs/03_Exponential_b_StraightLine_Test.pdf",
+    "slides": [
+      190
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Rejection-of-Separable-Exponential-Longitudinal-Decay.pdf",
+    "slides": [
+      191,
+      192
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Rejection-of-Separable-Exponential-Longitudinal-Decay-ceta.eps",
+    "slides": [
+      193,
+      194
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/fit_exploration_mathematica/fit_list_gaussian_c_d_etas.eps",
+    "slides": [
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/A2BfitFT_eta_Asymptotic_P1.pdf",
+    "slides": [
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/A2Bfit_widerFT_eta_Asymptotic_P1.pdf",
+    "slides": [
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "Gaussian_type_fit_Real_A2B/LorentzianFixedA_P-1_b3.pdf",
+    "slides": [
+      235
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/A2B_c_eta_AllAsymptoticModels_P1.pdf",
+    "slides": [
+      236
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/A2B_d_eta_Independence_P1.pdf",
+    "slides": [
+      237
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "Gaussian_type_fit_Real_A2B/LorentzianFixed_ReA12B_P-1_b3.pdf",
+    "slides": [
+      238
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/ReA12B_c_eta_Independence_P1.pdf",
+    "slides": [
+      240
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/ReA12B_d_eta_Independence_P1.pdf",
+    "slides": [
+      241
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "Gaussian_type_fit_Real_A2B/LorentzianFixed_ImA2B_P-1_b3.pdf",
+    "slides": [
+      239
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/ImA2B_c_eta_Independence_P1.pdf",
+    "slides": [
+      242
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "PowerLaw_etaAsymptotic/ImA2B_d_eta_Independence_P1.pdf",
+    "slides": [
+      243
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_PL-1_WithFit_3D.pdf",
+    "slides": [
+      252
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-1_WithFit_3D.pdf",
+    "slides": [
+      253
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_PL-1_WithFit_3D.pdf",
+    "slides": [
+      256
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-1_WithFit_3D.pdf",
+    "slides": [
+      257
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_PL-1_WithFit_3D.pdf",
+    "slides": [
+      260
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-1_WithFit_3D.pdf",
+    "slides": [
+      261
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      254
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      255
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      258
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      259
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      262
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-1_WithFit_2D.pdf",
+    "slides": [
+      263
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-1.pdf",
+    "slides": [
+      265,
+      266
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-1.pdf",
+    "slides": [
+      267,
+      268
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_PL-2_WithFit_3D.pdf",
+    "slides": [
+      270
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-2_WithFit_3D.pdf",
+    "slides": [
+      271
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_PL-2_WithFit_3D.pdf",
+    "slides": [
+      274
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-2_WithFit_3D.pdf",
+    "slides": [
+      275
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_PL-2_WithFit_3D.pdf",
+    "slides": [
+      278
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-2_WithFit_3D.pdf",
+    "slides": [
+      279
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      272
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      273
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      276
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      277
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      280
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-2_WithFit_2D.pdf",
+    "slides": [
+      281
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-2.pdf",
+    "slides": [
+      283,
+      284
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-2.pdf",
+    "slides": [
+      285,
+      286
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_PL-3_WithFit_3D.pdf",
+    "slides": [
+      288
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-3_WithFit_3D.pdf",
+    "slides": [
+      289
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_PL-3_WithFit_3D.pdf",
+    "slides": [
+      292
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-3_WithFit_3D.pdf",
+    "slides": [
+      293
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_PL-3_WithFit_3D.pdf",
+    "slides": [
+      296
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-3_WithFit_3D.pdf",
+    "slides": [
+      297
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      290
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      291
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      294
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      295
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      298
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-3_WithFit_2D.pdf",
+    "slides": [
+      299
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf",
+    "slides": [
+      301,
+      302
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-3.pdf",
+    "slides": [
+      303,
+      304
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_PL-4_WithFit_3D.pdf",
+    "slides": [
+      306
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_PL-4_WithFit_3D.pdf",
+    "slides": [
+      307
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_PL-4_WithFit_3D.pdf",
+    "slides": [
+      310
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_PL-4_WithFit_3D.pdf",
+    "slides": [
+      311
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_PL-4_WithFit_3D.pdf",
+    "slides": [
+      314
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_PL-4_WithFit_3D.pdf",
+    "slides": [
+      315
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      308
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA2B_Pb_bsq_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      309
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      312
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ImA2B_Pb_bsq_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      313
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      316
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "plots/Amps_Fit/ReA12B_Pb_bsq_eta8_PL-4_WithFit_2D.pdf",
+    "slides": [
+      317
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-4.pdf",
+    "slides": [
+      319,
+      320
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "FITTING_METHODOLOGIES_AND_STABILITY_ANALYSIS",
+    "source": "SimultaneousFitsCov/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-4.pdf",
+    "slides": [
+      321,
+      322
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "INTRODUCTION_AND_MOTIVATION",
+    "source": "plots/EIC_whitepaper/EIC_WP_Fig2p2_distributions.png",
+    "slides": [
+      4
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "LATTICE_QCD_METHODOLOGY",
+    "source": "plots/lattice_methodology/LM_fig1_1_plaquette.png",
+    "slides": [
+      13
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "QCD_AND_HADRON_STRUCTURE",
+    "source": "plots/EIC_whitepaper/EIC_WP_Fig2p1_parton_bT.pdf",
+    "slides": [
+      5
+    ],
+    "source_exists": true
+  },
+  {
+    "chapter": "THEORETICAL_FRAMEWORK_OF_TMDs",
+    "source": "plots/kinematics_interpolation/StapleLink2.pdf",
+    "slides": [
+      23
+    ],
+    "source_exists": true
+  }
+]

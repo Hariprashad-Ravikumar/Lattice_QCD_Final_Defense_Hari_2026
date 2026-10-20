@@ -1,28 +1,45 @@
 % ===================== Lattice data & extracting the x-dependence (thesis Ch. 5) =====================
 \section{Lattice data}
 
-% Slide 20
-\begin{frame}{The Sivers shift as a function of $x$}
-  \small
-  \[ \langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,\textcolor{blue}{x},\zetahat,\eta v \tcdot P)
-     \equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}}
-     = -\mN \frac{\int d(\bvec\cdot P)\,e^{ix(\bvec\cdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P,\ldots)}{\int d(\bvec\cdot P)\,e^{ix(\bvec\cdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P,\ldots)} \]
-  \normalsize
+\begin{frame}{The $x$-dependent Sivers shift}
+  Write $\nu=b\cdot P$ and keep $s=-b_\mu b^\mu$, $\zetahat$, and $\eta v\cdot P$ fixed:
+  \[
+    \tAmp_{iB}^{[x]}(s,x,\zetahat,\eta v\cdot P)
+    =\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\,
+      e^{ix\nu}\tAmp_{iB}(s,\nu,\zetahat,\eta v\cdot P).
+  \]
+  \[
+    \langle k_y\rangle_{TU}(s,x,\zetahat,\eta v\cdot P)
+    =m_N\frac{\tilde f_{1T}^{\perp(1)}(s,x,\zetahat,\eta v\cdot P)}
+                  {\tilde f_1^{(0)}(s,x,\zetahat,\eta v\cdot P)}
+    =-m_N\frac{\tAmp_{12B}^{[x]}}{\tAmp_{2B}^{[x]}}.
+  \]
   \begin{itemize}
-    \item The amplitudes are complex, $\tAmp=\tAmp^{\text{Re}}+i\tAmp^{\text{Im}}$, and $e^{ix\,\bvec\cdot P}=\cos+i\sin$:
+    \item In the lattice frame, $s=b_L^2+b_T^2$. In the TMD frame with $b^+=0$, $s=|\vect b_{T,\mathrm{TMD}}|^2$.
+    \item The Fourier transform varies $\nu$ at fixed $s$; it is not a transform at fixed lattice $b_T$.
+    \item The common soft factor cancels at fixed geometry under the multiplicative-renormalization assumption used in the thesis.
   \end{itemize}
-  \small
-  \[ \int d(\bvec\tcdot P)\,e^{ix\,\bvec\cdot P}\big[\tAmp^{\text{Re}}+i\tAmp^{\text{Im}}\big]
-     = \int d(\bvec\tcdot P)\big[\cos\,\tAmp^{\text{Re}}-\sin\,\tAmp^{\text{Im}}\big]
-     + i\underbrace{\int d(\bvec\tcdot P)\big[\sin\,\tAmp^{\text{Re}}+\cos\,\tAmp^{\text{Im}}\big]}_{=\,0\ \text{(odd integrand)}} \]
-  \normalsize
+  \figsrc{Thesis, Ch. 5: Sivers shift as a function of momentum fraction $x$.}
+\end{frame}
+
+\begin{frame}{Cosine and sine transforms of the complex amplitudes}
+  At fixed $(s,\zetahat,\eta v\cdot P)$, define the real quantities
+  \begin{align*}
+    E_i(x)&=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\cos(x\nu)\tAmp_{iB}^{\mathrm{Re}}(\nu),\\
+    O_i(x)&=\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}\sin(x\nu)\tAmp_{iB}^{\mathrm{Im}}(\nu).
+  \end{align*}
+  \[
+    \tAmp_{iB}^{[x]}=E_i-O_i+
+    i\int_{-\infty}^{\infty}\frac{d\nu}{2\pi}
+       [\sin(x\nu)\tAmp_{iB}^{\mathrm{Re}}(\nu)
+        +\cos(x\nu)\tAmp_{iB}^{\mathrm{Im}}(\nu)].
+  \]
   \begin{itemize}
-    \item $\tAmp^{\text{Re}}$ even, $\tAmp^{\text{Im}}$ odd in $\bvec\tcdot P$ $\Rightarrow$ the imaginary part vanishes. The Sivers shift is \textbf{real}:
+    \item $\tAmp^{\mathrm{Re}}$ is even and $\tAmp^{\mathrm{Im}}$ odd in $\nu$. The remaining imaginary integral vanishes by parity, when the integrals exist.
+    \item Therefore $\tAmp_{iB}^{[x]}=E_i-O_i$ is real. The thesis labels these two real transforms $\tAmp_{iB}^{[x]\mathrm{Re}}$ and $\tAmp_{iB}^{[x]\mathrm{Im}}$.
   \end{itemize}
-  \begin{block}{}
-  \[ \langle \vect{k}_y \rangle_{TU}(x) = -\mN\, \frac{\tAmp_{12B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{12B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)}{\tAmp_{2B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{2B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)} \]
-  \end{block}
-  {\scriptsize with $\tAmp^{[x]\text{Re}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\cos(x\,\bvec\cdot P)\,\tAmp^{\text{Re}}$, \ $\tAmp^{[x]\text{Im}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\sin(x\,\bvec\cdot P)\,\tAmp^{\text{Im}}$}
+  \[ \langle k_y\rangle_{TU}=-m_N\frac{E_{12}-O_{12}}{E_2-O_2}. \]
+  \figsrc{Thesis, Ch. 5: Fourier decomposition; all transform signs follow $e^{+ix\nu}$.}
 \end{frame}
 
 % Slide 21
@@ -40,7 +57,7 @@
     \end{column}
     \begin{column}{0.43\textwidth}
       \centering
-      \begin{tikzpicture}[scale=1.1]
+      \begin{tikzpicture}[scale=0.95]
         \fill[gray!12] (0,0) -- (2,2) -- (-2,2) -- cycle;
         \draw[gray, dashed] (-2,-2) -- (2,2) node[above right, font=\scriptsize] {light cone};
         \draw[gray, dashed] (2,-2) -- (-2,2);
@@ -76,7 +93,7 @@
     \end{column}
     \begin{column}{0.48\textwidth}
       \small
-      \[ \zetahat =\sqrt{\frac{P_{1}^2}{\mN^{2}\left(\frac{\mN^{2}}{P_{1}^{2}}+2\right)}} = \pm 0.090772 \]
+      \[ \zetahat =\sqrt{\frac{P_{1}^2}{\mN^{2}\left(\frac{\mN^{2}}{P_{1}^{2}}+2\right)}} = 0.090772 \]
       \[ \zetahat=\frac{-v_{1}P_{1}}{|v|\,\mN} \ \Rightarrow\ v_{1}=\pm 0.301\,v_{3} \]
     \end{column}
   \end{columns}
@@ -100,7 +117,7 @@
       \end{tabular}\\[3mm]
       \raggedright
       \begin{itemize}
-        \item Lattice parameters: $\vect{\bvec}/a=(b_{1},b_{2},0)$; \ $\eta \vect{v}/a=\eta\,(v_{1},0,v_{3})$, $\eta=0,\ldots,10$; \ $\vect{P}\cdot a\hat{L}/(2\pi)=(n,0,0)$, $n=-1,\ldots,-4$.
+        \item Lattice parameters: $\vect{\bvec}/a=(b_{1},b_{2},0)$; \ $\eta \vect{v}/a=\eta\,(v_{1},0,v_{3})$, $\eta\in\{0,1,2,3,4,5,6,7,8,9,10\}$; \ $\vect{P}\cdot a\hat{L}/(2\pi)=(n,0,0)$, $n\in\{-1,-2,-3,-4\}$.
         \item $P_L\equiv n$: nucleon momentum in units of $2\pi/(\hat L a)$, $\hat L=32$.
         \item $v$ is \textbf{off-axis} in the $v_1$--$v_3$ plane: not a lattice direction.
       \end{itemize}
@@ -145,6 +162,22 @@
     \end{column}
   \end{columns}
 \end{frame}
+
+\begin{frame}{Staple interpolation paths at $P_L=-2$}
+\centering\includegraphics[width=0.97\linewidth,height=0.76\textheight,keepaspectratio]{eta_gauge_links_forP-2_table.pdf}
+\figsrc{Thesis, Ch. 5: bounding lattice paths. Arrays list the complete directional step sequence.}
+\end{frame}
+
+\begin{frame}{Staple interpolation paths at $P_L=-3$}
+\centering\includegraphics[width=0.97\linewidth,height=0.76\textheight,keepaspectratio]{eta_gauge_links_forP-3_table.pdf}
+\figsrc{Thesis, Ch. 5: bounding lattice paths. Arrays list the complete directional step sequence.}
+\end{frame}
+
+\begin{frame}{Staple interpolation paths at $P_L=-4$}
+\centering\includegraphics[width=0.97\linewidth,height=0.76\textheight,keepaspectratio]{eta_gauge_links_forP-4_table.pdf}
+\figsrc{Thesis, Ch. 5: bounding lattice paths. Arrays list the complete directional step sequence.}
+\end{frame}
+\input{sections/06a_staple_path_details}
 
 % Slide 26
 \begin{frame}{Symmetry improvement: path averaging for $v$}
@@ -208,17 +241,7 @@
   \end{itemize}
 \end{frame}
 
-% Slide 29
-\begin{frame}{Gauge-link paths for $\vect b$}
-  \quick
-  \centering
-  \begin{tabular}{ccc}
-    \includegraphics[height=0.5\textheight]{b_gauge_links_for_table1.pdf} &
-    \includegraphics[height=0.78\textheight]{b_gauge_links_for_table2.pdf} &
-    \includegraphics[height=0.78\textheight]{b_gauge_links_for_table3.pdf} \\
-    {\scriptsize transverse, $b_1=0$} & {\scriptsize $+b_1$} & {\scriptsize mirrored $-b_1$}
-  \end{tabular}
-\end{frame}
+\input{sections/06d_b_path_tables}
 
 % Slide 30
 \begin{frame}{Symmetry improvement: path averaging for $\vect b$}
@@ -241,93 +264,64 @@
 \end{frame}
 
 % Slide 31
-\begin{frame}{Real and imaginary amplitudes from $\pm\vect b$}
+\input{sections/06b_correlator_decomp}
+
+\begin{frame}{Effective amplitudes and invariant coordinates}
+  The extracted primitive amplitudes form the combinations
+  \begin{align*}
+    \tAmp_{2B}^{\mathrm{Re}}&=\tAmp_2^{\mathrm{Re}}+R(\zetahat^2)\tBmp_1^{\mathrm{Re}},&
+    \tAmp_{2B}^{\mathrm{Im}}&=\tAmp_2^{\mathrm{Im}}+R(\zetahat^2)\tBmp_1^{\mathrm{Im}},\\
+    \tAmp_{12B}^{\mathrm{Re}}&=\tAmp_{12}^{\mathrm{Re}}-R(\zetahat^2)\tBmp_8^{\mathrm{Re}},&
+    \tAmp_{12B}^{\mathrm{Im}}&=\tAmp_{12}^{\mathrm{Im}}-R(\zetahat^2)\tBmp_8^{\mathrm{Im}}.
+  \end{align*}
+  \[ R(\zetahat^2)=1-\sqrt{1+\zetahat^{-2}},\qquad
+     \nu=-p_L b_L,\quad s=b_L^2+b_T^2,\quad
+     b_L=-\frac{\nu}{p_L},\quad b_T^2=s-\frac{\nu^2}{p_L^2}. \]
   \begin{itemize}
-    \item Lattice form of the parametrization (finite $\eta$), with the measured ratios:
+    \item Here $p_L=2\pi P_L/(a\hat L)$ is the physical momentum; $P_L\in\{-1,-2,-3,-4\}$ labels the lattice momentum mode.
+    \item $b^{(2)}=b_T$ is a spatial component. It is distinct from the positive squared distance $s$, often denoted $b^2$ in the plots.
+    \item The extraction divides by $b^{(2)}$, while the fitted radial denominator uses $s$.
   \end{itemize}
-  \small
-  \[ \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\unsub}=\frac{1}{2} R_{\gamma^{\mu}} E_N = P^\mu\, \tilde a_2 - i \mN^2 \bvec^\mu\, \tilde a_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tilde a_{12} + \mN^2 \eta v^\mu\, \tilde b_1 + \ldots \]
-  \normalsize
-  \begin{itemize}
-    \item Evaluate at $+b_1$ and at the mirrored $-b_1$, for $\Gamma(1),\Gamma(2),\Gamma(4),\Gamma(8)=\gamma_1,\gamma_2,\gamma_3,\gamma_4$:
-  \end{itemize}
-  \[ R^{[b^1\text{-even}]}=\tfrac{1}{2}\big(R^{[+b]} + R^{[-b]}\big)\ \Rightarrow\ \text{real parts}, \qquad
-     R^{[b^1\text{-odd}]}=\tfrac{1}{2}\big(R^{[+b]} - R^{[-b]}\big)\ \Rightarrow\ \text{imaginary parts} \]
-  \begin{itemize}
-    \item Each projection gives 8 linear equations (Re, Im of 4 Dirac structures). The even projection isolates the real parts of $\tilde a_2,\tilde b_1,\tilde a_{12},\tilde b_8$, the odd one their imaginary parts (some rows also carry $b^1\times$ cross terms).
-    \item Convert back: $\tAmp_i = \tilde a_i$, \ $\tBmp_i = (\eta v \tcdot P)^n\ \tilde b_i$ ($n$: power of $1/v\tcdot P$ in front of $\tBmp_i$), with $v \tcdot P = v^1 |P^1|$; $E_N$: nucleon energy.
-  \end{itemize}
+  \figsrc{Thesis, Ch. 5: effective amplitudes and Lorentz-invariant mapping; component notation made explicit.}
 \end{frame}
 
-% Slide 32
-\begin{frame}{Solving for the amplitudes}
-  \footnotesize
-  \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
-      \textbf{$b$-even (real parts)}
-      \begin{align*}
-        \tAmp^{\text{Re}}_2 &= \tfrac{1}{2}\text{Re}\{ R_{\Gamma(8)}\}^{\text{even}} \\
-        \tBmp^{\text{Re}}_1 &= \tfrac{E_{N}|P^1|v^1}{2\mN^2  v^3} \text{Im}\{ R_{\Gamma(4)}\}^{\text{even}} \\
-        \tAmp^{\text{Re}}_{12} &= \tfrac{-1}{2\mN  b^{(2)}}\Big[\text{Re}\{ R_{\Gamma(1)}\}^{\text{even}}+\tfrac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}}\Big] \\
-        \tBmp^{\text{Re}}_8 &= \tfrac{-E_N |P^1|}{ 2\mN^3 b^{(2)} }\Big[\text{Im}\{ R_{\Gamma(8)}\}^{\text{even}}+\tfrac{|P^1|v^3}{E_N v^1}\text{Re}\{ R_{\Gamma(4)}\}^{\text{even}} \\ &\qquad + 2\mN  \tfrac{|P^1|}{E_N} b^{(2)}  \tAmp^{\text{Re}}_{12}\Big]
-      \end{align*}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \textbf{$b$-odd (imaginary parts)}
-      \begin{align*}
-        \tAmp^{\text{Im}}_2 &= \tfrac{1}{2}\text{Im}\{ R_{\Gamma(8)}\}^{\text{odd}} \\
-        \tBmp^{\text{Im}}_1 &= \tfrac{-E_{N}|P^1|v^1}{2\mN^2 v^3} \text{Re}\{ R_{\Gamma(4)}\}^{\text{odd}} \\
-        \tAmp^{\text{Im}}_{12} &= \tfrac{-1}{2\mN  b^{(2)}}\Big[\text{Im}\{ R_{\Gamma(1)}\}^{\text{odd}}+\tfrac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}}\Big] \\
-        \tBmp^{\text{Im}}_8 &= \tfrac{E_N|P^1|}{ 2\mN^3 b^{(2)}  }\Big[\text{Re}\{ R_{\Gamma(8)}\}^{\text{odd}}-\tfrac{|P^1|v^3}{E_N v^1}\text{Im}\{ R_{\Gamma(4)}\}^{\text{odd}} \\ &\qquad - 2\mN  \tfrac{|P^1|}{E_N} b^{(2)}  \tAmp^{\text{Im}}_{12}\Big]
-      \end{align*}
-    \end{column}
-  \end{columns}
-  \normalsize
-  \begin{block}{}
-    \centering
-    $\tAmp_{2B}^{\text{Re/Im}} = \tAmp_2^{\text{Re/Im}} + R(\zetahat^2)\, \tBmp_1^{\text{Re/Im}}, \qquad
-     \tAmp_{12B}^{\text{Re/Im}} = \tAmp_{12}^{\text{Re/Im}} - R(\zetahat^2)\, \tBmp_8^{\text{Re/Im}}$\\[1mm]
-    {\scriptsize $b^{(1)}, b^{(2)}$: components of $\vect b$ along $\hat 1$ (longitudinal) and $\hat 2$ (transverse).}\\
-    then map $b_L = \dfrac{P\cdot b}{-P_L}$, \ $\bvec^2=b_L^2+b_T^2$: \quad $\tAmp_{iB}(b_L, b_T, \zetahat)\ \to\ \tAmp_{iB}(P \cdot b, \bvec^2, \zetahat)$
-  \end{block}
-\end{frame}
-
-% Slide 33
-\begin{frame}{Amplitudes at $P_L=-1$ \ ($\zetahat=0.090772$): 3D view}
-  \quick
-  \centering
-  \begin{tabular}{cc}
-    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA2B_Pb_bsq_PL-1_3D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA2B_Pb_bsq_PL-1_3D.pdf} \\
-    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA12B_Pb_bsq_PL-1_3D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA12B_Pb_bsq_PL-1_3D.pdf}
-  \end{tabular}\\
-  {\scriptsize $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$ (top); $\tAmp_{12B}^{\text{Re}}$, $\tAmp_{12B}^{\text{Im}}$ (bottom) vs $\eta|v|/a$ and $(P\cdot b)\hat L/(2\pi)$, colored by $b^2/a^2$}
-\end{frame}
-
-% Slide 34
-\begin{frame}{Amplitudes at $P_L=-1$: slices at $\eta|v|/a=8$}
-  \centering
-  \begin{tabular}{cc}
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-1_2D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-1_2D.pdf} \\
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-1_2D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-1_2D.pdf}
-  \end{tabular}
+\begin{frame}{The Fourier integral extends beyond the measured domain}
+  \[ b_T^2=s-\frac{\nu^2}{p_L^2}\ge0
+      \quad\Longrightarrow\quad |\nu|\le |p_L|\sqrt{s}
+      \quad\text{for real spatial lattice separations}. \]
   \begin{itemize}
-    \item Parity checks pass: Re even, Im odd in $P\cdot b$. \ $\tAmp_{12B}^{\text{Im}}$ is consistent with zero $\Rightarrow$ dropped.
+    \item The measured points occupy a finite, irregular subset of this domain.
+    \item The Fourier integral requires all real $\nu$ at fixed $s$. A fitted function therefore extends the amplitude beyond the directly sampled region.
+    \item Decay of a fit along $b_L$ at fixed lattice $b_T$ does not by itself ensure integrability in $\nu$ at fixed $s$.
+    \item Candidate selection must test the transformed model, its tails, and its resulting $x$-dependence as well as its fit quality.
   \end{itemize}
+  \figsrc{Thesis, Chs. 5--6: invariant mapping and Fourier-integrability requirement.}
 \end{frame}
 
-% Slide 35
-\begin{frame}{Amplitudes at $P_L=-4$ \ ($\zetahat=0.785756$): slices at $\eta|v|/a=8$}
-  \quick
-  \centering
-  \begin{tabular}{cc}
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_Pb_bsq_eta8_PL-4_2D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_Pb_bsq_eta8_PL-4_2D.pdf} \\
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_Pb_bsq_eta8_PL-4_2D.pdf} &
-    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-4_2D.pdf}
-  \end{tabular}\\
-  {\scriptsize Same layout as $P_L=-1$; the highest momentum reaches the widest range in $P\cdot b$. ($P_L=-2,-3$ in backup.)}
+\begin{frame}{Raw amplitude profiles at all four momenta}
+  \begin{itemize}
+    \item The following figures show every raw-amplitude view used in the thesis, before fitting.
+    \item For each momentum, retain all four components: $\tAmp_{2B}^{\mathrm{Re}}$, $\tAmp_{2B}^{\mathrm{Im}}$, $\tAmp_{12B}^{\mathrm{Re}}$, $\tAmp_{12B}^{\mathrm{Im}}$.
+    \item Each component is displayed in lattice coordinates and invariant coordinates, both as a surface and at $\eta|v|/a=8$.
+    \item The two panels of each original figure show complementary coordinate slices or views. Both are retained.
+  \end{itemize}
+  \figsrc{Thesis, Ch. 5: numerical results and parity constraints.}
+\end{frame}
+
+\input{sections/06c_raw_amplitudes}
+
+\begin{frame}{Parity and the imaginary Sivers amplitude}
+  \[
+    \tAmp_{iB}^{\mathrm{Re}}(-\nu)=\tAmp_{iB}^{\mathrm{Re}}(\nu),\qquad
+    \tAmp_{iB}^{\mathrm{Im}}(-\nu)=-\tAmp_{iB}^{\mathrm{Im}}(\nu).
+  \]
+  \begin{itemize}
+    \item The profiles display the parity imposed by the amplitude projection; this is a consistency check of the extraction.
+    \item The thesis finds no statistically resolved $\tAmp_{12B}^{\mathrm{Im}}$ signal and omits it from the subsequent fit. Compatibility with zero does not establish that it vanishes exactly.
+    \item With this analysis choice, write $E=E_2$, $O=O_2$, $S=E_{12}$:
+  \end{itemize}
+  \[ \tilde f_1^{(0)}=2(E-O),\qquad
+      \tilde f_{1T}^{\perp(1)}=-2S,\qquad
+      \langle k_y\rangle_{TU}=-m_N\frac{S}{E-O}. \]
+  \figsrc{Thesis, Ch. 5: numerical profiles and treatment of $\tAmp_{12B}^{\mathrm{Im}}$.}
 \end{frame}

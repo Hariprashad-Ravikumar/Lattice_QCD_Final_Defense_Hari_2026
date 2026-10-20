@@ -21,13 +21,47 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Transverse position and transverse momentum}
+  \begin{columns}[c]
+  \begin{column}{0.55\textwidth}
+  \begin{itemize}
+    \item GPDs encode transverse position, through Fourier transformation of transverse momentum transfer $\vect\Delta_T$.
+    \item TMDs encode the quark transverse momentum $\vect k_T$.
+    \item The impact parameter in this picture is distinct from the quark-field separation $\vect b_T$ used in the TMD correlator.
+  \end{itemize}
+  \[ \rho_q(x,\vect b_T)=\int\frac{d^2\vect\Delta_T}{(2\pi)^2}
+       e^{-i\vect b_T\cdot\vect\Delta_T}H^q(x,0,-\vect\Delta_T^2). \]
+  \end{column}
+  \begin{column}{0.41\textwidth}\centering
+    \includegraphics[width=\linewidth,height=0.65\textheight,keepaspectratio]{EIC_WP_Fig2p1_parton_bT.pdf}
+  \end{column}
+  \end{columns}
+  \figsrc{Thesis, Ch. 2; Accardi et al., EPJA 52, 268 (2016), arXiv:1212.1701, Fig. 2.1 (CC BY 4.0).}
+\end{frame}
+
+\begin{frame}{Leading-twist quark TMDs}
+  \centering\renewcommand{\arraystretch}{1.65}
+  \begin{tabular}{c|ccc}
+    Nucleon $\backslash$ quark & unpolarized & longitudinal & transverse\\\hline
+    Unpolarized & $f_1$ & & $h_1^\perp$ (T-odd)\\
+    Longitudinal & & $g_1$ & $h_{1L}^\perp$\\
+    Transverse & $f_{1T}^\perp$ (T-odd) & $g_{1T}$ & $h_1,\ h_{1T}^\perp$
+  \end{tabular}
+  \vspace{4mm}
+  \begin{itemize}
+    \item The Sivers function describes unpolarized quarks in a transversely polarized nucleon.
+    \item Sivers and Boer--Mulders functions change sign between future- and past-pointing staple links.
+  \end{itemize}
+  \figsrc{Thesis, Ch. 2: leading-twist quark TMD polarization table.}
+\end{frame}
+
 % Slide 4
 \begin{frame}{Single-spin asymmetries and the Sivers effect}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \begin{itemize}
         \item Large left--right asymmetries off transversely polarized protons (E704, 1991).
-        \item Collinear pQCD predicts them to be tiny (Kane, Pumplin, Repko 1978).
+        \item Leading-twist collinear hard-scattering estimates predict tiny asymmetries (Kane, Pumplin, Repko 1978).
         \item Sivers (1990): the quark $\vprp{k}$ distribution is \textbf{shifted perpendicular to the spin}.
       \end{itemize}
       \vspace{-1mm}
@@ -67,7 +101,7 @@
 % Slide 5
 \begin{frame}{Why it is not zero: the gauge link}
   \begin{itemize}
-    \item Collins (1993): time reversal forces $f_{1T}^\perp=0$ \quad (``naively T-odd'').
+    \item Collins (1993): neglecting the process-dependent gauge link led to a vanishing Sivers function.
     \item Brodsky--Hwang--Schmidt (2002): final-state interactions give a nonzero asymmetry.
     \item Collins (2002): a gauge-invariant TMD needs a \textbf{Wilson line}. Its path depends on the process, and T-reversal swaps the two paths:
   \end{itemize}
@@ -107,8 +141,8 @@
       \begin{itemize}
         \item Light-like separations cannot be placed at a single Euclidean time.
         \item Lorentz-invariant amplitude method with staple links (Musch \emph{et al.} 2012): first lattice Sivers shift and its sign change.
-        \item Published results sit at $\bvec\tcdot P=0$. Since $\bvec\tcdot P$ is Fourier-conjugate to $x$, they are \textbf{$x$-integrated}.
-        \item Experiments (HERMES, COMPASS, JLab, STAR) establish the SIDIS sign; the DY sign change is favored but not yet significant. The $x$-shape from fits carries model bias.
+        \item The earlier staple-link Sivers-shift calculations used here sit at $\bvec\tcdot P=0$. Since $\bvec\tcdot P$ is Fourier-conjugate to $x$, they are \textbf{$x$-integrated}.
+        \item SIDIS measurements constrain the Sivers function. The combined COMPASS Drell--Yan data are consistent with its predicted sign change; extracting the $x$-shape requires phenomenological fits.
       \end{itemize}
     \end{column}
     \begin{column}{0.46\textwidth}
@@ -122,6 +156,9 @@
       \end{tikzpicture}
     \end{column}
   \end{columns}
+\figsrc{Musch et al., Phys. Rev. D 85, 094510 (2012); COMPASS, Phys. Rev. Lett. 133, 071902 (2024), arXiv:2312.17379.}
+\end{frame}
+\begin{frame}{The extraction procedure}
   \vspace{2mm}
   \begin{block}{This thesis}
     \begin{enumerate}
@@ -131,4 +168,5 @@
       \item Fourier transform to $x$, extrapolate to the light-cone limit, test factorization.
     \end{enumerate}
   \end{block}
+\figsrc{Thesis, Chs. 5--7: extraction, candidate selection, Fourier transformation and extrapolation.}
 \end{frame}

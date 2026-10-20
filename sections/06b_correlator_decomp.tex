@@ -1,0 +1,341 @@
+% ===== Correlator decomposition: all four Dirac structures, +b / -b, even / odd (follows thesis, Extracting the x-dependence) =====
+\newcommand{\En}{E_N}
+\newcommand{\Pa}{|\vec P^{1}|}
+\newcommand{\aR}[1]{\tilde a^{\text{Re}}_{#1}}
+\newcommand{\aI}[1]{\tilde a^{\text{Im}}_{#1}}
+\newcommand{\bR}[1]{\tilde b^{\text{Re}}_{#1}}
+\newcommand{\bI}[1]{\tilde b^{\text{Im}}_{#1}}
+\newcommand{\Rr}[3]{\text{#1}\{R_{\Gamma(#2)}\}^{[#3]}}
+\newcommand{\fl}{\textcolor{red}}
+
+\begin{frame}{Dirac structures $\Gamma$: Euclidean (lattice) versus Minkowski}
+  \begin{itemize}
+    \item The lattice code uses Euclidean $\gamma_E$; the amplitudes are defined with Minkowski $\gamma_M$:
+  \end{itemize}
+  \[ \gamma^{1}_{E}=+i\gamma^{1}_{M},\quad \gamma^{2}_{E}=-i\gamma^{2}_{M},\quad \gamma^{3}_{E}=+i\gamma^{3}_{M},\quad \gamma^{4}_{E}=\gamma^{0}_{M},\quad \gamma^{5}_{E}=\gamma^{1}_{E}\gamma^{2}_{E}\gamma^{3}_{E}\gamma^{4}_{E}=-\gamma^{5}_{M} \]
+  \begin{itemize}
+    \item The index $i\in\{1,2,4,8\}$ of $\Gamma(i)$ is the bit-encoded position of the structure in the CHROMA/QLUA operator basis:
+  \end{itemize}
+  \[ \Gamma(1)=[+i\gamma^1],\qquad \Gamma(2)=[-i\gamma^2],\qquad \Gamma(4)=[+i\gamma^3],\qquad \Gamma(8)=[\gamma^0] \]
+  \begin{itemize}
+    \item Measured: the four ratios $R_{\Gamma(1)},R_{\Gamma(2)},R_{\Gamma(4)},R_{\Gamma(8)}$, each complex, at $(+b^1,b^2,0)$ and $(-b^1,b^2,0)$. Raising spatial indices with $g^{\mu\nu}=\mathrm{diag}(1,-1,-1,-1)$ ($P_1=-P^1$, $b_2=-b^2$), and $P^0\to\En$.
+    \item Lattice amplitudes (finite link $\eta$): $\tilde a_i=\tilde a_i^{\text{Re}}+i\tilde a_i^{\text{Im}}$, $\tilde b_i=\tilde b_i^{\text{Re}}+i\tilde b_i^{\text{Im}}$, related to the uppercase parametrization by $\tAmp_i=\tilde a_i$, $\tBmp_i=(\eta v\tcdot P)^n\,\tilde b_i$. Here $n=1$ for $i=1,7,8,9$ and $n=2$ for $i=10$.
+  \end{itemize}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+\begin{frame}{Lattice geometry and reflection in $b^1$}
+  \[
+  P^\mu=(\En,-\Pa,0,0),\quad b^\mu=(0,b^1,b^2,0),
+  \quad v^\mu=(0,v^1,0,v^3),\quad S^\mu=(0,0,0,1).
+  \]
+  \[
+  b\cdot S=0,\qquad v\cdot S=-v^3,\qquad v\cdot P=\Pa v^1,
+  \qquad \epsilon^{0123}=+1.
+  \]
+  \begin{itemize}
+    \item Reflect only $b^1$, keeping $b^2$, $v$, $P$, $S$ and $\eta$ fixed.
+    \item Then $b\cdot P$ and $v\cdot b$ both change sign while $b\cdot b$ stays fixed. Hermiticity gives
+  \end{itemize}
+  \[
+  \tilde a_i[-b^1]=\tilde a_i[+b^1]^*,\qquad
+  \tilde b_i[-b^1]=\tilde b_i[+b^1]^*.
+  \]
+  \begin{itemize}
+    \item A spatial component $b^2$ in the following equations means the second Cartesian component. It is distinct from the invariant $b\cdot b$ and the magnitude $|\vect b|^2$.
+    \item $\tBmp_9$ vanishes in this geometry because $b\cdot S=0$. The other seven amplitudes remain in the four-channel system.
+  \end{itemize}
+  \figsrc{Thesis, Extracting the x-dependence, lattice kinematics and amplitude inversion.}
+\end{frame}
+
+% ---------------- Gamma(8) = gamma^0 ----------------
+\begin{frame}{Correlator for $\Gamma(8)=[\gamma^0]$}
+  \small
+  Continuum projection (contravariant indices, $S^3$ the nucleon polarization):
+  \[ \tfrac12\widetilde\Phi^{[\gamma^0]}_{\unsub}=P^0\,\tAmp_2-i\mN\Pa\,\bvec^2S^3\,\tAmp_{12}-\tfrac{i\mN^3}{v\tcdot P}\,\bvec^2v^1S^3\,\tBmp_8-\tfrac{i\mN^3}{(v\tcdot P)^2}(v\tcdot S)\Pa\,\bvec^2v^3\,\tBmp_{10} \]
+  Lattice ratio in terms of the finite-link amplitudes:
+  \[ R_{\Gamma(8)}=2\Big[\tilde a_2-i\mN\tfrac{\Pa}{\En}\bvec^2\,\tilde a_{12}-\tfrac{i\mN^3}{\En}\bvec^2\eta v^1\,\tilde b_8+\tfrac{i\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\,\tilde b_{10}\Big] \]
+  \figsrc{Thesis, Extracting the x-dependence, projected vector correlator.}
+\end{frame}
+
+\begin{frame}{$\Gamma(8)$: the $+b^1$ and $-b^1$ equations}
+  \small
+  \begin{align*}
+    \Rr{Re}{8}{+b^1}&=2\Big[\aR2+\mN\tfrac{\Pa}{\En}\bvec^2\aI{12}+\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bI8-\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Im}{8}{+b^1}&=2\Big[-\mN\tfrac{\Pa}{\En}\bvec^2\aR{12}-\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bR8+\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bR{10}+\aI2\Big]\\
+    \Rr{Re}{8}{-b^1}&=2\Big[\aR2\fl{-}\mN\tfrac{\Pa}{\En}\bvec^2\aI{12}\fl{-}\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bI8\fl{+}\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Im}{8}{-b^1}&=2\Big[-\mN\tfrac{\Pa}{\En}\bvec^2\aR{12}-\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bR8+\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bR{10}\fl{-}\aI2\Big]
+  \end{align*}
+  {\scriptsize Red: sign flipped relative to $+b^1$, because $\tilde a^{\text{Re}},\tilde b^{\text{Re}}$ are even and $\tilde a^{\text{Im}},\tilde b^{\text{Im}}$ are odd in $b^1$ (and $\bvec^1$ itself flips).}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+% ---------------- Gamma(1) = i gamma^1 ----------------
+\begin{frame}{Correlator for $\Gamma(1)=[+i\gamma^1]$}
+  \small
+  Continuum projection:
+  \[ \tfrac12\widetilde\Phi^{[\gamma^1]}_{\unsub}=-\Pa\,\tAmp_2-i\mN^2\bvec^1\tAmp_3+\tfrac{\mN^2}{v\tcdot P}v^1\tBmp_1+i\mN P^0\bvec^2S^3\,\tAmp_{12}+\tfrac{i\mN^3}{(v\tcdot P)^2}(v\tcdot S)P^0\bvec^2v^3\,\tBmp_{10} \]
+  Lattice ratio:
+  \[ R_{\Gamma(1)}=2\Big[-i\tfrac{\Pa}{\En}\tilde a_2+\tfrac{\mN^2}{\En}\bvec^1\tilde a_3+i\tfrac{\mN^2}{\En}\eta v^1\tilde b_1-\mN\bvec^2\tilde a_{12}+\mN^3\bvec^2\eta^2(v^3)^2\tilde b_{10}\Big] \]
+  \figsrc{Thesis, Extracting the x-dependence, projected vector correlator.}
+\end{frame}
+
+\begin{frame}{$\Gamma(1)$: the $+b^1$ and $-b^1$ equations}
+  \small
+  \begin{align*}
+    \Rr{Re}{1}{+b^1}&=2\Big[\tfrac{\mN^2}{\En}\bvec^1\aR3-\mN\bvec^2\aR{12}+\mN^3\bvec^2\eta^2(v^3)^2\bR{10}+\tfrac{\Pa}{\En}\aI2-\tfrac{\mN^2}{\En}\eta v^1\bI1\Big]\\
+    \Rr{Im}{1}{+b^1}&=2\Big[-\tfrac{\Pa}{\En}\aR2+\tfrac{\mN^2}{\En}\eta v^1\bR1+\tfrac{\mN^2}{\En}\bvec^1\aI3-\mN\bvec^2\aI{12}+\mN^3\bvec^2\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Re}{1}{-b^1}&=2\Big[\fl{-}\tfrac{\mN^2}{\En}\bvec^1\aR3-\mN\bvec^2\aR{12}+\mN^3\bvec^2\eta^2(v^3)^2\bR{10}\fl{-}\tfrac{\Pa}{\En}\aI2\fl{+}\tfrac{\mN^2}{\En}\eta v^1\bI1\Big]\\
+    \Rr{Im}{1}{-b^1}&=2\Big[-\tfrac{\Pa}{\En}\aR2+\tfrac{\mN^2}{\En}\eta v^1\bR1+\tfrac{\mN^2}{\En}\bvec^1\aI3\fl{+}\mN\bvec^2\aI{12}\fl{-}\mN^3\bvec^2\eta^2(v^3)^2\bI{10}\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+% ---------------- Gamma(2) = -i gamma^2 ----------------
+\begin{frame}{Correlator for $\Gamma(2)=[-i\gamma^2]$}
+  \small
+  Continuum projection:
+  \[ \tfrac12\widetilde\Phi^{[\gamma^2]}_{\unsub}=-i\mN^2\bvec^2\tAmp_3-i\mN P^0\bvec^1S^3\,\tAmp_{12}+\tfrac{\mN}{v\tcdot P}P^0v^1S^3\,\tBmp_7-\tfrac{i\mN^3}{(v\tcdot P)^2}(v\tcdot S)P^0\bvec^1v^3\,\tBmp_{10} \]
+  Lattice ratio:
+  \[ R_{\Gamma(2)}=2\Big[-\tfrac{\mN^2}{\En}\bvec^2\tilde a_3-\mN\bvec^1\tilde a_{12}-i\mN\eta v^1\tilde b_7+\mN^3\bvec^1\eta^2(v^3)^2\tilde b_{10}\Big] \]
+  \figsrc{Thesis, Extracting the x-dependence, projected vector correlator.}
+\end{frame}
+
+\begin{frame}{$\Gamma(2)$: the $+b^1$ and $-b^1$ equations}
+  \small
+  \begin{align*}
+    \Rr{Re}{2}{+b^1}&=2\Big[-\tfrac{\mN^2}{\En}\bvec^2\aR3-\mN\bvec^1\aR{12}+\mN^3\bvec^1\eta^2(v^3)^2\bR{10}+\mN\eta v^1\bI7\Big]\\
+    \Rr{Im}{2}{+b^1}&=2\Big[-\mN\eta v^1\bR7-\tfrac{\mN^2}{\En}\bvec^2\aI3-\mN\bvec^1\aI{12}+\mN^3\bvec^1\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Re}{2}{-b^1}&=2\Big[-\tfrac{\mN^2}{\En}\bvec^2\aR3\fl{+}\mN\bvec^1\aR{12}\fl{-}\mN^3\bvec^1\eta^2(v^3)^2\bR{10}\fl{-}\mN\eta v^1\bI7\Big]\\
+    \Rr{Im}{2}{-b^1}&=2\Big[-\mN\eta v^1\bR7\fl{+}\tfrac{\mN^2}{\En}\bvec^2\aI3-\mN\bvec^1\aI{12}+\mN^3\bvec^1\eta^2(v^3)^2\bI{10}\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+% ---------------- Gamma(4) = i gamma^3 ----------------
+\begin{frame}{Correlator for $\Gamma(4)=[+i\gamma^3]$}
+  \small
+  Continuum projection:
+  \[ \tfrac12\widetilde\Phi^{[\gamma^3]}_{\unsub}=\tfrac{\mN^2}{v\tcdot P}v^3\,\tBmp_1-\tfrac{i\mN^3}{(v\tcdot P)^2}(v\tcdot S)P^0\bvec^2v^1\,\tBmp_{10} \]
+  Lattice ratio:
+  \[ R_{\Gamma(4)}=2\Big[i\tfrac{\mN^2}{\En}\eta v^3\tilde b_1-\mN^3\bvec^2\eta^2v^1v^3\,\tilde b_{10}\Big] \]
+  \figsrc{Thesis, Extracting the x-dependence, projected vector correlator.}
+\end{frame}
+
+\begin{frame}{$\Gamma(4)$: the $+b^1$ and $-b^1$ equations}
+  \small
+  \begin{align*}
+    \Rr{Re}{4}{+b^1}&=2\Big[-\mN^3\bvec^2\eta^2v^1v^3\bR{10}-\tfrac{\mN^2}{\En}\eta v^3\bI1\Big]\\
+    \Rr{Im}{4}{+b^1}&=2\Big[\tfrac{\mN^2}{\En}\eta v^3\bR1-\mN^3\bvec^2\eta^2v^1v^3\bI{10}\Big]\\
+    \Rr{Re}{4}{-b^1}&=2\Big[-\mN^3\bvec^2\eta^2v^1v^3\bR{10}\fl{+}\tfrac{\mN^2}{\En}\eta v^3\bI1\Big]\\
+    \Rr{Im}{4}{-b^1}&=2\Big[\tfrac{\mN^2}{\En}\eta v^3\bR1\fl{+}\mN^3\bvec^2\eta^2v^1v^3\bI{10}\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+\begin{frame}{Matrix construction: coefficient definitions}
+  \small
+  To display both reflections side by side, define the exact coefficients
+  \begin{align*}
+    p&=\frac{\Pa}{\En},&u_1&=\frac{\mN^2b^1}{\En},&u_2&=\frac{\mN^2b^2}{\En},\\
+    s_1&=\mN b^1,&s_2&=\mN b^2,&h&=\mN\eta v^1,\\
+    \ell_1&=\frac{\mN^2\eta v^1}{\En},&\ell_3&=\frac{\mN^2\eta v^3}{\En},&k&=\frac{\mN^3b^2\eta v^1}{\En},\\
+    t_1&=\mN^3b^1\eta^2(v^3)^2,&t_2&=\mN^3b^2\eta^2(v^3)^2,&w&=\mN^3b^2\eta^2v^1v^3.
+  \end{align*}
+  \[
+  \boldsymbol R_\pm=
+   (R_{\Gamma(1)}^{[\pm b^1]},R_{\Gamma(2)}^{[\pm b^1]},
+    R_{\Gamma(4)}^{[\pm b^1]},R_{\Gamma(8)}^{[\pm b^1]})^{\mathsf T}.
+  \]
+  \[
+  \boldsymbol a_+=(\tilde a_2,\tilde a_3,\tilde a_{12})^{\mathsf T},\quad
+  \boldsymbol b_+=(\tilde b_1,\tilde b_7,\tilde b_8,\tilde b_{10})^{\mathsf T},\quad
+  \boldsymbol a_-=\boldsymbol a_+^*,\quad\boldsymbol b_-=\boldsymbol b_+^*.
+  \]
+  \figsrc{Algebraic matrix form of the four thesis ratio equations. Coefficients refer to $+b^1$.}
+\end{frame}
+
+\begin{frame}{The $+b^1$ and $-b^1$ matrices: $a$ amplitudes}
+  \[
+    \frac{\boldsymbol R_\pm}{2}
+       =M_{a,\pm}\boldsymbol a_\pm+M_{b,\pm}\boldsymbol b_\pm.
+  \]
+  \begin{columns}[c]
+    \begin{column}{.49\textwidth}
+      \[M_{a,+}=\begin{pmatrix}
+       -ip&u_1&-s_2\\
+       0&-u_2&-s_1\\
+       0&0&0\\
+       1&0&-ip s_2
+      \end{pmatrix}.\]
+    \end{column}
+    \begin{column}{.49\textwidth}
+      \[M_{a,-}=\begin{pmatrix}
+       -ip&-u_1&-s_2\\
+       0&-u_2&+s_1\\
+       0&0&0\\
+       1&0&-ip s_2
+      \end{pmatrix}.\]
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    \item Columns: $(\tilde a_2,\tilde a_3,\tilde a_{12})$. Rows: $\Gamma(1),\Gamma(2),\Gamma(4),\Gamma(8)$.
+    \item The entries proportional to $b^1$ change sign. Separately, the imaginary parts of all amplitudes change sign through $\boldsymbol a_-=\boldsymbol a_+^*$.
+    \item The complete $b$-amplitude contribution is displayed on the next slide.
+  \end{itemize}
+  \figsrc{Thesis, Extracting the x-dependence, full $\pm b^1$ correlator system.}
+\end{frame}
+
+\begin{frame}{The $+b^1$ and $-b^1$ matrices: $b$ amplitudes}
+  \[
+    \frac{\boldsymbol R_\pm}{2}
+       =M_{a,\pm}\boldsymbol a_\pm+M_{b,\pm}\boldsymbol b_\pm.
+  \]
+  \begin{columns}[c]
+    \begin{column}{.49\textwidth}
+      \[M_{b,+}=\begin{pmatrix}
+       i\ell_1&0&0&t_2\\
+       0&-ih&0&t_1\\
+       i\ell_3&0&0&-w\\
+       0&0&-ik&ip t_2
+      \end{pmatrix}.\]
+    \end{column}
+    \begin{column}{.49\textwidth}
+      \[M_{b,-}=\begin{pmatrix}
+       i\ell_1&0&0&t_2\\
+       0&-ih&0&-t_1\\
+       i\ell_3&0&0&-w\\
+       0&0&-ik&ip t_2
+      \end{pmatrix}.\]
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    \item Columns: $(\tilde b_1,\tilde b_7,\tilde b_8,\tilde b_{10})$. Row order is unchanged.
+    \item Only $t_1\propto b^1$ changes sign in these coefficient matrices.
+    \item Combine the two matrix blocks before taking even and odd projections. No tensor structures have been dropped from this geometry.
+  \end{itemize}
+  \figsrc{Thesis, Extracting the x-dependence, full $\pm b^1$ correlator system.}
+\end{frame}
+
+\begin{frame}{Even and odd projections of the full system}
+  \[
+    \boldsymbol R_{\rm e}=\frac{\boldsymbol R_++\boldsymbol R_-}{2},
+    \qquad\boldsymbol R_{\rm o}=\frac{\boldsymbol R_+-\boldsymbol R_-}{2}.
+  \]
+  For either block $M=M_a$ or $M_b$, set
+  $M_{\rm e}=(M_++M_-)/2$ and $M_{\rm o}=(M_+-M_-)/2$. Then
+  \begin{align*}
+  \frac{\boldsymbol R_{\rm e}}2
+    &=M_{a,\rm e}\Re\boldsymbol a_+
+       +iM_{a,\rm o}\Im\boldsymbol a_+
+       +M_{b,\rm e}\Re\boldsymbol b_+
+       +iM_{b,\rm o}\Im\boldsymbol b_+,\\
+  \frac{\boldsymbol R_{\rm o}}2
+    &=M_{a,\rm o}\Re\boldsymbol a_+
+       +iM_{a,\rm e}\Im\boldsymbol a_+
+       +M_{b,\rm o}\Re\boldsymbol b_+
+       +iM_{b,\rm e}\Im\boldsymbol b_+.
+  \end{align*}
+  \begin{itemize}
+    \item Matrix parity and amplitude parity both matter. An even ratio can contain $b^1\tilde a_i^{\rm Im}$ because both factors are odd.
+    \item The following slides expand every real and imaginary component of these two equations.
+  \end{itemize}
+  \figsrc{Direct sum and difference of the full $\pm b^1$ systems in the thesis.}
+\end{frame}
+
+% ---------------- even combination ----------------
+\begin{frame}{$b^1$-even projection $\tfrac12(R^{[+b^1]}+R^{[-b^1]})$: $\Gamma(1),\Gamma(2)$}
+  \small
+  \begin{align*}
+    \Rr{Re}{1}{b^1\text{-even}}&=2\Big[-\mN\bvec^2\aR{12}+\mN^3\bvec^2\eta^2(v^3)^2\bR{10}\Big]\\
+    \Rr{Im}{1}{b^1\text{-even}}&=2\Big[-\tfrac{\Pa}{\En}\aR2+\tfrac{\mN^2}{\En}\eta v^1\bR1+\tfrac{\mN^2}{\En}\bvec^1\aI3\Big]\\
+    \Rr{Re}{2}{b^1\text{-even}}&=2\Big[-\tfrac{\mN^2}{\En}\bvec^2\aR3\Big]\\
+    \Rr{Im}{2}{b^1\text{-even}}&=2\Big[-\mN\eta v^1\bR7-\mN\bvec^1\aI{12}+\mN^3\bvec^1\eta^2(v^3)^2\bI{10}\Big]
+  \end{align*}
+  \begin{itemize}
+    \item The even projection keeps $\tilde a^{\text{Re}}$, $\tilde b^{\text{Re}}$ and the products $\bvec^1\tilde a^{\text{Im}}$, $\bvec^1\tilde b^{\text{Im}}$.
+  \end{itemize}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+\begin{frame}{$b^1$-even projection $\tfrac12(R^{[+b^1]}+R^{[-b^1]})$: $\Gamma(4),\Gamma(8)$}
+  \small
+  \begin{align*}
+    \Rr{Re}{4}{b^1\text{-even}}&=2\Big[-\mN^3\bvec^2\eta^2v^1v^3\bR{10}\Big]\\
+    \Rr{Im}{4}{b^1\text{-even}}&=2\Big[\tfrac{\mN^2}{\En}\eta v^3\bR1\Big]\\
+    \Rr{Re}{8}{b^1\text{-even}}&=2\Big[\aR2\Big]\\
+    \Rr{Im}{8}{b^1\text{-even}}&=2\Big[-\mN\tfrac{\Pa}{\En}\bvec^2\aR{12}-\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bR8+\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bR{10}\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+% ---------------- odd combination ----------------
+\begin{frame}{$b^1$-odd projection $\tfrac12(R^{[+b^1]}-R^{[-b^1]})$: $\Gamma(1),\Gamma(2)$}
+  \small
+  \begin{align*}
+    \Rr{Re}{1}{b^1\text{-odd}}&=2\Big[\tfrac{\mN^2}{\En}\bvec^1\aR3+\tfrac{\Pa}{\En}\aI2-\tfrac{\mN^2}{\En}\eta v^1\bI1\Big]\\
+    \Rr{Im}{1}{b^1\text{-odd}}&=2\Big[-\mN\bvec^2\aI{12}+\mN^3\bvec^2\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Re}{2}{b^1\text{-odd}}&=2\Big[-\mN\bvec^1\aR{12}+\mN^3\bvec^1\eta^2(v^3)^2\bR{10}+\mN\eta v^1\bI7\Big]\\
+    \Rr{Im}{2}{b^1\text{-odd}}&=2\Big[-\tfrac{\mN^2}{\En}\bvec^2\aI3\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+\begin{frame}{$b^1$-odd projection $\tfrac12(R^{[+b^1]}-R^{[-b^1]})$: $\Gamma(4),\Gamma(8)$}
+  \small
+  \begin{align*}
+    \Rr{Re}{4}{b^1\text{-odd}}&=2\Big[-\tfrac{\mN^2}{\En}\eta v^3\bI1\Big]\\
+    \Rr{Im}{4}{b^1\text{-odd}}&=2\Big[-\mN^3\bvec^2\eta^2v^1v^3\bI{10}\Big]\\
+    \Rr{Re}{8}{b^1\text{-odd}}&=2\Big[\mN\tfrac{\Pa}{\En}\bvec^2\aI{12}+\tfrac{\mN^3}{\En}\bvec^2\eta v^1\bI8-\tfrac{\mN^3}{\En}\Pa\bvec^2\eta^2(v^3)^2\bI{10}\Big]\\
+    \Rr{Im}{8}{b^1\text{-odd}}&=2\Big[\aI2\Big]
+  \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, solving real and imaginary amplitudes.}
+\end{frame}
+
+\begin{frame}{Real amplitudes from the even system}
+  \normalsize
+
+      \begin{align*}
+        \aR2&=\tfrac12\Rr{Re}{8}{b^1\text{-even}}\\
+        \bR1&=\tfrac{\En}{2\mN^2\eta v^3}\Rr{Im}{4}{b^1\text{-even}}\\
+        \aR{12}&=\tfrac{-1}{2\mN\bvec^2}\Big[\Rr{Re}{1}{b^1\text{-even}}\\&\quad+\tfrac{v^3}{v^1}\Rr{Re}{4}{b^1\text{-even}}\Big]\\
+        \bR8&=\tfrac{-\En}{2\mN^3\bvec^2\eta v^1}\Big[\Rr{Im}{8}{b^1\text{-even}}\\&\quad+\tfrac{\Pa v^3}{\En v^1}\Rr{Re}{4}{b^1\text{-even}}\\&\quad+2\mN\tfrac{\Pa}{\En}\bvec^2\aR{12}\Big]
+      \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, amplitude inversion.}
+\end{frame}
+
+\begin{frame}{Imaginary amplitudes from the odd system}
+  \normalsize
+
+      \begin{align*}
+        \aI2&=\tfrac12\Rr{Im}{8}{b^1\text{-odd}}\\
+        \bI1&=\tfrac{-\En}{2\mN^2\eta v^3}\Rr{Re}{4}{b^1\text{-odd}}\\
+        \aI{12}&=\tfrac{-1}{2\mN\bvec^2}\Big[\Rr{Im}{1}{b^1\text{-odd}}\\&\quad+\tfrac{v^3}{v^1}\Rr{Im}{4}{b^1\text{-odd}}\Big]\\
+        \bI8&=\tfrac{\En}{2\mN^3\bvec^2\eta v^1}\Big[\Rr{Re}{8}{b^1\text{-odd}}\\&\quad-\tfrac{\Pa v^3}{\En v^1}\Rr{Im}{4}{b^1\text{-odd}}\\&\quad-2\mN\tfrac{\Pa}{\En}\bvec^2\aI{12}\Big]
+      \end{align*}
+  \figsrc{Thesis, Extracting the x-dependence, amplitude inversion.}
+\end{frame}
+
+\begin{frame}{Uppercase amplitudes and the staple-length factors}
+  \small
+  For the Sivers-relevant amplitudes, $v\cdot P=\Pa v^1$ gives
+  \[
+    \tAmp_2=\tilde a_2,\qquad \tAmp_{12}=\tilde a_{12},\qquad
+    \tBmp_1=\eta\Pa v^1\tilde b_1,\qquad
+    \tBmp_8=\eta\Pa v^1\tilde b_8.
+  \]
+  In particular, multiplication by $\eta v\cdot P$ cancels $\eta$ in both parts of $\tBmp_1$:
+  \begin{align*}
+    \tBmp_1^{\rm Re}&=\frac{\En\Pa v^1}{2\mN^2v^3}
+       \Rr{Im}{4}{b^1\text{-even}},\\
+    \tBmp_1^{\rm Im}&=-\frac{\En\Pa v^1}{2\mN^2v^3}
+       \Rr{Re}{4}{b^1\text{-odd}}.
+  \end{align*}
+  \[
+   \tAmp_{2B}=\tAmp_2+R(\zetahat^2)\tBmp_1,\qquad
+   \tAmp_{12B}=\tAmp_{12}-R(\zetahat^2)\tBmp_8.
+  \]
+  The componentwise inversions assume $b^2\ne0$, $\eta v^1\ne0$ and $\eta v^3\ne0$.
+  At singular geometries, use the original correlator system and its symmetry limits.
+  \figsrc{Thesis amplitude mapping, with the $\eta$ cancellation applied consistently to both real and imaginary parts.}
+\end{frame}
