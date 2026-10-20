@@ -5,14 +5,14 @@
 \begin{frame}{Definition of TMDs}
   \begin{itemize}
     \item Nucleon with $P^+\gg\mN$, $\vprp P=0$: $x=k^+/P^+$ and $\vprp k$ are boost invariant along $z$.
-    \item Gauge-invariant bilocal operator, divided by the soft factor $\widetilde{\softf}$ (rapidity divergences). Wilson-line geometry, rapidity-regulator and renormalization-scale arguments are held fixed and suppressed below:
+    \item Gauge-invariant bilocal operator, divided by the soft factor $\widetilde{\softf}$ (rapidity divergences):
   \end{itemize}
-  \[ \Phi^{[\Gamma]}(\kei,P,S)\equiv\int \frac{d^4 \bvec}{(2\pi)^4}\, e^{i \kei\cdot \bvec}\,
-     \frac{\overbrace{\tfrac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \WlineC{\mathcal{C}_\bvec}\ q(\bvec)\ \ket{P,S}}^{\textstyle \equiv\ \widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S)}}{\widetilde{\softf}(\bvec^2)} \]
+  \[ \Phi^{[\Gamma]}(\kei,P,S;\ldots)\equiv\int \frac{d^4 \bvec}{(2\pi)^4}\, e^{i \kei\cdot \bvec}\,
+     \frac{\overbrace{\tfrac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \WlineC{\mathcal{C}_\bvec}\ q(\bvec)\ \ket{P,S}}^{\textstyle \equiv\ \widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}}{\widetilde{\softf}(\bvec^2;\ldots)} \]
   \begin{itemize}
     \item Integrating over $k^-$ sets $\bvec^+=0$:
   \end{itemize}
-  \[ \Phi^{[\Gamma]}(x,\vprp{k};P,S)=\int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+}\ e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}}\,\frac{\widetilde \Phi_\unsub^{[\Gamma]}}{\widetilde{\softf}}\Big|_{\bvec^+=0} \]
+  \[ \Phi^{[\Gamma]}(x,\vprp{k};P,S;\ldots)=\int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+}\ e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}}\,\frac{\widetilde \Phi_\unsub^{[\Gamma]}}{\widetilde{\softf}}\Big|_{\bvec^+=0} \]
   \keymsg{$x \leftrightarrow \bvec \tcdot P$ \ and \ $\vprp{k} \leftrightarrow \vprp{b}$ are Fourier pairs. \qquad
   $\Phi^{[\gamma^+]} = f_1 - \dfrac{\myeps_{ij}\, k_{i}\, S_{j}}{\mN}\ f_{1T}^\prp$}
 \end{frame}
@@ -29,7 +29,7 @@
   \begin{itemize}
     \item $\tilde f_1^{(0)}$: unpolarized; \ $\tilde f_{1T}^{\perp(1)}$: first $\vprp k$-moment of the Sivers function.
     \item $f_{1T}^{\perp(1)}(x)$ diverges without extra regularization (high-$\vprp k$ tail), so we \textbf{stay at finite $|\vprp b|$}.
-    \item Finite $|\vprp b|$ provides Bessel weighting. The correlator still requires ultraviolet and rapidity renormalization. We reach $x$ through $\bvec\tcdot P$.
+    \item At finite $|\vprp b|$ the integrals converge, and $x$ is reached through $\bvec\tcdot P$.
   \end{itemize}
 \end{frame}
 
@@ -39,7 +39,7 @@
     \begin{column}{0.55\textwidth}
       \begin{itemize}
         \item Staple-shaped link $\mathcal U[0,\eta v,\eta v+\bvec,\bvec]$: legs along $v$ of length $\eta|v|$, joined at the far end.
-        \item Large staple extent: SIDIS for $\eta v\tcdot P\to+\infty$ and Drell--Yan for $\eta v\tcdot P\to-\infty$.
+        \item $\eta\to\infty$: SIDIS ($\eta v\tcdot P\to+\infty$) or Drell--Yan ($\eta v\tcdot P\to-\infty$) staple.
         \item On the lattice $\bvec$ and $v$ are purely spatial (space-like). Collins--Soper parameter:
       \end{itemize}
       \[ \zetahat \equiv \frac{\zeta}{2\mN}=\frac{v \cdot P}{\sqrt{|v^2|}\, \sqrt{P^2}} = \sinh(y_P - y_v) \]
@@ -65,49 +65,21 @@
   \keymsg{$\tAmp_i=\tAmp_i^{\text{Re}}+i\tAmp_i^{\text{Im}}$ \ are complex, with \ $\tAmp_i^{\text{Re}}$: even in $\bvec$, \quad $\tAmp_i^{\text{Im}}$: odd in $\bvec$ \quad (same for $\tBmp_i$)}
 \end{frame}
 
-% Full vector decomposition, with no suppressed tensor structures.
-\begin{frame}{Complete vector-correlator decomposition}
+% Slide 18
+\begin{frame}{Correlator parametrization}
   \small
-  \begin{align*}
-  \frac12\widetilde\Phi_{\unsub}^{[\gamma^\mu]}
-   ={}&P^\mu\tAmp_2-i\mN^2 b^\mu\tAmp_3
-       -i\mN\epsilon^{\mu\nu\alpha\beta}P_\nu b_\alpha S_\beta\tAmp_{12}\\
-   &+\frac{\mN^2}{v\cdot P}v^\mu\tBmp_1
-       +\frac{\mN}{v\cdot P}\epsilon^{\mu\nu\alpha\beta}P_\nu v_\alpha S_\beta\tBmp_7\\
-   &-\frac{i\mN^3}{v\cdot P}\epsilon^{\mu\nu\alpha\beta}b_\nu v_\alpha S_\beta\tBmp_8\\
-   &-\frac{\mN^3}{v\cdot P}(b\cdot S)\epsilon^{\mu\nu\alpha\beta}P_\nu b_\alpha v_\beta\tBmp_9\\
-   &-\frac{i\mN^3}{(v\cdot P)^2}(v\cdot S)\epsilon^{\mu\nu\alpha\beta}P_\nu b_\alpha v_\beta\tBmp_{10}.
-  \end{align*}
+  \[ \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\unsub} = P^\mu\, \tAmp_2 - i \mN^2 \bvec^\mu\, \tAmp_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tAmp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \tBmp_1 + \ldots - \frac{ i \mN^3}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \bvec_\nu v_\alpha S_\beta\, \tBmp_8 + \ldots \]
+  \normalsize
   \begin{itemize}
-    \item All eight allowed structures of this vector channel are retained.
-    \item Each amplitude is a function of
-    $\big(b\cdot b,\ b\cdot P,\ (v\cdot b)/(v\cdot P),\ -1/(\mN\zetahat)^2,\ \eta v\cdot P\big)$.
-    \item Here $b\cdot b$ is the Minkowski square. A spatial component $b^2$ later denotes the second component, not this invariant.
+    \item The amplitudes depend on the invariants: \ $\tAmp_i\big(\bvec^2,\ \bvec \tcdot P,\ \tfrac{v\tcdot \bvec}{v\tcdot P},\ -\tfrac{1}{(\mN\zetahat)^2},\ \eta v \tcdot P\big)$
+    \item In the TMD frame ($\bvec^+=0$, $\vprp v=\vprp P=0$) the third argument is fixed:
   \end{itemize}
-  \figsrc{Thesis, TMD framework, vector parametrization; Musch et al., Phys. Rev. D 85, 094510 (2012).}
-\end{frame}
-
-\begin{frame}{The two amplitude combinations entering the Sivers shift}
-  In the TMD frame, $b^+=0$ and $\vprp v=\vprp P=0$ fix the third invariant:
-  \[
-  \frac{v\cdot b}{v\cdot P}=(b\cdot P)\frac{R(\zetahat^2)}{\mN^2},
-  \qquad R(\zetahat^2)=1-\sqrt{1+\zetahat^{-2}}.
-  \]
-  The $\gamma^+$ projection becomes
-  \[
-  \frac{1}{2P^+}\widetilde\Phi_{\unsub}^{[\gamma^+]}
-  =\tAmp_{2B}+i\mN\epsilon_{ij}\vect b_i\vect S_j\tAmp_{12B}.
-  \]
-  \[
-    \boxed{\tAmp_{2B}=\tAmp_2+R(\zetahat^2)\tBmp_1},
-    \qquad
-    \boxed{\tAmp_{12B}=\tAmp_{12}-R(\zetahat^2)\tBmp_8}.
-  \]
+  \[ \frac{v \tcdot \bvec}{v \tcdot P} = \bvec \tcdot P\, \frac{R(\zetahat^2)}{\mN^2}, \qquad R(\zetahat^2) \equiv 1- \sqrt{1 + \zetahat^{-2}} \]
   \begin{itemize}
-    \item These combinations follow from the full vector decomposition.
-    \item We determine them from the four Euclidean vector channels, after path averaging and interpolation.
+    \item For $\Gamma=\gamma^+$ two combinations survive:
   \end{itemize}
-  \figsrc{Thesis, TMD framework, TMD-frame reduction; Musch et al. (2012).}
+  \[ \frac{1}{2 P^+}\widetilde \Phi^{[\gamma^+]}_{\unsub} = \tAmp_{2B} + i \mN \epsilon_{ij}\, \vect{\bvec}_i \vect{S}_j\, \tAmp_{12B}, \qquad
+     \tAmp_{2B} \equiv \tAmp_2 + R(\zetahat^2) \tBmp_1, \quad \tAmp_{12B} \equiv \tAmp_{12} - R(\zetahat^2) \tBmp_8 \]
 \end{frame}
 
 % Slide 19
@@ -116,7 +88,7 @@
     \item Average $k_y$ of unpolarized quarks in a nucleon polarized along $\hat x$ ($T$: transversely polarized nucleon, $U$: unpolarized quark), generalized to finite $|\vprp b|$:
   \end{itemize}
   \begin{block}{}
-  \[ \langle k_y\rangle_{TU}(\vprp{b}^2;\zetahat,\eta v\tcdot P) \equiv \mN\,\frac{\tilde f_{1T}^{\perp[1](1)}(\vprp{b}^2)}{\tilde f_1^{[1](0)}(\vprp{b}^2)}
+  \[ \langle k_y\rangle_{TU}(\vprp{b}^2;\zetahat,\eta v\tcdot P) \equiv \mN\,\frac{\tilde f_{1T}^{\perp[1](1)}(\vprp{b}^2;\ldots)}{\tilde f_1^{[1](0)}(\vprp{b}^2;\ldots)}
      = -\mN\,\frac{\tAmp_{12B}(-\vprp{b}^2,0,0,-1/(\mN\zetahat)^2,\eta v\tcdot P)}{\tAmp_{2B}(-\vprp{b}^2,0,0,-1/(\mN\zetahat)^2,\eta v\tcdot P)} \]
   \end{block}
   \begin{itemize}

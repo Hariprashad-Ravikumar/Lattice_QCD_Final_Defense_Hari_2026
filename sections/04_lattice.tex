@@ -50,16 +50,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{The elementary plaquette in the thesis}
-  \centering
-  \includegraphics[width=.62\linewidth,height=.65\textheight,keepaspectratio]{LM_fig1_1_plaquette.png}
-  \[
-   P_{\mu\nu}(x)=U_\mu(x)U_\nu(x+\hat\mu)
-                 U_\mu^\dagger(x+\hat\nu)U_\nu^\dagger(x).
-  \]
-  \figsrc{Thesis, Lattice QCD methodology, original plaquette figure.}
-\end{frame}
-
 % Slide 10
 \begin{frame}{Path integral, Wick contractions and Monte Carlo}
   \quick
@@ -109,108 +99,18 @@
   \end{columns}
 \end{frame}
 
-% Local insertion and complete spectral construction.
-\begin{frame}{Nucleon three-point function: source, insertion and sink}
-  \small
-  \[
-  \mathcal O_\Gamma(\vect x_1,\tau)=\bar q(\vect x_1,\tau)\Gamma q(\vect x_1,\tau),
-  \qquad 0<\tau<t,\qquad \vect q=\vect p'-\vect p.
-  \]
-  \begin{align*}
-  G(t,\tau;\vect p,\vect p')={}&a^6\sum_{\vect x_2,\vect x_1}
-    e^{-i\vect p'\cdot(\vect x_2-\vect x_1)}e^{-i\vect p\cdot\vect x_1}
-    \Gamma^{\rm 3pt}_{\beta\alpha}\\
-  &\times\big\langle\chi_\alpha(\vect x_2,t)\,
-    \mathcal O_\Gamma(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle.
-  \end{align*}
+% Slide 12
+\begin{frame}{Nucleon three-point function of a local operator}
+  \quick
   \begin{itemize}
-    \item $\bar\chi$ creates nucleon states at the source. The operator acts at $\tau$, and $\chi$ annihilates the states at the sink.
-    \item The sink sum projects $\vect p'$. The insertion sum projects the momentum transfer through $e^{i\vect q\cdot\vect x_1}$.
-    \item $\Gamma$ specifies the inserted quark bilinear. $\Gamma^{\rm 3pt}$ projects the nucleon spin.
-    \item The connected contraction inserts the operator on a nucleon quark line. Disconnected quark loops cancel for $u-d$ in the isospin limit.
+    \item Insert $\mathcal O_\Gamma(x)=\bar q(x)\,\Gamma\,q(x)$ at time $\tau$ between source ($0$) and sink ($t$):
   \end{itemize}
-  \figsrc{Thesis, Lattice QCD methodology, local three-point functions; Lin (2014), Sec. 3.}
-\end{frame}
-
-\begin{frame}{Three-point function: complete spectral sum}
-  \small
-  With relativistic normalization, insert states on both sides of $\mathcal O$:
-  \begin{align*}
-  G={}&\sum_{n,n'}\sum_{s,s'}
-   \frac{e^{-E_{n'}(\vect p')(t-\tau)}e^{-E_n(\vect p)\tau}}
-        {4E_{n'}(\vect p')E_n(\vect p)}\,\Gamma^{\rm 3pt}_{\beta\alpha}\\
-  &\times\langle\Omega|\chi_\alpha|N_{n'}(\vect p',s')\rangle
-   \langle N_{n'}(\vect p',s')|\mathcal O(\vect q)|N_n(\vect p,s)\rangle\\
-  &\times\langle N_n(\vect p,s)|\bar\chi_\beta|\Omega\rangle.
-  \end{align*}
-  \[
-  \langle\Omega|\chi_\alpha|N(\vect p,s)\rangle=\sqrt{Z(\vect p)}\,u_\alpha(\vect p,s),
-  \quad
-  \langle N'|\mathcal O|N\rangle=\bar u(\vect p',s')\mathcal J u(\vect p,s).
-  \]
+  \[ G(t,\tau;\vect p,\vect p')=a^6\!\sum_{\vect x_2,\vect x_1}\!e^{-i\vect p'\cdot(\vect x_2-\vect x_1)}e^{-i\vect p\cdot\vect x_1}\,\Gamma^{\rm 3pt}_{\beta\alpha}\big\langle\chi_\alpha(\vect x_2,t)\,\mathcal O(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle \]
   \begin{itemize}
-    \item $n,n'$ include ground and excited states on the source and sink sides.
-    \item Both $\tau$ and $t-\tau$ must be large compared with the inverse excitation gaps for ground-state dominance.
+    \item Ground state for $0\ll\tau\ll t$; connected part via the \textbf{sequential propagator} through the sink; disconnected part cancels in $u-d$ (isospin limit).
+    \item Forward kinematics ($\vect p'=\vect p$): the ratio to the two-point function removes overlaps and time dependence:
   \end{itemize}
-  \figsrc{Thesis, Lattice QCD methodology, spectral decomposition; Lin (2014), Eqs. (3.80)--(3.81).}
-\end{frame}
-
-\begin{frame}{Forward matrix element and plateau extraction}
-  \small
-  For $\vect p'=\vect p$, write $E=E(\vect p)$ and $\Lambda(p)=-i\not\!p+\mN$,
-  with Euclidean $p=(\vect p,iE)$.
-  \begin{align*}
-  G_{00}(t,\tau;\vect p,\vect p)
-   &=\frac{|Z(\vect p)|e^{-Et}}{4E^2}
-     \Tr[\Gamma^{\rm 3pt}\Lambda(p)\mathcal J\Lambda(p)],\\
-  C_{00,\Gamma^+}(t,\vect p)
-   &=\frac{|Z(\vect p)|e^{-Et}}{2E}\Tr[\Gamma^+\Lambda(p)],
-   \qquad\Gamma^+=\frac{1+\gamma_4}{2}.
-  \end{align*}
-  \[
-  R(t,\tau)=\frac{G(t,\tau)}{C_{\Gamma^+}(t)}
-    \xrightarrow{\tau,\,t-\tau\to\infty}
-  \frac{\Tr[\Gamma^{\rm 3pt}\Lambda(p)\mathcal J\Lambda(p)]}
-       {2E\,\Tr[\Gamma^+\Lambda(p)]}.
-  \]
-  \begin{itemize}
-    \item $G_{00}$ and $C_{00}$ denote the ground-state terms. The overlaps and $e^{-Et}$ cancel in their ratio.
-    \item The measured ratio approaches a $\tau$-independent plateau. Finite separations retain excited-state contamination.
-    \item A sequential-source inversion fixes the sink time, momentum and spin projector while allowing insertion positions to vary.
-  \end{itemize}
-  \figsrc{Thesis, Lattice QCD methodology, ratio and sequential propagators; Lin (2014).}
-\end{frame}
-
-\begin{frame}{Three-point function: skeleton diagram}
-  \centering
-  \begin{tikzpicture}[>=Stealth,scale=1.0,
-      qline/.style={thick,postaction={decorate},decoration={markings,mark=at position 0.55 with {\arrow{Stealth}}}}]
-    % time axis
-    \draw[->,gray] (-0.6,-2.6) -- (10.2,-2.6) node[right,gray] {$t$};
-    \foreach \x/\l in {0/{0 (source)},4.8/{\tau},9.6/{t (sink)}} \draw[gray] (\x,-2.5)--(\x,-2.7) node[below,font=\small] {$\l$};
-    % source and sink blobs
-    \fill[blue!25,draw=blue!60!black,thick] (0,0) ellipse (0.45 and 1.5);
-    \fill[blue!25,draw=blue!60!black,thick] (9.6,0) ellipse (0.45 and 1.5);
-    \node[blue!60!black] at (0,-1.9) {$\bar\chi_\beta(\vect 0,0)$};
-    \node[blue!60!black] at (9.6,-1.9) {$\chi_\alpha(\vect x_2,t)$};
-    % spectator quarks
-    \draw[qline] (0.4,0.7) -- (9.2,0.7);
-    \draw[qline] (0.4,0.0) -- (9.2,0.0);
-    \node[font=\small] at (4.8,1.05) {spectator quarks};
-    % active quark through the operator
-    \draw[qline,red!70!black] (0.4,-0.7) -- (4.5,-0.7);
-    \draw[qline,red!70!black] (5.1,-0.7) -- (9.2,-0.7);
-    \node[fill=red!15,draw=red!70!black,thick,circle,inner sep=3pt] at (4.8,-0.7) {$\mathcal O_\Gamma$};
-    \node[red!70!black,font=\small] at (2.4,-1.15) {propagator $S(\vect x_1,\tau;0)$};
-    \node[red!70!black,font=\small] at (7.2,-1.15) {sequential propagator};
-    \draw[gray,dashed] (4.8,-2.5)--(4.8,1.3);
-    \node[font=\small] at (4.8,1.6) {$\mathcal O(\vect x_1,\tau)=\bar q\,\Gamma\,q$};
-  \end{tikzpicture}
-  \figsrc{Existing schematic of the connected contraction; topology as in thesis, Lattice QCD methodology (Lin, 2014).}
-  \begin{itemize}\footnotesize
-    \item Connected topology: one quark line (red) carries the operator insertion. Sum over operator position $\vect x_1$ at fixed $\tau$ projects the momentum transfer; the sink sum projects $\vect p'$.
-    \item For the TMD operator the single vertex is replaced by the non-local $\bar q(0)\,\Gamma\,\mathcal U\,q(\bvec)$ with a staple gauge link (next slide).
-  \end{itemize}
+  \[ R=\frac{G_\Gamma(t,\tau;\vect p,\vect p)}{C_{\Gamma^+}(t,\vect p)}\ \xrightarrow{\ 0\ll\tau\ll t\ }\ \frac{\Tr\big[\Gamma^{\rm 3pt}\big(-i{\not\!p}+m\big)\,\mathcal J\,\big(-i{\not\!p}+m\big)\big]}{2E(\vect p)\,\Tr\big[\Gamma^+\big(-i{\not\!p}+m\big)\big]} \]
 \end{frame}
 
 % Slide 13
