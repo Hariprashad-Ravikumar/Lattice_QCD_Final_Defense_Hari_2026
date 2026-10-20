@@ -99,26 +99,102 @@
   \end{columns}
 \end{frame}
 
-% Slide 12
-\begin{frame}{Nucleon three-point function of a local operator}
-  \quick
-  \begin{itemize}
-    \item Insert $\mathcal O_\Gamma(x)=\bar q(x)\,\Gamma\,q(x)$ at time $\tau$ between source ($0$) and sink ($t$):
-  \end{itemize}
-  \[ G(t,\tau;\vect p,\vect p')=a^6\!\sum_{\vect x_2,\vect x_1}\!e^{-i\vect p'\cdot(\vect x_2-\vect x_1)}e^{-i\vect p\cdot\vect x_1}\,\Gamma^{\rm 3pt}_{\beta\alpha}\big\langle\chi_\alpha(\vect x_2,t)\,\mathcal O(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle \]
-  \begin{itemize}
-    \item Ground state for $0\ll\tau\ll t$; connected part via the \textbf{sequential propagator} through the sink; disconnected part cancels in $u-d$ (isospin limit).
-    \item Forward kinematics ($\vect p'=\vect p$): the ratio to the two-point function removes overlaps and time dependence:
-  \end{itemize}
-  \[ R=\frac{G_\Gamma(t,\tau;\vect p,\vect p)}{C_{\Gamma^+}(t,\vect p)}\ \xrightarrow{\ 0\ll\tau\ll t\ }\ \frac{\Tr\big[\Gamma^{\rm 3pt}\big(-i{\not\!p}+m\big)\,\mathcal J\,\big(-i{\not\!p}+m\big)\big]}{2E(\vect p)\,\Tr\big[\Gamma^+\big(-i{\not\!p}+m\big)\big]} \]
+% Slide 12. Diagram: Can et al., LNP 889 (2015), Fig. 3.8,
+% printed p. 84 / PDF p. 97 of the local Lin--Meyer reference.
+% Vector crop in PDF points: 266 56 373 149. Labels below are added in LaTeX.
+\begin{frame}{Nucleon three-point function}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{itemize}
+        \item The source $\bar\chi$ creates a nucleon at $0$; the sink $\chi$ annihilates it at $t$. Insert $\mathcal O_\Gamma=\bar q\,\Gamma\,q$ at $0<\tau<t$.
+        \item The three lines are quark propagators $S=\mathcal M^{-1}$ ($u,u,d$). In a \textbf{connected contraction}, the insertion probes one line.
+        \item \textbf{Sequential source through the sink:} combine forward propagators at fixed sink time, momentum and spin projector; another inversion reaches all insertion points.
+        \item Disconnected insertions form a separate quark loop. They cancel in $u-d$ for $m_u=m_d$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[inner sep=0] (image) {\includegraphics[width=0.62\linewidth]{nucleon_3pt_LinMeyer_fig3_8.pdf}};
+        \node[font=\scriptsize, anchor=south, align=center] at (image.north)
+          {wavy line: operator insertion\\$\mathcal O_\Gamma(\vect x_1,\tau)=\bar q\,\Gamma\,q$};
+        \node[font=\scriptsize, anchor=east, align=center] at ($(image.south west)!0.29!(image.north west)$)
+          {source\\$0$};
+        \node[font=\scriptsize, anchor=west, align=center] at ($(image.south east)!0.29!(image.north east)$)
+          {sink\\$t$};
+        \node[font=\scriptsize, anchor=west] at ($(image.south west)!0.60!(image.north east)$)
+          {$\tau$};
+        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.22!(image.south east)$)
+          {incoming $\vect p$};
+        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.78!(image.south east)$)
+          {outgoing $\vect p'$};
+      \end{tikzpicture}\\[3mm]
+      \figsrc{K.~U.~Can et al., ``Hadron Structure on the Lattice,''\\
+        in Lin \& Meyer (eds.), 2015, Fig.~3.8, p.~84.}
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  \[
+    \begin{aligned}
+      G_\Gamma(t,\tau;\vect p,\vect p')={}&a^6\!\sum_{\vect x_2,\vect x_1}
+      e^{-i\vect p'\cdot(\vect x_2-\vect x_1)}e^{-i\vect p\cdot\vect x_1}
+      \,\Gamma^{\rm 3pt}_{\beta\alpha}\\[-1mm]
+      &\times\big\langle\chi_\alpha(\vect x_2,t)\,
+      \mathcal O_\Gamma(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle .
+    \end{aligned}
+  \]
+  \centering
+  {\small $\Gamma$: Dirac matrix in the operator;\qquad
+    $\Gamma^{\rm 3pt}$: nucleon spin projector;\qquad $\vect q=\vect p'-\vect p$.}
 \end{frame}
 
-% Slide 13
+% Slide 13. Normalization follows thesis Eqs. c3pt_ground and ratio_forward.
+\begin{frame}{Extracting the nucleon matrix element}
+  With $E=E(\vect p)$, $E'=E(\vect p')$ and $K(p)=-i{\not\!p}+m$, the ground-state term is
+  \[
+    G_\Gamma\simeq
+    \frac{\sqrt{Z(\vect p')}\sqrt{Z(\vect p)}^{\,*}}{4E'E}\,
+    \underbrace{e^{-E'(t-\tau)}e^{-E\tau}}_{\text{propagation after / before the insertion}}\,
+    \Tr\!\left[\Gamma^{\rm 3pt}K(p')\,\mathcal J\,K(p)\right].
+  \]
+  \vspace{-2mm}
+  \[
+    \langle N(\vect p',s')|\mathcal O_\Gamma(\vect q)|N(\vect p,s)\rangle
+    =\bar u(\vect p',s')\,\mathcal J\,u(\vect p,s).
+  \]
+  \begin{itemize}
+    \item Ground-state isolation requires \textbf{both} $\Delta E\,\tau\gg1$ and
+      $\Delta E'(t-\tau)\gg1$: suppress excited states on either side of the insertion.
+    \item \textbf{Forward kinematics} ($\vect p'=\vect p$):
+      $e^{-E(t-\tau)}e^{-E\tau}=e^{-Et}$. The same overlap $|Z(\vect p)|$
+      and exponential occur in $C_{\Gamma^+}(t,\vect p)$.
+  \end{itemize}
+  \[
+    R(t,\tau)=\frac{G_\Gamma(t,\tau;\vect p,\vect p)}{C_{\Gamma^+}(t,\vect p)}
+    \ \longrightarrow\
+    \frac{\Tr[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}
+         {2E\,\Tr[\Gamma^+K(p)]}
+    =\frac{\Tr[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}{4E(E+m)} .
+  \]
+  \begin{itemize}
+    \item The \textbf{plateau in $\tau$} isolates the projected matrix element with the
+      kinematic normalization above. Here $\Gamma^+=\tfrac12(1+\gamma_4)$ and $p_4=iE$.
+    \item Larger source--sink separation suppresses excited states, but increases
+      statistical noise; plateau stability must be checked.
+  \end{itemize}
+  \figsrc{Can et al., in Lin \& Meyer (eds.), 2015, Sec.~3.3; thesis lattice methodology.}
+\end{frame}
+
+% Slide 14
 \begin{frame}{Non-local staple three-point function: what we compute}
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
       \begin{itemize}
-        \item TMD operator: $\bar q(0)\,\Gamma\,\mathcal U[0,\eta v,\eta v+\bvec,\bvec]\,q(\bvec)$: quark separation $\bvec$, staple direction $v$, staple length $\eta|v|$. Both purely spatial, so the operator sits in one time slice.
+        \item Replace the local insertion by the \textbf{non-local TMD operator}
+          $\bar q(0)\,\Gamma\,\mathcal U[0,\eta v,\eta v+\bvec,\bvec]\,q(\bvec)$.
+          The separated quark fields are joined by a gauge link.
+        \item Quark separation $\bvec$, staple direction $v$, staple length $\eta|v|$:
+          $\bvec$ and $v$ are purely spatial, so the insertion stays in one time slice.
         \item On the lattice the staple is a step-wise path $\mathcal C^{\rm lat}$:
       \end{itemize}
       \[ \begin{aligned} C^{\rm 3pt}_{\Gamma}(\tau,\vect P;\mathcal C^{\rm lat})=\frac{1}{\hat L^3}\sum_{z}\Gamma^{\rm 3pt}_{\beta\alpha}\big\langle&\chi_\alpha(t_{\rm snk},\vect P)\,O^{\rm lat}_{\Gamma}(\mathcal C^{\rm lat};z,\tau)\\ &\times\bar\chi_\beta(t_{\rm src},\vect P)\big\rangle \end{aligned} \]
