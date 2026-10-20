@@ -2,27 +2,30 @@
 \section{Lattice data}
 
 % Slide 20
-\begin{frame}{The Sivers shift as a function of $x$}
+\begin{frame}{The $x$-dependent Sivers shift: Fourier representation}
+  \centering
+  \[\resizebox{0.72\textwidth}{!}{$\displaystyle \langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
+	\ \equiv\ \mN \frac{\tilde f_{1T}^{\perp(1)}(\vprp{\bvec}^2,x;\zetahat,\ldots,\eta v \tcdot P)}{\tilde f_1^{(0)}(\vprp{\bvec}^2,x;\zetahat,\ldots,\eta v \tcdot P)}  $}\]
+  \[\resizebox{0.98\textwidth}{!}{$\displaystyle =-m_{N} \frac{\int d(b\cdot P)e^{ix(b\cdot P)} \tAmp_{12B}(\bvec^2,\bvec \tcdot P,(\bvec \tcdot P) R(\zetahat^2)/\mN^2,-1/(\mN\zetahat)^2,\eta v \tcdot P)}{\int d(b\cdot P)e^{ix(b\cdot P)}\tAmp_{2B}(\bvec^2,\bvec \tcdot P,(\bvec \tcdot P) R(\zetahat^2)/\mN^2,-1/(\mN\zetahat)^2,\eta v \tcdot P)}  $}\]
+  \[\resizebox{0.68\textwidth}{!}{$\displaystyle =-m_{N} \frac{\int d(b\cdot P)e^{ix(b\cdot P)} \left[\tAmp_{12B}^{\text{Re}}(\cdots)+i\tAmp_{12B}^{\text{Im}}(\cdots)\right]}{\int d(b\cdot P)e^{ix(b\cdot P)}\left[\tAmp_{2B}^{\text{Re}}(\cdots)+i\tAmp_{2B}^{\text{Im}}(\cdots)\right]}$}\]
   \small
-  \[ \langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,\textcolor{blue}{x},\zetahat,\eta v \tcdot P)
-     \equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}}
-     = -\mN \frac{\int d(\bvec\cdot P)\,e^{ix(\bvec\cdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P,\ldots)}{\int d(\bvec\cdot P)\,e^{ix(\bvec\cdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P,\ldots)} \]
-  \normalsize
-  \begin{itemize}
-    \item The amplitudes are complex, $\tAmp=\tAmp^{\text{Re}}+i\tAmp^{\text{Im}}$, and $e^{ix\,\bvec\cdot P}=\cos+i\sin$:
-  \end{itemize}
+  The Fourier transform in $b\tcdot P$ resolves the momentum fraction $x$.
+  Both $\tAmp_{2B}$ and $\tAmp_{12B}$ retain their real and imaginary components.
+\end{frame}
+
+\begin{frame}{The $x$-dependent Sivers shift: cosine and sine contributions}
+  \centering
   \small
-  \[ \int d(\bvec\tcdot P)\,e^{ix\,\bvec\cdot P}\big[\tAmp^{\text{Re}}+i\tAmp^{\text{Im}}\big]
-     = \int d(\bvec\tcdot P)\big[\cos\,\tAmp^{\text{Re}}-\sin\,\tAmp^{\text{Im}}\big]
-     + i\underbrace{\int d(\bvec\tcdot P)\big[\sin\,\tAmp^{\text{Re}}+\cos\,\tAmp^{\text{Im}}\big]}_{=\,0\ \text{(odd integrand)}} \]
-  \normalsize
-  \begin{itemize}
-    \item $\tAmp^{\text{Re}}$ even, $\tAmp^{\text{Im}}$ odd in $\bvec\tcdot P$ $\Rightarrow$ the imaginary part vanishes. The Sivers shift is \textbf{real}:
-  \end{itemize}
-  \begin{block}{}
-  \[ \langle \vect{k}_y \rangle_{TU}(x) = -\mN\, \frac{\tAmp_{12B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{12B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)}{\tAmp_{2B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{2B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)} \]
-  \end{block}
-  {\scriptsize with $\tAmp^{[x]\text{Re}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\cos(x\,\bvec\cdot P)\,\tAmp^{\text{Re}}$, \ $\tAmp^{[x]\text{Im}}\equiv\int\frac{d(\bvec\cdot P)}{2\pi}\sin(x\,\bvec\cdot P)\,\tAmp^{\text{Im}}$}
+  \[\resizebox{0.95\textwidth}{!}{$\displaystyle \langle\vect{k}_y\rangle_{TU}=-m_{N} \frac{\int d(b\cdot P)\left[\cos{\left(x(b\cdot P)\right)}+i\sin{\left(x(b\cdot P)\right)}\right] \left[\tAmp_{12B}^{\text{Re}}(\cdots)+i\tAmp_{12B}^{\text{Im}}(\cdots)\right]}{\int d(b\cdot P)\left[\cos{\left(x(b\cdot P)\right)}+i\sin{\left(x(b\cdot P)\right)}\right]\left[\tAmp_{2B}^{\text{Re}}(\cdots)+i\tAmp_{2B}^{\text{Im}}(\cdots)\right]}$}\]
+  \[\resizebox{0.95\textwidth}{!}{$\displaystyle =-m_{N} \frac{\int d(b\cdot P) \left[\cos{\left(x(b\cdot P)\right)}\tAmp_{12B}^{\text{Re}}(\cdots)-\sin{\left(x(b\cdot P)\right)}\tAmp_{12B}^{\text{Im}}(\cdots)\right]}{\int d(b\cdot P)\left[\cos{\left(x(b\cdot P)\right)}\tAmp_{2B}^{\text{Re}}(\cdots)-\sin{\left(x(b\cdot P)\right)}\tAmp_{2B}^{\text{Im}}(\cdots)\right]} $}\]
+  \[\resizebox{0.84\textwidth}{!}{$\displaystyle \boxed{\langle\vect{k}_y\rangle_{TU}=-m_{N} \frac{\left[\tAmp_{12B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{12B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)\right]}{\left[\tAmp_{2B}^{[x]\text{Re}}(b^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{2B}^{[x]\text{Im}}(b^2,x,\zetahat,\eta v \tcdot P)\right]}}$}\]
+  \footnotesize
+  $\tAmp^{\text{Re}}$ is even and $\tAmp^{\text{Im}}$ is odd in $b\tcdot P$:
+  the imaginary integrand is odd and integrates to zero on the symmetric domain.
+  \[
+    \tAmp_{iB}^{[x]\text{Re}}\equiv\int\frac{d(b\tcdot P)}{2\pi}\cos\!\big(x(b\tcdot P)\big)\tAmp_{iB}^{\text{Re}}(\cdots),\qquad
+    \tAmp_{iB}^{[x]\text{Im}}\equiv\int\frac{d(b\tcdot P)}{2\pi}\sin\!\big(x(b\tcdot P)\big)\tAmp_{iB}^{\text{Im}}(\cdots).
+  \]
 \end{frame}
 
 % Slide 21
@@ -240,23 +243,110 @@
   \end{itemize}
 \end{frame}
 
+% Explicit lattice-ratio systems (thesis Ch. 5).
+\begin{frame}{Lattice ratios in terms of complex amplitudes}
+  \centering
+  \resizebox{\textwidth}{!}{$\displaystyle
+\begin{pmatrix}
+        \rule{0pt}{16pt} R_{\Gamma(1)}\\
+        \rule{0pt}{16pt} R_{\Gamma(2)}\\
+        \rule{0pt}{16pt} R_{\Gamma(4)}\\
+        \rule{0pt}{16pt} R_{\Gamma(8)}
+    \end{pmatrix} = \begin{pmatrix}
+        \rule{0pt}{16pt} R_{[+i\gamma^1]}\\
+        \rule{0pt}{16pt} R_{[-i\gamma^2]}\\
+        \rule{0pt}{16pt} R_{[+i\gamma^3]}\\
+        \rule{0pt}{16pt} R_{[\gamma^0]}
+    \end{pmatrix} =2\begin{pmatrix}
+        \rule{0pt}{16pt} -i\frac{|\vec{P}^1|}{E_N}\, \tilde a_2+  \frac{\mN^2}{E_N} \bvec^1\, \tilde a_3+ i\frac{\mN^2}{E_N} \eta v^1\, \tilde b_1
+		-  \mN  \bvec^2 \, \tilde a_{12}+  \mN^3  \bvec^2 \eta^2 (v^3)^2 \tilde b_{10}\\
+         \rule{0pt}{16pt} -  \frac{\mN^2}{E_N} \bvec^2\, \tilde a_3
+		-  \mN   \bvec^1  \tilde a_{12}-i \mN \eta  v^1  \tilde b_7+ \mN^3  \bvec^1 \eta^2 (v^3)^2 \tilde b_{10}\\
+        \rule{0pt}{16pt} i\frac{\mN^2}{E_N} \eta v^3\, \tilde b_1-  \mN^3 \bvec^2 \eta^2 v^1 v^3\tilde b_{10}\\
+         \rule{0pt}{16pt}   \tilde a_2  - i \mN  \frac{|\vec{P}^1|}{E_N} \bvec^2  \tilde a_{12}- \frac{ i \mN^3}{E_N}  \bvec^2 \eta v^1  \tilde b_8+ \frac{i \mN^3}{E_N}  |\vec{P}^1| \bvec^2 \eta^2 (v^3)^2 \tilde b_{10}
+    \end{pmatrix}
+  $}
+\end{frame}
+
+\begin{frame}{Real and imaginary ratios at $+b^1$}
+  \centering
+  \resizebox{\textwidth}{!}{$\displaystyle
+\begin{pmatrix}
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(1)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(1)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(2)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(2)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(4)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(4)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(8)}\}^{[+b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(8)}\}^{[+b^1]}
+    \end{pmatrix} = 2\begin{pmatrix}
+     \rule{0pt}{16pt}   \frac{\mN^2}{E_N} \bvec^1\, \tilde a^{\text{Re}}_3-  \mN  \bvec^2 \, \tilde a^{\text{Re}}_{12}+  \mN^3  \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10} +\frac{|\vec{P}^1|}{E_N}\, \tilde a^{\text{Im}}_2- \frac{\mN^2}{E_N} \eta v^1\, \tilde b^{\text{Im}}_1\\
+      \rule{0pt}{16pt}  -\frac{|\vec{P}^1|}{E_N}\, \tilde a^{\text{Re}}_2+ \frac{\mN^2}{E_N} \eta v^1\, \tilde b^{\text{Re}}_1 + \frac{\mN^2}{E_N} \bvec^1\, \tilde a^{\text{Im}}_3-  \mN  \bvec^2 \, \tilde a^{\text{Im}}_{12}+  \mN^3  \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt}  -  \frac{\mN^2}{E_N} \bvec^2\, \tilde a^{\text{Re}}_3
+		-  \mN   \bvec^1  \tilde a^{\text{Re}}_{12}+ \mN^3  \bvec^1 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10}+\mN \eta v^1  \tilde b^{\text{Im}}_7 \\
+      \rule{0pt}{16pt} - \mN \eta v^1  \tilde b^{\text{Re}}_7 -  \frac{\mN^2}{E_N} \bvec^2\, \tilde a^{\text{Im}}_3
+		-  \mN   \bvec^1  \tilde a^{\text{Im}}_{12}+ \mN^3  \bvec^1 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt} -\mN^3 \bvec^2 \eta^2 v^1 v^3\tilde b^{\text{Re}}_{10}-\frac{\mN^2}{E_N} \eta v^3\, \tilde b^{\text{Im}}_1\\
+      \rule{0pt}{16pt} \frac{\mN^2}{E_N} \eta v^3\, \tilde b^{\text{Re}}_1 -\mN^3 \bvec^2 \eta^2 v^1 v^3\tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt}  \tilde a^{\text{Re}}_2 +  \mN  \frac{|\vec{P}^1|}{E_N} \bvec^2  \tilde a^{\text{Im}}_{12}+ \frac{  \mN^3}{E_N}  \bvec^2 \eta v^1  \tilde b^{\text{Im}}_8- \frac{ \mN^3}{E_N}  |\vec{P}^1| \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt} -  \mN  \frac{|\vec{P}^1|}{E_N} \bvec^2  \tilde a^{\text{Re}}_{12}- \frac{  \mN^3}{E_N}  \bvec^2 \eta v^1  \tilde b^{\text{Re}}_8+ \frac{ \mN^3}{E_N}  |\vec{P}^1| \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10}+\tilde a^{\text{Im}}_2
+    \end{pmatrix}
+  $}
+\end{frame}
+
+\begin{frame}{Real and imaginary ratios at $-b^1$}
+  \centering
+  \resizebox{\textwidth}{!}{$\displaystyle
+\begin{pmatrix}
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(1)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(1)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(2)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(2)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(4)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(4)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Re}\{ R_{\Gamma(8)}\}^{[-b^1]} \\
+        \rule{0pt}{16pt} \text{Im}\{ R_{\Gamma(8)}\}^{[-b^1]}
+    \end{pmatrix} = 2\begin{pmatrix}
+     \rule{0pt}{16pt}   \textcolor{red}{-}\frac{\mN^2}{E_N} \bvec^1\, \tilde a^{\text{Re}}_3-  \mN  \bvec^2 \, \tilde a^{\text{Re}}_{12}+  \mN^3  \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10} \textcolor{red}{-}\frac{|\vec{P}^1|}{E_N}\, \tilde a^{\text{Im}}_2\textcolor{red}{+} \frac{\mN^2}{E_N} \eta v^1\, \tilde b^{\text{Im}}_1\\
+      \rule{0pt}{16pt}  -\frac{|\vec{P}^1|}{E_N}\, \tilde a^{\text{Re}}_2+ \frac{\mN^2}{E_N} \eta v^1\, \tilde b^{\text{Re}}_1 + \frac{\mN^2}{E_N} \bvec^1\, \tilde a^{\text{Im}}_3\textcolor{red}{+} \mN  \bvec^2 \, \tilde a^{\text{Im}}_{12}\textcolor{red}{-} \mN^3  \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt}  - \frac{\mN^2}{E_N} \bvec^2\, \tilde a^{\text{Re}}_3
+		\textcolor{red}{+}  \mN   \bvec^1  \tilde a^{\text{Re}}_{12}\textcolor{red}{-} \mN^3  \bvec^1 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10}\textcolor{red}{-}\mN \eta v^1  \tilde b^{\text{Im}}_7 \\
+      \rule{0pt}{16pt} - \mN \eta v^1  \tilde b^{\text{Re}}_7 \textcolor{red}{+}  \frac{\mN^2}{E_N} \bvec^2\, \tilde a^{\text{Im}}_3
+		- \mN   \bvec^1  \tilde a^{\text{Im}}_{12} +\mN^3  \bvec^1 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt}-\mN^3 \bvec^2 \eta^2 v^1 v^3\tilde b^{\text{Re}}_{10}\textcolor{red}{+}\frac{\mN^2}{E_N} \eta v^3\, \tilde b^{\text{Im}}_1\\
+      \rule{0pt}{16pt} \frac{\mN^2}{E_N} \eta v^3\, \tilde b^{\text{Re}}_1 \textcolor{red}{+} \mN^3 \bvec^2 \eta^2 v^1 v^3\tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt}  \tilde a^{\text{Re}}_2 \textcolor{red}{-}  \mN  \frac{|\vec{P}^1|}{E_N} \bvec^2  \tilde a^{\text{Im}}_{12}\textcolor{red}{-} \frac{  \mN^3}{E_N}  \bvec^2 \eta v^1  \tilde b^{\text{Im}}_8\textcolor{red}{+} \frac{ \mN^3}{E_N}  |\vec{P}^1| \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Im}}_{10}\\
+      \rule{0pt}{16pt} - \mN  \frac{|\vec{P}^1|}{E_N} \bvec^2  \tilde a^{\text{Re}}_{12}- \frac{  \mN^3}{E_N}  \bvec^2 \eta v^1  \tilde b^{\text{Re}}_8 + \frac{ \mN^3}{E_N}  |\vec{P}^1| \bvec^2 \eta^2 (v^3)^2 \tilde b^{\text{Re}}_{10}\textcolor{red}{-}\tilde a^{\text{Im}}_2
+    \end{pmatrix}
+  $}
+\end{frame}
+
 % Slide 31
 \begin{frame}{Real and imaginary amplitudes from $\pm\vect b$}
   \begin{itemize}
-    \item Lattice form of the parametrization (finite $\eta$), with the measured ratios:
+    \item Form symmetric and antisymmetric combinations of the two measured systems:
   \end{itemize}
-  \small
-  \[ \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\unsub}=\frac{1}{2} R_{\gamma^{\mu}} E_N = P^\mu\, \tilde a_2 - i \mN^2 \bvec^\mu\, \tilde a_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tilde a_{12} + \mN^2 \eta v^\mu\, \tilde b_1 + \ldots \]
-  \normalsize
+  \[
+    R^{[b^1\text{-even}]}=\tfrac12\big(R^{[+b^1]}+R^{[-b^1]}\big),\qquad
+    R^{[b^1\text{-odd}]}=\tfrac12\big(R^{[+b^1]}-R^{[-b^1]}\big).
+  \]
+  \[
+    \Gamma(1)=[+i\gamma^1],\quad \Gamma(2)=[-i\gamma^2],\quad
+    \Gamma(4)=[+i\gamma^3],\quad \Gamma(8)=[\gamma^0].
+  \]
   \begin{itemize}
-    \item Evaluate at $+b_1$ and at the mirrored $-b_1$, for $\Gamma(1),\Gamma(2),\Gamma(4),\Gamma(8)=\gamma_1,\gamma_2,\gamma_3,\gamma_4$:
+    \item Each projection gives eight equations: real and imaginary parts of four Dirac structures.
+    \item The even system isolates the real parts of $\tilde a_2,\tilde b_1,\tilde a_{12},\tilde b_8$; the odd system isolates their imaginary parts. Some rows also contain $b^1$-weighted cross terms.
   \end{itemize}
-  \[ R^{[b^1\text{-even}]}=\tfrac{1}{2}\big(R^{[+b]} + R^{[-b]}\big)\ \Rightarrow\ \text{real parts}, \qquad
-     R^{[b^1\text{-odd}]}=\tfrac{1}{2}\big(R^{[+b]} - R^{[-b]}\big)\ \Rightarrow\ \text{imaginary parts} \]
-  \begin{itemize}
-    \item Each projection gives 8 linear equations (Re, Im of 4 Dirac structures). The even projection isolates the real parts of $\tilde a_2,\tilde b_1,\tilde a_{12},\tilde b_8$, the odd one their imaginary parts (some rows also carry $b^1\times$ cross terms).
-    \item Convert back: $\tAmp_i = \tilde a_i$, \ $\tBmp_i = (\eta v \tcdot P)^n\ \tilde b_i$ ($n$: power of $1/v\tcdot P$ in front of $\tBmp_i$), with $v \tcdot P = v^1 |P^1|$; $E_N$: nucleon energy.
-  \end{itemize}
+  \begin{block}{Convert the finite-link amplitudes}
+    \[
+      \tAmp_i=\tilde a_i,\qquad
+      \tBmp_i=(\eta v\tcdot P)^n\,\tilde b_i,\qquad
+      v\tcdot P=v^1|P^1|.
+    \]
+    $n$ is the power of $1/(v\tcdot P)$ multiplying $\tBmp_i$ in the parametrization; $E_N$ is the nucleon energy.
+  \end{block}
 \end{frame}
 
 % Slide 32
