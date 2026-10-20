@@ -1,0 +1,146 @@
+% ===================== Fitting methodologies (thesis Ch. 6) =====================
+\section{Fitting}
+
+% Slide 36
+\begin{frame}{Why a Gaussian model fails}
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \[ \tAmp_{iB}^{\text{Re}} = \gamma\, e^{-\alpha b_L^2-\beta b_T^2} \]\vspace{-3mm}
+      \[ = \gamma \exp\!\left[-\frac{\alpha-\beta}{P_{L}^2} (P\cdot b)^{2}-\beta\, b^{2}\right] \]
+      \begin{itemize}
+        \item The Fourier transform over $P\cdot b$ needs $\alpha-\beta>0$.
+        \item $\tAmp_{2B}^{\text{Re}}$, $P_L=-1$: \ $\alpha-\beta = -0.0427(27)$, $\chi^2/\text{dof}\approx 235$.
+      \end{itemize}
+      \keymsg{The data are wider along $\vect P$ than across it: the Gaussian \textbf{grows} in $P\cdot b$, and the transform diverges.}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Gaussian_A2B_Re_P1_FailedFit.pdf}\\
+      {\scriptsize Gaussian fit to $\tAmp_{2B}^{\text{Re}}$ ($P_L=-1$) vs $b_L$. For $\tAmp_{12B}^{\text{Re}}$: $\alpha-\beta = -0.022(25)$ (backup).}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 37
+\begin{frame}{Discretization effects: keep $|\vect b|\ge 3a$}
+  \centering
+  \includegraphics[width=0.85\linewidth]{A2B_Re_b_lessthan3_and_ge3.pdf}
+  \begin{itemize}
+    \item $P_L=-1$, $\eta|v|/a=9$: at $b^2/a^2=5$, $\tAmp_{2B}^{\text{Re}}$ rises by about 14\% with $|P\cdot b|$; at $b^2/a^2=20$ and $45$ it is flat within uncertainties.
+    \item Short distances carry UV discretization artifacts $\Rightarrow$ all fits use $|\vect b| = \sqrt{b_L^2+b_T^2}\ \ge 3a$.
+    \item Global fit in $(b_L, b_T, \eta)$, equivalently $(P\cdot b, b^2, \eta)$, with $\eta\in[6,10]$.
+  \end{itemize}
+\end{frame}
+
+% Slide 38
+\begin{frame}{Physics-informed symbolic regression (PySR)}
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item \texttt{PySR} searches over formulas for $\tAmp_{2B}^{\text{Re}}$ ($P_L=-1$, $|\vect b|\ge3a$). Our loss penalizes growth at large $b_L$:
+      \end{itemize}
+      \[ \mathcal{L} = \frac{\chi^2}{\text{dof}} + \epsilon\, \mathcal{P}_{\text{asymptotic}} \]
+      \begin{itemize}
+        \item No Gaussian among the best formulas. A simple, accurate one:
+      \end{itemize}
+      \[ \tAmp_{2B}^{\text{Re}} = \frac{39.71}{(1 + b_L^2 + b_T^2)^{1.39}}\, e^{-0.534\eta} \]
+      \begin{itemize}
+        \item What it told us: a \textbf{power-law tail} and a common $e^{-f\eta}$. These formulas depend on $b_L,b_T$ only through $b^2$, so PySR guides the form; it is not the final model.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{02_Gaussian_StraightLine_Test.pdf}\\
+      {\scriptsize On $\log\tAmp$ vs $b^2$ a Gaussian is a straight line; the data bend upward.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 39
+\begin{frame}{Failure of exponential decay}
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}
+        \item $e^{-c|\vect b|}$ describes $\tAmp_{2B}^{\text{Re}}$ \textbf{alone} over $3\le|\vect b|/a\le8.2$ about as well as the power law.
+        \item Separable forms (longitudinal profile in $P\cdot b$ $\times$ transverse profile), fit to all three amplitudes, lose the longitudinal decay in at least one amplitude or fit poorly.
+        \item $e^{-c|P\cdot b|}$ has a cusp at $P\cdot b=0$, which conflicts with $\tAmp_{2B}^{\text{Im}}\propto b_L$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{03_Exponential_b_StraightLine_Test.pdf}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 40
+\begin{frame}{Systematic exploration of the power law}
+  \begin{itemize}
+    \item One denominator couples $(P\cdot b)^2$ and $b^2$, smooth at $P\cdot b=0$:\quad $\big[1 + c(\eta)\,\tfrac{(P\cdot b)^2}{P_L^2} + d\,b^2\big]^{-j}$.
+  \end{itemize}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{A2B_c_eta_AllAsymptoticModels_P1.pdf}\\
+      {\scriptsize $c(\eta)$ for $\tAmp_{2B}^{\text{Re}}$ and candidate forms $c_1,\ldots,c_{10}$}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{A2B_d_eta_Independence_P1.pdf}\\
+      {\scriptsize $d(\eta)$: slope $0.00122(87)$, no $\eta$ dependence}
+      \begin{itemize}
+        \item $\tAmp_{2B}^{\text{Re}}$: $c(\eta)$ approaches an asymptote; $d$ constant.
+        \item $\tAmp_{12B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$: $c$, $d$ taken $\eta$-independent.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 41
+\begin{frame}{Candidate selection}
+  \begin{itemize}
+    \item Fit quality: $\chi^2/\text{dof}$ and AIC at fixed-$\eta$ slices and in the global $(b_L,b_T,\eta)$ fit.
+    \item \textbf{Antiquarks:} $\bar q(x) = -f_1(-x)$ for $x<0$. At larger momentum the model must give
+      \[ \tilde{f}^{(0)}_{1}(x\lesssim-0.2)=2\tAmp^{[x]}_{2B}(x\lesssim-0.2)\ \longrightarrow\ 0 \]
+      (involves both $\tAmp_{2B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$).
+    \item \textbf{$x$-integrated (Mellin moment) limit:} $\mN\int dx\,\tilde{f}_{1T}^{\perp(1)}\big/\int dx\,\tilde{f}_1^{(0)}$ must agree with earlier $\bvec\tcdot P=0$ lattice results (involves all three amplitudes).
+  \end{itemize}
+  \begin{block}{Selected models}
+    \small
+    \[ \tAmp_{2B}^{\text{Re}}=\frac{a\, e^{-f \eta}}{\left[1 + \left(d + c\left(1 - \frac{k_1}{\eta} - \frac{k_2}{\eta^2}\right)\right) b_L^2 + d\, b_T^2\right]^j} \]
+    \[ \tAmp_{12B}^{\text{Re}}=\frac{-a^{\prime} e^{-f \eta}}{\left[1 + (c^{\prime} + d^{\prime}) b_L^2 + d^{\prime} b_T^2\right]^{j^{\prime}}}, \qquad
+       \tAmp_{2B}^{\text{Im}}=\frac{a^{\prime\prime} b_L\, e^{-f \eta}}{\left[1 + (c^{\prime\prime} + d^{\prime\prime}) b_L^2 + d^{\prime\prime}b_T^2\right]^{j^{\prime\prime}}} \]
+  \end{block}
+\end{frame}
+
+% Slide 42
+\begin{frame}{Simultaneous fit: results at $P_L=-1$}
+  \centering
+  \includegraphics[height=0.62\textheight]{Combined_Pb_bsq_eta8_PL-1_WithFit_2D.pdf}
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item One fit to all three amplitudes with the full Jackknife covariance: \ $\chi^2=\sum_{ij}(\bar y-F)_i\, C^{-1}_{ij}\,(\bar y-F)_j$.
+        \item Common $e^{-f\eta}$: cancels in the Sivers ratio.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      {\scriptsize
+      \begin{tabular}{ccccc}
+        \toprule
+        $P_L$ & $-1$ & $-2$ & $-3$ & $-4$ \\
+        \midrule
+        $\chi^2/\text{DoF}$ & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ \\
+        \bottomrule
+      \end{tabular}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Slide 43
+\begin{frame}{From $\bvec\tcdot P$ to $x$ at $P_L=-1$}
+  \centering
+  \includegraphics[height=0.68\textheight]{FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-1.pdf}
+  \[ \tilde f_1^{(0)} = 2\big[\tAmp^{[x]\text{Re}}_{2B}-\tAmp^{[x]\text{Im}}_{2B}\big], \qquad \tilde f_{1T}^{\perp(1)} = -2\tAmp^{[x]\text{Re}}_{12B} \qquad (b^2=9a^2,\ \text{Jackknife bands}) \]
+\end{frame}

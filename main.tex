@@ -202,6 +202,8 @@
 \newcommand{\figsrc}[1]{\par\vspace{-1mm}{\tiny\color{gray}#1}}
 \definecolor{okgreen}{RGB}{0,128,60}
 \definecolor{badred}{RGB}{190,30,30}
+% small grey tag for slides meant to be shown quickly
+\newcommand{\quick}{\begin{tikzpicture}[remember picture,overlay]\node[anchor=north east, font=\tiny, text=gray, inner sep=2pt] at ([xshift=-1mm,yshift=-1mm]current page.north east) {quick};\end{tikzpicture}}
 
 \title[\texorpdfstring{$x$}{x}-dependence of the Sivers shift from lattice QCD]{\textbf{Dependence of the Sivers TMD Shift on\\ Quark Longitudinal Momentum Fraction $x$\\ from Lattice QCD}}
 \subtitle{PhD Dissertation Defense}
@@ -225,14 +227,15 @@
 
 \input{sections/01_opening}
 \input{sections/02_motivation}
-\input{sections/03_lattice}
-\input{sections/04_sivers_shift}
-\input{sections/05_kinematics}
-\input{sections/06_model_ladder}
-\input{sections/07_results}
-\input{sections/08_close}
+\input{sections/03_qcd}
+\input{sections/04_lattice}
+\input{sections/05_tmd_correlator}
+\input{sections/06_lattice_data}
+\input{sections/07_fitting}
+\input{sections/08_extrapolation}
+\input{sections/09_close}
 
 \appendix
-\input{sections/09_backup}
+\input{sections/10_backup}
 
 \end{document}

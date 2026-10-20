@@ -1,35 +1,18 @@
-% ===================== VI. Results =====================
-\section{Results}
+% ===================== Extrapolations to the physical limit (thesis Ch. 7) =====================
+\section{Extrapolation}
 
-% Slide 25
-\begin{frame}{From $\bvec\tcdot P$ to $x$ at $P_L=-3$}
-  \centering
-  \includegraphics[width=0.95\linewidth, trim=0 0 0 280, clip]{FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf}
-  \begin{columns}[t]
-    \begin{column}{0.55\textwidth}
-      \[ \tilde f_1^{(0)} = 2\big[\tAmp^{[x]\text{Re}}_{2B}-\tAmp^{[x]\text{Im}}_{2B}\big], \qquad \tilde f_{1T}^{\perp(1)} = -2\tAmp^{[x]\text{Re}}_{12B} \]
-    \end{column}
-    \begin{column}{0.43\textwidth}
-      \begin{itemize}
-        \item Continuous $x$-dependence at $b^2=9a^2$; bands: Jackknife.
-        \item $x$-integrated: $\mN\!\int\! dx\,\tilde f_{1T}^{\perp(1)}/\!\int\! dx\,\tilde f_1^{(0)} = 0.236(32)$ GeV ($x\in(-\infty,\infty)$).
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Slide 26
+% Slide 44
 \begin{frame}{All four momenta: the result drifts with $\zetahat$}
   \centering
   \includegraphics[width=0.9\linewidth]{All_Momenta_vs_Extrapolated_2D_P234_bmin3_eta610_b29.0_Sivers.pdf}
   \begin{itemize}
-    \item $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $b^2=9a^2$ change systematically from $P_L=-1$ to $-4$.
-    \item The light-cone limit needs an \textbf{extrapolation} $\zetahat\to\infty$ (black dashed band, next slide).
+    \item $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $|\vprp b|=3a\approx0.34$ fm change systematically from $P_L=-1$ to $-4$.
+    \item The light-cone limit needs an extrapolation $\zetahat\to\infty$ (black dashed band).
   \end{itemize}
 \end{frame}
 
-% Slide 27
-\begin{frame}{Extrapolating the parameters, not the curves}
+% Slide 45
+\begin{frame}{Extrapolation $\zetahat\to\infty$}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -48,8 +31,8 @@
   {\scriptsize Parameters of $\tAmp_{2B}^{\text{Re}}$ vs $1/\zetahat$; blue: extrapolated value (all 12 in backup)}
 \end{frame}
 
-% Slide 28
-\begin{frame}{The answer: the $x$-dependent Sivers shift at $\zetahat\to\infty$}
+% Slide 46
+\begin{frame}{Result: the $x$-dependent Sivers shift at $\zetahat\to\infty$}
   \centering
   \includegraphics[width=\linewidth]{Extrapolated_AmpLevel_P234_Sivers_1_over_zetahat_sq_bmin3_eta610_b29.0_Sivers.pdf}
   \begin{itemize}
@@ -59,17 +42,25 @@
   \end{itemize}
 \end{frame}
 
-% Slide 29
-\begin{frame}{Dependence on $|\vprp b|$: is it factorized, $F(x)\,G(|\vprp b|)$?}
+% Slide 47
+\begin{frame}{The Sivers shift in $x$ and $|\vprp b|$}
+  \quick
+  \centering
+  \includegraphics[width=0.95\linewidth]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf}\\
+  {\scriptsize $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$ at $\zetahat\to\infty$ for $|\vprp b|\in[0.34,0.94]$ fm}
+\end{frame}
+
+% Slide 48
+\begin{frame}{Ratio tests: is it factorized, $F(x)\,G(|\vprp b|)$?}
   \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{Factorization_Ratio_vs_x_4curves_P234_bmin3_eta610.pdf}\\
+      {\scriptsize $R_b(x)=\langle k_y\rangle_{TU}(x,|\vprp b|)/\langle k_y\rangle_{TU}(x,0.34\,\text{fm})$: flat if factorized}
+    \end{column}
     \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[width=0.85\linewidth, trim=0 0 400 0, clip]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PLInf_Sivers.pdf}\\
-      {\scriptsize $\langle k_y\rangle_{TU}(x,|\vprp b|)$ at $\zetahat\to\infty$, $|\vprp b|\in[0.34,0.94]$ fm}
-    \end{column}
-    \begin{column}{0.50\textwidth}
-      \centering
-      relative distance $=\sqrt{J/N}$: residual of the best $F(x)G(|\vprp b|)$, relative to the size of the data\\[1mm]
+      relative distance $=\sqrt{J/N}$ of the best $F(x)G(|\vprp b|)$\\[1mm]
       {\small
       \begin{tabular}{cc}
         \toprule
@@ -82,8 +73,8 @@
         \bottomrule
       \end{tabular}}
       \begin{itemize}
-        \item Sivers shift: $5.7$--$7.6\%$ from factorized; the amplitudes themselves: $8$--$19\%$ (for $x\in[0,1]$).
-        \item The power $j$ is $\approx2$ for both real amplitudes but $\approx1$ for $\tAmp_{2B}^{\text{Im}}$, so exact factorization is not expected.
+        \item Sivers shift: $5.7$--$7.6\%$ from factorized; amplitudes: $8$--$19\%$ (for $x\in[0,1]$).
+        \item The power $j$ is $\approx2$ for both real amplitudes but $\approx1$ for $\tAmp_{2B}^{\text{Im}}$.
       \end{itemize}
     \end{column}
   \end{columns}
