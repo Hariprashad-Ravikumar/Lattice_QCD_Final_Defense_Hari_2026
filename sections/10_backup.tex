@@ -5,6 +5,158 @@
   \centering \Huge \textbf{Backup slides}
 \end{frame}
 
+% Moved from the main talk (nucleon methods and fit details)
+\begin{frame}{Backup: proton two-point function (spectral decomposition)}
+  On inserting a complete set of states between the interpolating operators\footnote{Refer: Boussarie, Renaud, et al. ``TMD Handbook.'' arXiv:2304.03302 [hep-ph].}
+  \begin{align*}
+    C_{\alpha\beta}(t,\mathbf{p})=&\,a^{3}\sum_{n,\sigma}\frac{e^{-E_{n}(\mathbf{p})t}}{2E_{n}(\mathbf{p})}\bra{0}\chi_{\alpha}\ket{n;\mathbf{p},\sigma}\bra{n;\mathbf{p},\sigma}\bar{\chi}_{\beta}\ket{0}\\
+    =&\,a^{3}Z(\mathbf{p})\sum_{\sigma}u_{\alpha}(n=0,\mathbf{p},\sigma)\bar{u}_{\beta}(n=0,\mathbf{p},\sigma)\frac{e^{-E_{0}(\mathbf{p})t}}{2E_{0}(\mathbf{p})}+\cdots
+  \end{align*}
+  Tracing this correlator against a given Dirac structure, often chosen to be $\Gamma^{+}=\frac{1}{2}(1+\gamma_{4})$, leads to
+  \begin{align*}
+    \boxed{C_{\Gamma^{+}}(t,\mathbf{p})}=\Gamma^{+}_{\beta\alpha}C_{\alpha\beta}(t,\mathbf{p})\xrightarrow{t\rightarrow\infty}\boxed{Ce^{-E_{0}(\mathbf{p})t}}
+  \end{align*}
+  where $C$ is a time-independent constant.
+\end{frame}
+
+% Slide 12. Diagram: Can et al., LNP 889 (2015), Fig. 3.8,
+% printed p. 84 / PDF p. 97 of the local Lin--Meyer reference.
+% Vector crop in PDF points: 266 56 373 149. Labels below are added in LaTeX.
+\begin{frame}{Backup: nucleon three-point function}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{itemize}
+        \item The source $\bar\chi$ creates a nucleon at $0$; the sink $\chi$ annihilates it at $t$. Insert $\mathcal O_\Gamma=\bar q\,\Gamma\,q$ at $0<\tau<t$.
+        \item The three lines are quark propagators $S=\mathcal M^{-1}$ ($u,u,d$). In a \textbf{connected contraction}, the insertion probes one line.
+        \item \textbf{Sequential source:} one extra inversion from the sink gives the propagator to every insertion point.
+        \item Disconnected insertions form a separate quark loop. They cancel in $u-d$ for $m_u=m_d$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node[inner sep=0] (image) {\includegraphics[width=0.62\linewidth]{nucleon_3pt_LinMeyer_fig3_8.pdf}};
+        \node[font=\scriptsize, anchor=south, align=center] at (image.north)
+          {wavy line: operator insertion\\$\mathcal O_\Gamma(\vect x_1,\tau)=\bar q\,\Gamma\,q$};
+        \node[font=\scriptsize, anchor=east, align=center] at ($(image.south west)!0.29!(image.north west)$)
+          {source\\$0$};
+        \node[font=\scriptsize, anchor=west, align=center] at ($(image.south east)!0.29!(image.north east)$)
+          {sink\\$t$};
+        \node[font=\scriptsize, anchor=west] at ($(image.south west)!0.60!(image.north east)$)
+          {$\tau$};
+        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.22!(image.south east)$)
+          {momentum $\vect p$};
+        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.78!(image.south east)$)
+          {momentum $\vect p$};
+      \end{tikzpicture}\\[3mm]
+      \figsrc{K.~U.~Can et al., ``Hadron Structure on the Lattice,''\\
+        in Lin \& Meyer (eds.), 2015, Fig.~3.8, p.~84.}
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  \[
+    \begin{aligned}
+      G_\Gamma(t,\tau;\vect p)={}&a^6\!\sum_{\vect x_2,\vect x_1}
+      e^{-i\vect p\cdot\vect x_2}
+      \,\Gamma^{\rm 3pt}_{\beta\alpha}\\[-1mm]
+      &\times\big\langle\chi_\alpha(\vect x_2,t)\,
+      \mathcal O_\Gamma(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle .
+    \end{aligned}
+  \]
+  \centering
+  {\small $\Gamma$: Dirac matrix in the operator;\quad
+    $\Gamma^{\rm 3pt}$: nucleon spin projector (like $\Gamma^+$ in the two-point function).\\
+    Source and sink have the same momentum $\vect p$.}
+\end{frame}
+
+% Slide 13. Normalization follows thesis Eqs. c3pt_ground and ratio_forward, specialized to p'=p.
+\begin{frame}{Backup: extracting the nucleon matrix element}
+  For the operator $\mathcal O_\Gamma=\bar q\,\Gamma\,q$ with the same momentum $\vect p$ at source and sink, $E=E(\vect p)$ and $K(p)=-i{\not\!p}+m=\sum_s u\bar u$, the ratio of the ground-state terms of $G_\Gamma$ and $C_{\Gamma^+}$ removes the unknown overlap $|Z|$ and the time dependence:
+  \[
+    R(t,\tau)=\frac{G_\Gamma(t,\tau;\vect p)}{C_{\Gamma^+}(t,\vect p)}
+    \simeq
+    \frac{\dfrac{|Z(\vect p)|}{4E^2}\,e^{-Et}\,\Tr\!\left[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)\right]}
+         {|Z(\vect p)|\,\dfrac{E+m}{E}\,e^{-Et}}
+    =\frac{\Tr[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}{4E(E+m)}
+  \]
+  {\small $\mathcal O_\Gamma$: the operator;\quad
+    $\mathcal J$: Dirac structure of its nucleon matrix element,
+    $\langle N(\vect p,s')|\mathcal O_\Gamma|N(\vect p,s)\rangle=\bar u(\vect p,s')\,\mathcal J\,u(\vect p,s)$ (the quantity we extract);\quad
+    $\Gamma^{\rm 3pt}$: nucleon spin projector.}
+  \begin{itemize}
+    \item Ground-state isolation needs $\Delta E\,\tau\gg1$ and $\Delta E\,(t-\tau)\gg1$.
+      The \textbf{plateau in $\tau$} then gives the projected matrix element.
+      Here $\Gamma^+=\tfrac12(1+\gamma_4)$ and $p_4=iE$.
+    \item Larger source--sink separation suppresses excited states, but increases
+      statistical noise; plateau stability must be checked.
+  \end{itemize}
+  \figsrc{Can et al., in Lin \& Meyer (eds.), 2015, Sec.~3.3; thesis lattice methodology.}
+\end{frame}
+
+% Fitting methodology 27/32
+\begin{frame}{Backup: full Jackknife covariance and correlated fitting}
+\[
+\bar y_i=\frac1{N_{\rm JK}}\sum_{k=1}^{N_{\rm JK}}y_i^{(k)},\qquad
+C_{ij}=\frac{N_{\rm JK}-1}{N_{\rm JK}}\sum_{k=1}^{N_{\rm JK}}
+(y_i^{(k)}-\bar y_i)(y_j^{(k)}-\bar y_j).
+\]
+\[
+\boxed{\chi^2(\mathbf p)=\sum_{i,j}[\bar y_i-F_i(\mathbf p)]C^{-1}_{ij}[\bar y_j-F_j(\mathbf p)]}
+\]
+\begin{itemize}
+\item Stack points from all retained spatial coordinates, staple extents, and all three amplitudes.
+\item The same gauge configurations create correlations both between coordinates and between amplitude components.
+\item Retain the full covariance rather than treating those measurements as independent.
+\item Use \texttt{lsqfit} for nonlinear fitting and \texttt{gvar} for correlated Gaussian quantities.
+\end{itemize}
+\end{frame}
+
+% Moved from the main talk (nucleon two-point function)
+\begin{frame}{Backup: nucleon two-point function in terms of propagators}
+  After integrating out the quark fields in the path integral formulation, this correlator is expressed in terms of products of the inverse of the Dirac operator
+  {\small
+  \begin{align*}
+    C_{\alpha\beta}(t,\mathbf{p})=&-a^3\sum_{\mathbf{x}}e^{-i\mathbf{p}\cdot\mathbf{x}}\epsilon^{ijk}\epsilon^{i'j'k'}[C^{-1}\gamma_{5}]_{\alpha'\alpha''}[\gamma_{5}C]_{\beta'\beta''}\\
+    &\times\left\langle[\mathcal{M}^{-1}_{d}]^{ki'}_{\alpha''\beta'}\left\{[\mathcal{M}^{-1}_{u}]^{jj'}_{\alpha'\beta''}[\mathcal{M}^{-1}_{u}]^{ik'}_{\alpha\beta}-[\mathcal{M}^{-1}_{u}]^{ij'}_{\alpha\beta''}[\mathcal{M}^{-1}_{d}]^{ik'}_{\alpha'\beta}\right\}\right\rangle
+  \end{align*}}
+\end{frame}
+
+% Moved from main talk (gauge link and process dependence)
+\begin{frame}{Backup: why it is not zero, the gauge link}
+  \begin{itemize}
+    \item Collins (1993): time reversal forces $f_{1T}^\perp=0$ \quad (``naively T-odd'').
+    \item Brodsky--Hwang--Schmidt (2002): final-state interactions give a nonzero asymmetry.
+    \item Collins (2002): a gauge-invariant TMD needs a \textbf{Wilson line}. Its path depends on the process, and T-reversal swaps the two paths:
+  \end{itemize}
+  \[ f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{SIDIS}} = - f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{DY}} \]
+  \centering
+  \begin{tikzpicture}[scale=0.8, q/.style={circle, fill=black, inner sep=1.5pt}]
+    \begin{scope}[shift={(0,0)}]
+      \node[q, label=left:{$0$}] at (0,0) {};
+      \node[q, label=left:{$\bvec$}] at (0,1.6) {};
+      \draw[very thick, -latex] (0,0) -- (1.9,0);
+      \draw[very thick] (1.9,0) -- (3.6,0);
+      \draw[very thick, dashed] (3.6,0) -- (3.6,1.6);
+      \draw[very thick, -latex] (3.6,1.6) -- (1.6,1.6);
+      \draw[very thick] (1.6,1.6) -- (0,1.6);
+      \node[right] at (3.65,0.8) {\small $+\infty\,\nminus$};
+      \node at (1.8,-0.6) {\small (a) SIDIS: future-pointing};
+    \end{scope}
+    \begin{scope}[shift={(10.2,0)}]
+      \node[q, label=right:{$0$}] at (0,0) {};
+      \node[q, label=right:{$\bvec$}] at (0,1.6) {};
+      \draw[very thick, -latex] (0,0) -- (-1.9,0);
+      \draw[very thick] (-1.9,0) -- (-3.6,0);
+      \draw[very thick, dashed] (-3.6,0) -- (-3.6,1.6);
+      \draw[very thick, -latex] (-3.6,1.6) -- (-1.6,1.6);
+      \draw[very thick] (-1.6,1.6) -- (0,1.6);
+      \node[left] at (-3.65,0.8) {\small $-\infty\,\nminus$};
+      \node at (-1.8,-0.6) {\small (b) Drell--Yan: past-pointing};
+    \end{scope}
+  \end{tikzpicture}
+  \keymsg{We put this \textbf{staple-shaped link} on the lattice.}
+\end{frame}
+
 % Amplitude slices P_L=-2
 \begin{frame}{Backup: amplitudes at $P_L=-2$ ($\zetahat=0.294367$), $\eta|v|/a=8$}
   \centering

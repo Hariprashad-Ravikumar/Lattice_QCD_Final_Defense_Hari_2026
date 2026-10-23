@@ -4,8 +4,9 @@
 % Slide 14
 \begin{frame}{Definition of TMDs}
   \begin{itemize}
-    \item Nucleon with $P^+\gg\mN$, $\vprp P=0$: $x=k^+/P^+$ and $\vprp k$ are boost invariant along $z$.
-    \item Gauge-invariant bilocal operator, divided by the soft factor $\widetilde{\softf}$ (rapidity divergences):
+    \item Consider a frame where the nucleon has large momentum in the $z$-direction, i.e., $P^+ \gg \mN$, $\vprp{P} = 0$.
+      In light-cone coordinates, the components scale as \textcolor{brown}{\fbox{$\kei^+$:~$\vprp{\kei}$:~$\kei^-$ $\sim$ $P^+/\mN$:~$1$:~$\mN/P^+$}} under boosts along the $z$-axis.
+    \item Gauge-invariant bilocal operator, divided by the soft factor $\widetilde{\softf}$:
   \end{itemize}
   \[ \Phi^{[\Gamma]}(\kei,P,S;\ldots)\equiv\int \frac{d^4 \bvec}{(2\pi)^4}\, e^{i \kei\cdot \bvec}\,
      \frac{\overbrace{\tfrac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \WlineC{\mathcal{C}_\bvec}\ q(\bvec)\ \ket{P,S}}^{\textstyle \equiv\ \widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}}{\widetilde{\softf}(\bvec^2;\ldots)} \]
@@ -54,6 +55,27 @@
   \end{columns}
 \end{frame}
 
+% Moved here from the lattice section: follows Link geometry
+\begin{frame}{Non-local staple three-point function: what we compute}
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \small
+      \begin{enumerate}
+        \item Define TMDs from the correlator at generic off-light-cone kinematics (Musch \emph{et al.} 2012).
+        \item Parametrize it with Lorentz-invariant amplitudes, so results can be boosted between frames.
+        \item Boost to the frame where the operator sits at a single time; this is allowed because the separations are space-like.
+        \item Compute the matrix element as a Euclidean path integral with standard lattice methods.
+        \item Form ratios in which soft and renormalization factors cancel (the $k_T$-shifts), and study the approach to the SIDIS/DY limits.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{lattice_3pt_staple_Engelhardt.png}\\
+      \figsrc{Figure credit: M.~Engelhardt (NMSU)}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 % Slide 17
 \begin{frame}{Symmetry constraints: the amplitudes are complex}
   \begin{itemize}
@@ -67,8 +89,12 @@
 
 % Slide 18
 \begin{frame}{Correlator parametrization}
-  \small
-  \[ \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\unsub} = P^\mu\, \tAmp_2 - i \mN^2 \bvec^\mu\, \tAmp_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tAmp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \tBmp_1 + \ldots - \frac{ i \mN^3}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \bvec_\nu v_\alpha S_\beta\, \tBmp_8 + \ldots \]
+  \footnotesize
+  \begin{align*}
+    \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\unsub} ={}& P^\mu\, \tAmp_2 - i \mN^2 \bvec^\mu\, \tAmp_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tAmp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \tBmp_1\\
+    & + \frac{\mN}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} P_\nu v_\alpha S_\beta\, \tBmp_7 - \frac{i \mN^3}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \bvec_\nu v_\alpha S_\beta\, \tBmp_8\\
+    & - \frac{\mN^3}{v \tcdot P} (\bvec \tcdot S)\, \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha v_\beta\, \tBmp_9 - \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S)\, \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha v_\beta\, \tBmp_{10}
+  \end{align*}
   \normalsize
   \begin{itemize}
     \item The amplitudes depend on the invariants: \ $\tAmp_i\big(\bvec^2,\ \bvec \tcdot P,\ \tfrac{v\tcdot \bvec}{v\tcdot P},\ -\tfrac{1}{(\mN\zetahat)^2},\ \eta v \tcdot P\big)$
@@ -88,12 +114,16 @@
     \item Average $k_y$ of unpolarized quarks in a nucleon polarized along $\hat x$ ($T$: transversely polarized nucleon, $U$: unpolarized quark), generalized to finite $|\vprp b|$:
   \end{itemize}
   \begin{block}{}
-  \[ \langle k_y\rangle_{TU}(\vprp{b}^2;\zetahat,\eta v\tcdot P) \equiv \mN\,\frac{\tilde f_{1T}^{\perp[1](1)}(\vprp{b}^2;\ldots)}{\tilde f_1^{[1](0)}(\vprp{b}^2;\ldots)}
-     = -\mN\,\frac{\tAmp_{12B}(-\vprp{b}^2,0,0,-1/(\mN\zetahat)^2,\eta v\tcdot P)}{\tAmp_{2B}(-\vprp{b}^2,0,0,-1/(\mN\zetahat)^2,\eta v\tcdot P)} \]
+  \footnotesize
+  \begin{align*}
+    \langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
+    &\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}(\vprp{\bvec}^2,x;\zetahat,\ldots,\eta v \tcdot P)}{\tilde f_1^{(0)}(\vprp{\bvec}^2,x;\zetahat,\ldots,\eta v \tcdot P)}\\
+    &=-\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}\big(-\vprp{\bvec}^2,\bvec \tcdot P,(\bvec \tcdot P) R(\zetahat^2)/\mN^2,-1/(\mN\zetahat)^2,\eta v \tcdot P\big)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}\big(-\vprp{\bvec}^2,\bvec \tcdot P,(\bvec \tcdot P) R(\zetahat^2)/\mN^2,-1/(\mN\zetahat)^2,\eta v \tcdot P\big)}
+  \end{align*}
   \end{block}
   \begin{itemize}
     \item Under $\Gamma$-independent multiplicative renormalization, the soft factor and $Z$ cancel in this ratio at fixed geometry $(\bvec,P,\eta v)$.
-    \item At $\bvec\tcdot P=0$ this ratio is \textbf{integrated over $x$}: the quantity computed in earlier lattice work.
+    \item Setting $\bvec\tcdot P=0$ in the amplitudes, with no Fourier transform, gives the shift \textbf{integrated over $x$}: the quantity computed in earlier lattice work.
   \end{itemize}
-  \keymsg{This thesis: keep $\bvec\tcdot P\neq0$ and Fourier transform, to get the shift \textbf{as a function of $x$}.}
+  \keymsg{This thesis: scan the full $\bvec\tcdot P$ and Fourier transform, to get the shift \textbf{as a function of $x$}.}
 \end{frame}

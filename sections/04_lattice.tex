@@ -4,12 +4,12 @@
 % Slide 9
 \begin{frame}{Lattice QCD: links, plaquette and the Wilson action}
   \begin{columns}[c]
-    \begin{column}{0.42\textwidth}
+    \begin{column}{0.38\textwidth}
       \begin{itemize}
         \item Euclidean grid $\Lambda_4$ with spacing $a$. Quarks on sites; gluons as links $U_\mu(x)=e^{iaA_\mu(x)}\in SU(3)$.
         \item Plaquette:
       \end{itemize}
-      \[ P_{\mu\nu}(x)=U_{\mu}(x)\,U_{\nu}(x+\hat{\mu})\,U^{\dagger}_{\mu}(x+\hat{\nu})\,U^{\dagger}_{\nu}(x) \]
+      {\small \[ P_{\mu\nu}(x)=U_{\mu}(x)\,U_{\nu}(x+\hat{\mu})\,U^{\dagger}_{\mu}(x+\hat{\nu})\,U^{\dagger}_{\nu}(x) \]}
       \begin{itemize}
         \item Wilson gauge action:
       \end{itemize}
@@ -18,34 +18,57 @@
         \item Quarks: Wilson--clover fermions (removes doublers, $\mathcal O(a)$ improvement).
       \end{itemize}
     \end{column}
-    \begin{column}{0.56\textwidth}
+    \begin{column}{0.60\textwidth}
       \centering
-      \begin{tikzpicture}[scale=0.55]
-        \foreach \x in {0, 1, 2, 3} \foreach \y in {0, 1, 2, 3} \fill[red] (\x, \y) circle (0.08);
-        \draw[|<->|, gray] (0.1, 0.12) -- (0.9, 0.12);
-        \node at (0.5, 0.32) {\textcolor{gray}{\scriptsize $a$}};
-        \foreach \x in {0, 1, 2, 3} \foreach \y in {0, 1, 2} \draw (\x, \y) -- (\x, \y + 1);
-        \foreach \x in {0, 1, 2} \foreach \y in {0, 1, 2, 3} \draw (\x, \y) -- (\x + 1, \y);
+      \resizebox{\linewidth}{!}{%
+      \begin{tikzpicture}[scale=1.051]
+        % Lattice points
+        \foreach \x in {0, 1, 2, 3}
+          \foreach \y in {0, 1, 2, 3}
+            \fill[red] (\x, \y) circle (0.1);
+        \draw[|<->|, gray] (0.1, 0.1) -- (0.9, 0.1);
+        \node at (0.5, 0.2) {\textcolor{gray}{$a$}};
+        % Links
+        \foreach \x in {0, 1, 2, 3}
+          \foreach \y in {0, 1, 2}
+            \draw (\x, \y) -- (\x, \y + 1);
+        \foreach \x in {0, 1, 2}
+          \foreach \y in {0, 1, 2, 3}
+            \draw (\x, \y) -- (\x + 1, \y);
         \draw[thick, blue] (1, 1) -- (2, 1) -- (2, 2) -- (1, 2) -- cycle;
-        \node at (1.5, 1.5) {\scriptsize $P_{\mu\nu}$};
+        \draw[->, red, dashed] (1, 1) -- (0.65, 0.85);
+        \node at (0.5, 0.8) {\textcolor{red}{$x$}};
+        \node at (1.5, 1.5) {$P_{\mu\nu}(x)$};
+        % Axes
         \draw[->] (0, 0) -- (3.5, 0) node[right] {$\mu$};
         \draw[->] (0, 0) -- (0, 3.5) node[above] {$\nu$};
+        % Zoom effect
         \draw[magenta, dashed] (1.5, 1.5) circle (0.8);
-        \draw[->, magenta, dashed] (2.3, 1.5) -- (5.3, 1.5);
-        \begin{scope}[xshift=5.8cm, scale=1.4]
-          \foreach \x in {1, 2} \foreach \y in {1, 2} \fill[red] (\x, \y) circle (0.08);
+        \draw[->, magenta, dashed] (2.3, 1.5) -- (5.7, 1.5);
+        \draw[thick, blue] (3, 2) -- (3, 3);
+        \draw[blue,->, line width=1.5pt] (3, 2.5) -- ++(0,0.1);
+        \node at (4.5, 2.5) {\textcolor{blue}{$U_{\nu}(y)=e^{iaA_{\nu}(y)}$}};
+        \draw[->, red, dashed] (3, 2) -- (2.6, 2.2);
+        \node at (2.5, 2.2) {\textcolor{red}{$y$}};
+        % Zoomed plaquette
+        \begin{scope}[xshift=6cm]
+          \foreach \x in {1, 2}
+            \foreach \y in {1, 2}
+              \fill[red] (\x, \y) circle (0.1);
+          \draw[magenta, dashed] (1.8, 1.5) ellipse (1.99 and 1.3);
           \draw[thick, blue] (1, 1) -- (2, 1) -- (2, 2) -- (1, 2) -- cycle;
-          \draw[blue,->, line width=1.2pt] (1.5, 1) -- ++(0.1,0);
-          \draw[blue,<-, line width=1.2pt] (1.5, 2) -- ++(0.1,0);
-          \draw[blue,->, line width=1.2pt] (2, 1.5) -- ++(0,0.1);
-          \draw[blue,<-, line width=1.2pt] (1, 1.5) -- ++(0,0.1);
-          \node at (0.75, 0.75) {\scriptsize $x$};
-          \node at (1.5, 0.65) {\scriptsize $U_{\mu}(x)$};
-          \node at (3.0, 1.5) {\scriptsize $U_{\nu}(x+\hat{\mu})$};
-          \node at (1.5, 2.35) {\scriptsize $U^{\dagger}_{\mu}(x+\hat{\nu})$};
-          \node at (0.15, 2.1) {\scriptsize $U^{\dagger}_{\nu}(x)$};
+          \draw[blue,->, line width=1.5pt] (1.5, 1) -- ++(0.1,0);
+          \draw[blue,<-, line width=1.5pt] (1.5, 2) -- ++(0.1,0);
+          \draw[blue,->, line width=1.5pt] (2, 1.5) -- ++(0,0.1);
+          \draw[blue,<-, line width=1.5pt] (1, 1.5) -- ++(0,0.1);
+          \draw[->, red, dashed] (1, 1) -- (0.65, 0.85);
+          \node at (0.5, 0.8) {\textcolor{red}{$x$}};
+          \node at (1.5, 0.7) {$U_{\mu}(x)$};
+          \node at (3, 1.5) {$U_{\nu}(x+\hat{\mu})$};
+          \node at (1.5, 2.4) {$U^{\dagger}_{\mu}(x+\hat{\nu})$};
+          \node at (0.4, 1.5) {$U^{\dagger}_{\nu}(x)$};
         \end{scope}
-      \end{tikzpicture}
+      \end{tikzpicture}}
     \end{column}
   \end{columns}
 \end{frame}
@@ -55,12 +78,17 @@
   \quick
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
+      \small
+      Physical observables $\mathcal{O}$ are evaluated as an expectation value over the relevant degrees of freedom
+      \begin{align*}
+        \boxed{\langle \mathcal{O} \rangle =\frac{\int \mathcal{D}[U]\textcolor{blue}{\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]}~\mathcal{O}~e^{-[S_{\rm gauge}+\textcolor{blue}{\int dx\, \bar{\psi}\mathcal{M}\psi}]}}{\int\mathcal{D}[U]\textcolor{blue}{\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]}\,e^{-[S_{\rm gauge}+\textcolor{blue}{\int dx\, \bar{\psi}\mathcal{M}\psi}]}}}.
+      \end{align*}
+      The quark fields $\psi$ \& $\bar{\psi}$ are Grassmann variables:
+      \begin{align*}
+        \boxed{\langle \mathcal{O} \rangle =\frac{\int \mathcal{D}[U]~\widetilde{\mathcal{O}}~\textcolor{blue}{\det \mathcal{M}^2}\,e^{-S_{\rm gauge}}}{\int\mathcal{D}[U]\,\textcolor{blue}{\det \mathcal{M}^2}\,e^{-S_{\rm gauge}}}}.
+      \end{align*}
+      This integration results in the ``contraction'' of fermion--anti-fermion pairs in all possible ways (Wick's theorem), replacing them with quark propagators \textcolor{blue}{$\mathcal{M}^{-1}$}.
       \begin{itemize}
-        \item Observables as Euclidean path integrals:
-      \end{itemize}
-      \[ \langle \mathcal{O} \rangle =\frac{\int \mathcal{D}[U]\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]\ \mathcal{O}\ e^{-S_{G}[U]-\bar{\psi}\mathcal{M}[U]\psi}}{\int\mathcal{D}[U]\mathcal{D}[\psi]\mathcal{D}[\bar{\psi}]\ e^{-S_{G}[U]-\bar{\psi}\mathcal{M}[U]\psi}} \]
-      \begin{itemize}
-        \item Integrating out the Grassmann quark fields gives $\det\mathcal{M}$ and \textbf{Wick contractions}: quark pairs become propagators $S=\mathcal{M}^{-1}$.
         \item Monte Carlo: sample configurations $U_n$ with probability $\propto \prod_f\det\mathcal M_f\; e^{-S_G[U]}$:
       \end{itemize}
       \[ \langle \mathcal O\rangle \approx \frac{1}{N}\sum_{n=1}^{N} \widetilde{\mathcal O}[U_n] \]
@@ -73,141 +101,55 @@
   \end{columns}
 \end{frame}
 
-% Slide 11
-\begin{frame}{The nucleon two-point function}
-  \begin{columns}[c]
-    \begin{column}{0.56\textwidth}
-      \[ \chi_\alpha(\vect x,t)=\epsilon^{ijk}\,u^i_\alpha\,u^j_\gamma\,[C^{-1}\gamma_5]_{\gamma\delta}\,d^k_\delta \]
-      \[ C_{\alpha\beta}(t,\vect p)=a^3\sum_{\vect x}e^{-i\vect p\cdot\vect x}\,\big\langle\chi_\alpha(\vect x,t)\,\bar\chi_\beta(\vect 0,0)\big\rangle \]
-      \begin{itemize}
-        \item Wick's theorem: two $u$ propagators and one $d$ propagator from the source.
-        \item Spectral decomposition, projected with $\Gamma^+=\frac12(1+\gamma_4)$:
-      \end{itemize}
-      \[ C_{\Gamma^+}(t,\vect p)=|Z(\vect p)|\,\frac{E(\vect p)+m}{E(\vect p)}\,e^{-E(\vect p)t}\,\big[1+\mathcal O\big(e^{-\Delta E\,t}\big)\big] \]
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \node[inner sep=0] (image) {\includegraphics[width=0.85\linewidth]{nucleon_2pt_diagram.png}};
-        \node[font=\scriptsize, anchor=south west] at (image.north west) {$(\vect x,t)$};
-        \node[font=\scriptsize, anchor=south east] at (image.north east) {$(\vect 0,0)$};
-        \node[font=\scriptsize, anchor=north] at (image.south) {$u,\ u,\ d$ propagators $\mathcal{M}^{-1}$};
-      \end{tikzpicture}\\[3mm]
-      \includegraphics[width=\linewidth]{proton3.eps}\\
-      {\scriptsize $C_{\Gamma^+}(t,\vect 0)$ on a different lattice ($32^3\times94$, $a=0.11967$ fm; 2023 study), not the ensemble used in this thesis}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Slide 12. Diagram: Can et al., LNP 889 (2015), Fig. 3.8,
-% printed p. 84 / PDF p. 97 of the local Lin--Meyer reference.
-% Vector crop in PDF points: 266 56 373 149. Labels below are added in LaTeX.
-\begin{frame}{Nucleon three-point function}
-  \begin{columns}[c]
-    \begin{column}{0.56\textwidth}
-      \begin{itemize}
-        \item The source $\bar\chi$ creates a nucleon at $0$; the sink $\chi$ annihilates it at $t$. Insert $\mathcal O_\Gamma=\bar q\,\Gamma\,q$ at $0<\tau<t$.
-        \item The three lines are quark propagators $S=\mathcal M^{-1}$ ($u,u,d$). In a \textbf{connected contraction}, the insertion probes one line.
-        \item \textbf{Sequential source through the sink:} combine forward propagators at fixed sink time, momentum and spin projector; another inversion reaches all insertion points.
-        \item Disconnected insertions form a separate quark loop. They cancel in $u-d$ for $m_u=m_d$.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \centering
-      \begin{tikzpicture}
-        \node[inner sep=0] (image) {\includegraphics[width=0.62\linewidth]{nucleon_3pt_LinMeyer_fig3_8.pdf}};
-        \node[font=\scriptsize, anchor=south, align=center] at (image.north)
-          {wavy line: operator insertion\\$\mathcal O_\Gamma(\vect x_1,\tau)=\bar q\,\Gamma\,q$};
-        \node[font=\scriptsize, anchor=east, align=center] at ($(image.south west)!0.29!(image.north west)$)
-          {source\\$0$};
-        \node[font=\scriptsize, anchor=west, align=center] at ($(image.south east)!0.29!(image.north east)$)
-          {sink\\$t$};
-        \node[font=\scriptsize, anchor=west] at ($(image.south west)!0.60!(image.north east)$)
-          {$\tau$};
-        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.22!(image.south east)$)
-          {incoming $\vect p$};
-        \node[font=\scriptsize, anchor=north] at ($(image.south west)!0.78!(image.south east)$)
-          {outgoing $\vect p'$};
-      \end{tikzpicture}\\[3mm]
-      \figsrc{K.~U.~Can et al., ``Hadron Structure on the Lattice,''\\
-        in Lin \& Meyer (eds.), 2015, Fig.~3.8, p.~84.}
-    \end{column}
-  \end{columns}
-  \vspace{1mm}
-  \[
-    \begin{aligned}
-      G_\Gamma(t,\tau;\vect p,\vect p')={}&a^6\!\sum_{\vect x_2,\vect x_1}
-      e^{-i\vect p'\cdot(\vect x_2-\vect x_1)}e^{-i\vect p\cdot\vect x_1}
-      \,\Gamma^{\rm 3pt}_{\beta\alpha}\\[-1mm]
-      &\times\big\langle\chi_\alpha(\vect x_2,t)\,
-      \mathcal O_\Gamma(\vect x_1,\tau)\,\bar\chi_\beta(\vect 0,0)\big\rangle .
-    \end{aligned}
-  \]
-  \centering
-  {\small $\Gamma$: Dirac matrix in the operator;\qquad
-    $\Gamma^{\rm 3pt}$: nucleon spin projector;\qquad $\vect q=\vect p'-\vect p$.}
-\end{frame}
-
-% Slide 13. Normalization follows thesis Eqs. c3pt_ground and ratio_forward.
-\begin{frame}{Extracting the nucleon matrix element}
-  With $E=E(\vect p)$, $E'=E(\vect p')$ and $K(p)=-i{\not\!p}+m$, the ground-state term is
-  \[
-    G_\Gamma\simeq
-    \frac{\sqrt{Z(\vect p')}\sqrt{Z(\vect p)}^{\,*}}{4E'E}\,
-    \underbrace{e^{-E'(t-\tau)}e^{-E\tau}}_{\text{propagation after / before the insertion}}\,
-    \Tr\!\left[\Gamma^{\rm 3pt}K(p')\,\mathcal J\,K(p)\right].
-  \]
+% Nucleon two- and three-point functions on one slide
+\begin{frame}{Nucleon two- and three-point functions}
+  \small
+  \begin{align*}
+    \chi_{\alpha}(\mathbf{x},t)&=\epsilon^{ijk}u_{\alpha}^{i}u^{j}_{\gamma}[C^{-1}\gamma_{5}]_{\gamma\delta}d^{k}_{\delta}\ (\mathbf{x},t)\\
+    C_{\alpha\beta}(t,\mathbf{p})&=a^{3}\sum_{\mathbf{x}}e^{-i\mathbf{p}\cdot\mathbf{x}}\bra{0}\chi_{\alpha}(\mathbf{x},t)\bar{\chi}_{\beta}(\mathbf{0},0)\ket{0},\quad C_{\Gamma^+}(t,\mathbf{p})=\Gamma^{+}_{\beta\alpha}C_{\alpha\beta}\ \xrightarrow{t\to\infty}\ C\,e^{-Et}\\
+    G_\Gamma(t,\tau;\mathbf{p})&=a^6\sum_{\mathbf{x}_2,\mathbf{x}_1}e^{-i\mathbf{p}\cdot\mathbf{x}_2}\,\Gamma^{\rm 3pt}_{\beta\alpha}\,\big\langle\chi_\alpha(\mathbf{x}_2,t)\,\mathcal O_\Gamma(\mathbf{x}_1,\tau)\,\bar\chi_\beta(\mathbf{0},0)\big\rangle,\quad \mathcal O_\Gamma=\bar q\,\Gamma\,q
+  \end{align*}
   \vspace{-2mm}
-  \[
-    \langle N(\vect p',s')|\mathcal O_\Gamma(\vect q)|N(\vect p,s)\rangle
-    =\bar u(\vect p',s')\,\mathcal J\,u(\vect p,s).
-  \]
-  \begin{itemize}
-    \item Ground-state isolation requires \textbf{both} $\Delta E\,\tau\gg1$ and
-      $\Delta E'(t-\tau)\gg1$: suppress excited states on either side of the insertion.
-    \item \textbf{Forward kinematics} ($\vect p'=\vect p$):
-      $e^{-E(t-\tau)}e^{-E\tau}=e^{-Et}$. The same overlap $|Z(\vect p)|$
-      and exponential occur in $C_{\Gamma^+}(t,\vect p)$.
-  \end{itemize}
-  \[
-    R(t,\tau)=\frac{G_\Gamma(t,\tau;\vect p,\vect p)}{C_{\Gamma^+}(t,\vect p)}
-    \ \longrightarrow\
-    \frac{\Tr[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}
-         {2E\,\Tr[\Gamma^+K(p)]}
-    =\frac{\Tr[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}{4E(E+m)} .
-  \]
-  \begin{itemize}
-    \item The \textbf{plateau in $\tau$} isolates the projected matrix element with the
-      kinematic normalization above. Here $\Gamma^+=\tfrac12(1+\gamma_4)$ and $p_4=iE$.
-    \item Larger source--sink separation suppresses excited states, but increases
-      statistical noise; plateau stability must be checked.
-  \end{itemize}
-  \figsrc{Can et al., in Lin \& Meyer (eds.), 2015, Sec.~3.3; thesis lattice methodology.}
-\end{frame}
-
-% Slide 14
-\begin{frame}{Non-local staple three-point function: what we compute}
   \begin{columns}[c]
-    \begin{column}{0.55\textwidth}
+    \begin{column}{0.52\textwidth}
       \begin{itemize}
-        \item Replace the local insertion by the \textbf{non-local TMD operator}
-          $\bar q(0)\,\Gamma\,\mathcal U[0,\eta v,\eta v+\bvec,\bvec]\,q(\bvec)$.
-          The separated quark fields are joined by a gauge link.
-        \item Quark separation $\bvec$, staple direction $v$, staple length $\eta|v|$:
-          $\bvec$ and $v$ are purely spatial, so the insertion stays in one time slice.
-        \item On the lattice the staple is a step-wise path $\mathcal C^{\rm lat}$:
+        \item After integrating out the quarks, both are built from $\mathcal M^{-1}_u,\mathcal M^{-1}_u,\mathcal M^{-1}_d$; in $u-d$ the disconnected insertions cancel.
+        \item The ratio at equal momentum removes the overlap $|Z|$ and the time dependence ($K(p)=-i\not\!p+m$, $\langle N|\mathcal O_\Gamma|N\rangle=\bar u\,\mathcal J\,u$):
       \end{itemize}
-      \[ \begin{aligned} C^{\rm 3pt}_{\Gamma}(\tau,\vect P;\mathcal C^{\rm lat})=\frac{1}{\hat L^3}\sum_{z}\Gamma^{\rm 3pt}_{\beta\alpha}\big\langle&\chi_\alpha(t_{\rm snk},\vect P)\,O^{\rm lat}_{\Gamma}(\mathcal C^{\rm lat};z,\tau)\\ &\times\bar\chi_\beta(t_{\rm src},\vect P)\big\rangle \end{aligned} \]
-      \[ R_{\Gamma}(\vect P;\mathcal C^{\rm lat})\equiv\mathrm{plateau}\left[\frac{C^{\rm 3pt}_{\Gamma}(\tau,\vect P;\mathcal C^{\rm lat})}{C^{\rm 2pt}(t_{\rm snk}-t_{\rm src},\vect P)}\right] \]
-      \begin{itemize}
-        \item Inputs: $R_{\Gamma(n)}$ for $\Gamma=\gamma_1,\gamma_2,\gamma_3,\gamma_4$ (isovector $u-d$).
-      \end{itemize}
-      {\scriptsize Ensemble: $n_f=2+1$ clover, $32^3\times96$, $a=0.11403$ fm, $m_\pi=317$ MeV, $\mN a=0.6228(28)$ ($\mN=1077.8(48)$ MeV).}
+      \[
+        R(t,\tau)=\frac{G_\Gamma(t,\tau;\mathbf p)}{C_{\Gamma^+}(t,\mathbf p)}\ \longrightarrow\ \frac{\mathrm{Tr}[\Gamma^{\rm 3pt}K(p)\,\mathcal J\,K(p)]}{4E(E+m)}\quad(\text{plateau in }\tau)
+      \]
     \end{column}
-    \begin{column}{0.43\textwidth}
+    \begin{column}{0.46\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{lattice_3pt_staple_Engelhardt.png}\\
-      \figsrc{Figure credit: M.~Engelhardt (NMSU)}
+      \resizebox{0.75\linewidth}{!}{%
+      \begin{tikzpicture}
+        \node (image) {\includegraphics[scale=0.37]{nucleon_2pt_diagram_annotated.png}};
+        \node at (4.3, 0.5) {$u$};
+        \node at (4.3, 0) {$u$};
+        \node at (4.3, -0.5) {$d$};
+        \node at (-4.4, 0.5) {$u$};
+        \node at (-4.4, 0) {$u$};
+        \node at (-4.4, -0.5) {$d$};
+        \node at (-4.1, -1.2) {$(\mathbf{x},t)$};
+        \node at (4, -1.2) {$(\mathbf{0},0)$};
+        \node at (-0.4, -0.7) {$\mathcal{M}^{-1}_{d}$};
+        \node at (-0.4, 0.7) {$\mathcal{M}^{-1}_{u}$};
+        \node at (-0.4, 0.2) {$\mathcal{M}^{-1}_{u}$};
+      \end{tikzpicture}}\\[1mm]
+      \begin{tikzpicture}
+        \node[inner sep=0] (image) {\includegraphics[width=0.30\linewidth]{nucleon_3pt_LinMeyer_fig3_8.pdf}};
+        \node[font=\tiny, anchor=south, align=center] at (image.north)
+          {wavy line: operator insertion $\mathcal O_\Gamma(\mathbf x_1,\tau)$};
+        \node[font=\tiny, anchor=east, align=center] at ($(image.south west)!0.29!(image.north west)$)
+          {source\\$0$};
+        \node[font=\tiny, anchor=west, align=center] at ($(image.south east)!0.29!(image.north east)$)
+          {sink\\$t$};
+        \node[font=\tiny, anchor=west] at ($(image.south west)!0.60!(image.north east)$)
+          {$\tau$};
+      \end{tikzpicture}\\
+      {\tiny 2-pt (top) and 3-pt (bottom) quark flow; 3-pt after Can et al., 2015}
     \end{column}
   \end{columns}
 \end{frame}
+

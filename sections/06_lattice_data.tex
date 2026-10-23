@@ -73,7 +73,6 @@
     \begin{column}{0.5\textwidth}
       \begin{block}{Example: $P_1=-1$}
         \small
-        $m_\pi=317$ MeV\\
         $\mN = 0.6228(28)/a = 1077.8(48)$ MeV\\
         $P_1=-2\pi/L=-339.8$ MeV
       \end{block}
@@ -175,7 +174,7 @@
       \[ \Delta v_1 = \frac{v_1^{\text{constraint}} - v_1^{\text{lattice}}}{a} \]
       \begin{itemize}
         \item Path-averaged correlators at three or more bounding sites (red).
-        \item Quadratic interpolation in $\Delta v_1$ inside each Jackknife (leave-one-out resampling) sample (grey band).
+        \item Quadratic interpolation in $\Delta v_1$ inside each Jackknife sample (grey band).
         \item Read off the value at $\Delta v_1 = 0$ (blue).
         \item All 8 inputs: Re and Im of $R_{\Gamma}$ for $\Gamma=\gamma_1,\gamma_2,\gamma_3,\gamma_4$.
       \end{itemize}
@@ -412,6 +411,19 @@
   {\scriptsize $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$ (top); $\tAmp_{12B}^{\text{Re}}$, $\tAmp_{12B}^{\text{Im}}$ (bottom) vs $\eta|v|/a$ and $(P\cdot b)\hat L/(2\pi)$, colored by $b^2/a^2$}
 \end{frame}
 
+% Same amplitudes as the previous slide, now against b_L with b_T as the colour
+\begin{frame}{Amplitudes at $P_L=-1$ \ ($\zetahat=0.090772$): 3D view in $b_L$, $b_T$}
+  \quick
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA2B_PL-1_3D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA2B_PL-1_3D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ReA12B_PL-1_3D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 487 0, clip]{ImA12B_PL-1_3D.pdf}
+  \end{tabular}\\
+  {\scriptsize $\tAmp_{2B}^{\text{Re}}$, $\tAmp_{2B}^{\text{Im}}$ (top); $\tAmp_{12B}^{\text{Re}}$, $\tAmp_{12B}^{\text{Im}}$ (bottom) vs $\eta|v|/a$ and $b_L/a$, colored by $b_T/a$}
+\end{frame}
+
 % Slide 34
 \begin{frame}{Amplitudes at $P_L=-1$: slices at $\eta|v|/a=8$}
   \centering
@@ -426,6 +438,19 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Amplitudes at $P_L=-1$: slices at $\eta|v|/a=8$ in $b_L$, colored by $b_T$}
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_eta8_PL-1_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_eta8_PL-1_2D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_eta8_PL-1_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_eta8_PL-1_2D.pdf}
+  \end{tabular}
+  \begin{itemize}
+    \item Same data as the previous slide, plotted against $b_L/a$ with one colour per $b_T/a$.
+  \end{itemize}
+\end{frame}
+
 % Slide 35
 \begin{frame}{Amplitudes at $P_L=-4$ \ ($\zetahat=0.785756$): slices at $\eta|v|/a=8$}
   \quick
@@ -437,4 +462,16 @@
     \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_Pb_bsq_eta8_PL-4_2D.pdf}
   \end{tabular}\\
   {\scriptsize Same layout as $P_L=-1$; the highest momentum reaches the widest range in $P\cdot b$. ($P_L=-2,-3$ in backup.)}
+\end{frame}
+
+\begin{frame}{Amplitudes at $P_L=-4$ \ ($\zetahat=0.785756$): slices at $\eta|v|/a=8$ in $b_L$, colored by $b_T$}
+  \quick
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA2B_eta8_PL-4_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA2B_eta8_PL-4_2D.pdf} \\
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ReA12B_eta8_PL-4_2D.pdf} &
+    \includegraphics[height=0.39\textheight, trim=0 0 500 0, clip]{ImA12B_eta8_PL-4_2D.pdf}
+  \end{tabular}\\
+  {\scriptsize Same data as the previous slide, plotted against $b_L/a$ with one colour per $b_T/a$.}
 \end{frame}

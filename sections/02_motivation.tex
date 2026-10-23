@@ -1,40 +1,50 @@
 % ===================== I. Motivation =====================
 \section{Motivation}
 
-% Slide 3
-\begin{frame}{From parton distributions to 3D tomography}
-  \begin{columns}[c]
-    \begin{column}{0.40\textwidth}
-      \begin{itemize}
-        \item Deep inelastic scattering: a quark carries the light-cone momentum fraction
-        \[ x = \frac{k^+}{P^+} \]
-        \item Collinear PDFs $f_1(x)$ are a \textbf{1D} picture.
-        \item \textbf{TMDs} keep the transverse momentum $\vprp{k}$: momentum-space tomography.
-        \item TMDs need semi-inclusive processes (SIDIS, Drell--Yan).
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.58\textwidth}
+
+% Slide 5
+\begin{frame}{Introduction: TMDs}
+  The \textbf{intrinsic motion of quarks and gluons} inside the proton or neutron, specifically \textbf{with respect to the transverse momentum}, can be described in terms of Transverse Momentum Dependent Parton Distribution Functions (TMDs).
+  \begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.35\textwidth}
       \centering
-      \includegraphics[width=\linewidth]{EIC_WP_Fig2p2_distributions.png}
-      \figsrc{Adapted from Accardi \emph{et al.}, EPJA \textbf{52}, 268 (2016)}
-    \end{column}
-  \end{columns}
+      \includegraphics[width=\textwidth]{DY_process_TMD.png}
+      \caption{The Drell--Yan process.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.35\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{SIDIS_process_TMD.png}
+      \caption{The SIDIS process.}
+    \end{subfigure}
+    \caption{Two examples of processes sensitive to TMD PDFs. We draw the leading contributions, in which a single electroweak gauge boson (wiggled lines) is exchanged.}
+  \end{figure}
+\end{frame}
+
+% Slide 6
+\begin{frame}{Introduction: TMDs}
+  In the SIDIS cross section
+  \begin{align}
+    \frac{d\sigma}{d^3P_h\, d^3P_{l'}}\propto L_{\mu\nu}W^{\mu\nu}
+  \end{align}
+  \begin{align}
+    \Longrightarrow~~W^{\mu\nu}(P,q,P_h)=&\int \frac{d^4l}{(2\pi)^4}e^{iq\cdot l}\sum_{X}\bra{N(P,S)}J^{\mu}(-b)\ket{Xh(P_h,S_h)}\bra{Xh(P_h,S_h)}J^{\nu}(0)\ket{N(P,S)}\nonumber
+  \end{align}
+  \centering
+  \includegraphics[scale=0.2]{SIDIS_hadron_tensor_tree.png}
+  \figsrc{Simplified factorized tree-level diagram of the hadron tensor in SIDIS. arXiv:0907.2381}
 \end{frame}
 
 % Slide 4
-\begin{frame}{Single-spin asymmetries and the Sivers effect}
+\begin{frame}{Sivers effect}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \begin{itemize}
         \item Large left--right asymmetries off transversely polarized protons (E704, 1991).
-        \item Collinear pQCD predicts them to be tiny (Kane, Pumplin, Repko 1978).
         \item Sivers (1990): the quark $\vprp{k}$ distribution is \textbf{shifted perpendicular to the spin}.
       \end{itemize}
       \vspace{-1mm}
       \[ f_{q/N^\uparrow}(x,\vprp{k}) = f_1^q(x,\vprp{k}^2) - \frac{\epsilon_{ij}\,k_{T,i}\,S_{T,j}}{\mN}\, f_{1T}^{\perp q}(x,\vprp{k}^2) \]
-      \centering
-      \includegraphics[width=0.42\linewidth]{SIDIS.png}\\
-      {\tiny SIDIS: $\ell N^\uparrow\to\ell' h X$}
     \end{column}
     \begin{column}{0.50\textwidth}
       \centering
@@ -64,73 +74,3 @@
   \end{columns}
 \end{frame}
 
-% Slide 5
-\begin{frame}{Why it is not zero: the gauge link}
-  \begin{itemize}
-    \item Collins (1993): time reversal forces $f_{1T}^\perp=0$ \quad (``naively T-odd'').
-    \item Brodsky--Hwang--Schmidt (2002): final-state interactions give a nonzero asymmetry.
-    \item Collins (2002): a gauge-invariant TMD needs a \textbf{Wilson line}. Its path depends on the process, and T-reversal swaps the two paths:
-  \end{itemize}
-  \[ f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{SIDIS}} = - f_{1T}^{\perp}(x,\vprp{k}^2)\Big|_{\text{DY}} \]
-  \centering
-  \begin{tikzpicture}[scale=0.8, q/.style={circle, fill=black, inner sep=1.5pt}]
-    \begin{scope}[shift={(0,0)}]
-      \node[q, label=left:{$0$}] at (0,0) {};
-      \node[q, label=left:{$\bvec$}] at (0,1.6) {};
-      \draw[very thick, -latex] (0,0) -- (1.9,0);
-      \draw[very thick] (1.9,0) -- (3.6,0);
-      \draw[very thick, dashed] (3.6,0) -- (3.6,1.6);
-      \draw[very thick, -latex] (3.6,1.6) -- (1.6,1.6);
-      \draw[very thick] (1.6,1.6) -- (0,1.6);
-      \node[right] at (3.65,0.8) {\small $+\infty\,\nminus$};
-      \node at (1.8,-0.6) {\small (a) SIDIS: future-pointing};
-    \end{scope}
-    \begin{scope}[shift={(10.2,0)}]
-      \node[q, label=right:{$0$}] at (0,0) {};
-      \node[q, label=right:{$\bvec$}] at (0,1.6) {};
-      \draw[very thick, -latex] (0,0) -- (-1.9,0);
-      \draw[very thick] (-1.9,0) -- (-3.6,0);
-      \draw[very thick, dashed] (-3.6,0) -- (-3.6,1.6);
-      \draw[very thick, -latex] (-3.6,1.6) -- (-1.6,1.6);
-      \draw[very thick] (-1.6,1.6) -- (0,1.6);
-      \node[left] at (-3.65,0.8) {\small $-\infty\,\nminus$};
-      \node at (-1.8,-0.6) {\small (b) Drell--Yan: past-pointing};
-    \end{scope}
-  \end{tikzpicture}
-  \keymsg{We put this \textbf{staple-shaped link} on the lattice.}
-\end{frame}
-
-% Slide 7
-\begin{frame}{The $x$-gap on the lattice, and this thesis}
-  \begin{columns}[c]
-    \begin{column}{0.52\textwidth}
-      \small
-      \begin{enumerate}
-        \item Define TMDs from the correlator at generic off-light-cone kinematics (Musch \emph{et al.} 2012).
-        \item Parametrize it with Lorentz-invariant amplitudes, so results can be boosted between frames.
-        \item Boost to the frame where the operator sits at a single time; this is allowed because the separations are space-like.
-        \item Compute the matrix element as a Euclidean path integral with standard lattice methods.
-        \item Form ratios in which soft and renormalization factors cancel (the $k_T$-shifts), and study the approach to the SIDIS/DY limits.
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=0.9]
-        \draw[-latex, thick] (-3,0) -- (3.2,0) node[right] {$\bvec\tcdot P$};
-        \fill[badred] (0,0) circle (3pt);
-        \node[badred, above, align=center, font=\footnotesize] at (0,0.15) {earlier work:\\$\bvec\tcdot P=0$ $\Rightarrow\int dx$};
-        \draw[okgreen, line width=4pt, opacity=0.6] (-2.4,-0.45) -- (2.4,-0.45);
-        \node[okgreen!70!black, below, font=\footnotesize, align=center] at (0,-0.6) {this thesis: scan $\bvec\tcdot P\neq0$,\\Fourier transform $\Rightarrow$ function of $x$};
-      \end{tikzpicture}
-    \end{column}
-  \end{columns}
-  \vspace{2mm}
-  \begin{block}{This thesis}
-    \begin{enumerate}
-      \item Kinematic constraint at $\bvec\tcdot P\neq0$ $\Rightarrow$ off-axis staples, built by interpolation.
-      \item Map the data to $(\bvec\tcdot P,\ \bvec^2)$, keeping $|\vect b|\ge 3a$.
-      \item Find a model that can be Fourier transformed: a power law, fit to all amplitudes at once.
-      \item Fourier transform to $x$, extrapolate to the light-cone limit, test factorization.
-    \end{enumerate}
-  \end{block}
-\end{frame}

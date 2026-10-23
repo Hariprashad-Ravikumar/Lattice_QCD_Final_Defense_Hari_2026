@@ -81,7 +81,7 @@ First control the staple limit $\eta\to\infty$ at fixed $\hat\zeta$; the later r
 \end{frame}
 
 % Fitting methodology 6/32
-\begin{frame}{PySR: expression search and configuration}
+\begin{frame}{PySR for $\tAmp_{2B}^{\text{Re}}$: expression search and configuration}
 \small
 \begin{tabular}{p{0.28\textwidth}p{0.65\textwidth}}
 \toprule
@@ -101,20 +101,13 @@ Nesting limits & No $\exp\circ\exp$, $\operatorname{decay}\circ\operatorname{dec
 \end{frame}
 
 % Fitting methodology 7/32
-\begin{frame}{PySR: weighted loss and large-separation checks}
+\begin{frame}{PySR for $\tAmp_{2B}^{\text{Re}}$: weighted loss and large-separation checks}
 \small
-\[
-\mathcal L_{\rm base}=\frac{1}{N-k}\sum_{i=1}^{N}
-\left[\frac{y_i-F_i}{\sigma_i}\right]^2,\qquad
-\mathcal L_{\rm custom}=\mathcal L_{\rm base}+\epsilon\mathcal P,\quad\epsilon=0.1.
-\]
-\[
-\mathcal P_{\rm thesis}=\sum_{q\in Q}|F(q)|,\qquad
-Q=\{(10,50,1),(10,80,1),(10,10,1),(8,20,1),(6,30,2)\}.
-\]
+\begin{align*}
+    \mathcal{L}_{\text{custom}} &= \frac{\chi^2}{\text{dof}} + \epsilon \sum_{b_T \in \{b_{T}^{\text{fixed}}\}} \sum_{b_L \in \{b_{L}^{\text{large}}\}} \left| \tAmp_{2B}^{\text{Re, model}}(b_L, b_T) \right|,\qquad \epsilon=0.1
+\end{align*}
 \begin{itemize}
-\item Each tuple is $(\eta,b_L/a,b_T/a)$: check predictions beyond the measured grid, up to $b_L=80a$.
-\item The thesis's included Julia implementation uses $\sum_qF(q)^2$ and the fixed normalization $N-3$, rather than the schematic absolute-value penalty and $N-k$ above.
+\item The penalty evaluates each candidate at five test points $(\eta,b_L/a,b_T/a)=(10,50,1),(10,80,1),(10,10,1),(8,20,1),(6,30,2)$: predictions beyond the measured grid, up to $b_L=80a$.
 \item Invalid candidate evaluations are penalized or rejected.
 \end{itemize}
 \begin{block}{What this check establishes}
@@ -123,7 +116,7 @@ A finite set of large-separation evaluations discourages growth. It does not pro
 \end{frame}
 
 % Fitting methodology 8/32
-\begin{frame}{PySR Pareto front: accuracy versus complexity}
+\begin{frame}{PySR Pareto front for $\tAmp_{2B}^{\text{Re}}$: accuracy versus complexity}
 \small\centering
 \renewcommand{\arraystretch}{1.45}
 \begin{tabular}{ccl}
@@ -147,7 +140,7 @@ $C$ & Custom loss & Representative expression \\
 \end{frame}
 
 % Fitting methodology 9/32
-\begin{frame}{PySR benchmark fits across staple extents}
+\begin{frame}{PySR benchmark fits of $\tAmp_{2B}^{\text{Re}}$ across staple extents}
 \centering\includegraphics[width=0.98\linewidth,height=0.70\textheight,keepaspectratio]{01_A2B_PySR_Benchmark_Fits.pdf}
 
 \small $C=11,14,16,17$ at $\eta=6,7,8,10$, $P_L=-1$, $|\vect b|\ge3a$.
@@ -155,7 +148,7 @@ The exponential-$\eta$ models track the fitted grid; pure power-law-$\eta$ forms
 \end{frame}
 
 % Fitting methodology 10/32
-\begin{frame}{Gaussian diagnostic and the limitation of PySR models}
+\begin{frame}{Gaussian diagnostic for $\tAmp_{2B}^{\text{Re}}$ and the limitation of PySR models}
 \begin{columns}[c]
 \begin{column}{0.55\textwidth}\centering
 \includegraphics[width=\linewidth]{02_Gaussian_StraightLine_Test.pdf}
@@ -171,7 +164,7 @@ The exponential-$\eta$ models track the fitted grid; pure power-law-$\eta$ forms
 \end{frame}
 
 % Fitting methodology 11/32
-\begin{frame}{Direct test of exponential decay in $|\vect b|$}
+\begin{frame}{Direct test of exponential decay of $\tAmp_{2B}^{\text{Re}}$ in $|\vect b|$}
 \begin{columns}[c]
 \begin{column}{0.55\textwidth}\centering
 \includegraphics[width=\linewidth]{03_Exponential_b_StraightLine_Test.pdf}
@@ -187,18 +180,18 @@ The exponential-$\eta$ models track the fitted grid; pure power-law-$\eta$ forms
 \end{frame}
 
 % Fitting methodology 12/32
-\begin{frame}{Separable profiles: constant longitudinal coefficient}
+\begin{frame}{Separable profiles for $\tAmp_{2B}^{\text{Re}}$: constant longitudinal coefficient}
 \small
-\[F=a\,e^{-f\eta}L(\nu)T(b),\qquad\nu=P\cdot b.\]
+\[\tAmp_{2B}^{\text{Re}}=a\,e^{-f\eta}L(P\cdot b)\,T(b).\]
 \centering\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{llcc}
-\toprule $L(\nu)$ & $T(b)$ & $c$ & $\chi^2/\mathrm{DoF}$ \\
+\toprule $L(P\cdot b)$ & $T(b)$ & $c$ & $\chi^2/\mathrm{DoF}$ \\
 \midrule
-$e^{-c|\nu|}$ & $e^{-d|b|}$ & $-0.0021(76)$ & 2.157 \\
-$e^{-c|\nu|}$ & $e^{-db^2}$ & $0.0199(73)$ & 4.983 \\
-$e^{-c|\nu|}$ & $(1+db^2)^{-j}$ & $-0.0089(84)$ & 1.905 \\
-$e^{-c\nu^2}$ & $e^{-d|b|}$ & $-0.0018(17)$ & 2.124 \\
-$e^{-c\nu^2}$ & $(1+db^2)^{-j}$ & $-0.0015(16)$ & 1.909 \\
+$e^{-c|P\cdot b|}$ & $e^{-d|b|}$ & $-0.0021(76)$ & 2.157 \\
+$e^{-c|P\cdot b|}$ & $e^{-db^2}$ & $0.0199(73)$ & 4.983 \\
+$e^{-c|P\cdot b|}$ & $(1+db^2)^{-j}$ & $-0.0089(84)$ & 1.905 \\
+$e^{-c(P\cdot b)^2}$ & $e^{-d|b|}$ & $-0.0018(17)$ & 2.124 \\
+$e^{-c(P\cdot b)^2}$ & $(1+db^2)^{-j}$ & $-0.0015(16)$ & 1.909 \\
 \bottomrule\end{tabular}
 \begin{itemize}
 \item Preliminary fits use only $\tAmp_{2B}^{\text{Re}}$, $P_L=-1$, and the standard cuts.
@@ -208,30 +201,30 @@ $e^{-c\nu^2}$ & $(1+db^2)^{-j}$ & $-0.0015(16)$ & 1.909 \\
 \end{frame}
 
 % Fitting methodology 13/32
-\begin{frame}{Allowing the longitudinal coefficient to depend on $\eta$}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: longitudinal coefficient depending on $\eta$}
 \small
-\[ L(\nu)=e^{-c(\eta)|\nu|}\ \text{or}\ e^{-c(\eta)\nu^2},\qquad c(\eta)\longrightarrow c\quad(\eta\to\infty).\]
+\[ L(P\cdot b)=e^{-c(\eta)|P\cdot b|}\ \text{or}\ e^{-c(\eta)(P\cdot b)^2},\qquad c(\eta)\longrightarrow c\quad(\eta\to\infty).\]
 \centering\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{llcc}
-\toprule Longitudinal profile & Transverse profile & Asymptotic $c$ & $\chi^2/\mathrm{DoF}$ \\
+\toprule Longitudinal profile $L(P\cdot b)$ & Transverse profile & Asymptotic $c$ & $\chi^2/\mathrm{DoF}$ \\
 \midrule
-Exponential & Exponential & $0.51(12)$ & 1.576 \\
-Exponential & Gaussian & $0.53(13)$ & 4.384 \\
-Exponential & Power law & $0.49(12)$ & 1.318 \\
-Gaussian & Exponential & $0.114(30)$ & 1.546 \\
-Gaussian & Power law & $0.110(29)$ & 1.353 \\
+$e^{-c|P\cdot b|}$ & Exponential & $0.51(12)$ & 1.576 \\
+$e^{-c|P\cdot b|}$ & Gaussian & $0.53(13)$ & 4.384 \\
+$e^{-c|P\cdot b|}$ & Power law & $0.49(12)$ & 1.318 \\
+$e^{-c(P\cdot b)^2}$ & Exponential & $0.114(30)$ & 1.546 \\
+$e^{-c(P\cdot b)^2}$ & Power law & $0.110(29)$ & 1.353 \\
 \bottomrule\end{tabular}
 \begin{itemize}
-\item The embedded fit table uses $c(\eta)=c(1-k_1/\eta-k_2/\eta^2)$; fitted $k_2$ values are negative. The chapter prose writes the quadratic term with a plus sign.
-\item Positive asymptotic $c$ and improved fit quality motivate a systematic study of staple-dependent widths.
-\item These are still single-amplitude tests; the three-amplitude comparison comes later.
+\item The embedded fit table uses $c(\eta)=c(1-k_1/\eta-k_2/\eta^2)$; fitted $k_2$ values are negative.
 \end{itemize}
+\vspace{2mm}
+\centering\textbf{\textcolor{red}{Propagating this ansatz to the other amplitudes and the global simultaneous fit failed!}}
 \end{frame}
 
 % Fitting methodology 14/32
-\begin{frame}{Systematic Gaussian test: 16 width combinations}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: systematic Gaussian test, 16 width combinations}
 \[
-F=a\,e^{-f\eta}\exp[-c(\eta)(b_LP_L)^2-d(\eta)(b_L^2+b_T^2)].
+\tAmp_{2B}^{\text{Re}}=a\,e^{-f\eta}\exp[-c(\eta)(b_LP_L)^2-d(\eta)(b_L^2+b_T^2)].
 \]
 \begin{itemize}
 \item For $q=c,d$, independently choose
@@ -254,28 +247,53 @@ Allowing width dependence does not rescue the Gaussian family: the thesis compar
 \end{frame}
 
 % Fitting methodology 15/32
-\begin{frame}{Power-law candidates: compare fit quality and Fourier profiles}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: power-law candidates, fit quality and Fourier profiles}
+\begin{columns}[c]
+\begin{column}{0.54\textwidth}
+\small
 \[
-F=\frac{a\,e^{-f\eta}}{[1+(d+c(\eta))b_L^2+db_T^2]^j}.
+\tAmp_{2B}^{\text{Re}}=\frac{a\,e^{-f\eta}}{[1+(d+c(\eta))b_L^2+db_T^2]^j}.
 \]
-\small\centering\renewcommand{\arraystretch}{1.45}
-\begin{tabular}{lccc}
-\toprule $c(\eta)$ & $c$ & $\chi^2/\mathrm{DoF}$ & Reported AIC \\
+\scriptsize\centering\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{clccc}
+\toprule & $c(\eta)$ & $c$ & $\chi^2/\mathrm{DoF}$ & AIC \\
 \midrule
-$c$ & $0.0218(44)$ & 24.778 & 5461.17 \\
-$c(1-k_1/\eta)$ & $0.078(14)$ & 2.113 & 474.746 \\
-$c(1-k_1/\eta-k_2/\eta^2)$ & $0.146(51)$ & 1.568 & 355.799 \\
-$c(1-k_1/\eta-k_2/\eta^2-k_3/\eta^3)$ & $0.093(18)$ & 1.575 & 357.703 \\
+(1) & $c$ & $0.0218(44)$ & 24.778 & 5461.17 \\
+(2) & $c(1-k_1/\eta)$ & $0.078(14)$ & 2.113 & 474.746 \\
+(3) & $c(1-k_1/\eta-k_2/\eta^2)$ & $0.146(51)$ & 1.568 & 355.799 \\
+(4) & $c(1-k_1/\eta-k_2/\eta^2-k_3/\eta^3)$ & $0.093(18)$ & 1.575 & 357.703 \\
 \bottomrule\end{tabular}
+\footnotesize
 \begin{itemize}
 \item Staple dependence in $c$ improves the fit; additional freedom in $d$ is not supported by the comparison.
 \item Several candidates have similar fit quality but different asymptotic Fourier widths.
 \item Compare AIC and Fourier behavior as well as $\chi^2/\mathrm{DoF}$; values shown are those reported in the thesis table.
 \end{itemize}
+\end{column}
+\begin{column}{0.44\textwidth}\centering
+\begin{minipage}[t]{0.48\linewidth}\centering
+\includegraphics[width=\linewidth,trim=780 850 5 114,clip]{A2BfitFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\tiny (1) $c$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\centering
+\includegraphics[width=\linewidth,trim=780 682 5 282,clip]{A2BfitFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\tiny (2) $c(1-k_1/\eta)$}
+\end{minipage}\\[2mm]
+\begin{minipage}[t]{0.48\linewidth}\centering
+\includegraphics[width=\linewidth,trim=780 512 5 455,clip]{A2BfitFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\tiny (3) $c(1-k_1/\eta-k_2/\eta^2)$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\centering
+\includegraphics[width=\linewidth,trim=780 344 5 622,clip]{A2BfitFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\tiny (4) $c(1-k_1/\eta-\dots-k_3/\eta^3)$}
+\end{minipage}\\[2mm]
+{\scriptsize Fourier transform in $x$ ($\eta\to\infty$) of each candidate}
+\end{column}
+\end{columns}
 \end{frame}
 
 % Fitting methodology 16/32
-\begin{frame}{Further candidates: similar fits, wider Fourier profiles}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: further candidates, similar fits, wider Fourier profiles}
 \begin{columns}[c]
 \begin{column}{0.63\textwidth}
 \small\setlength{\jot}{0pt}\setlength{\abovedisplayskip}{3pt}\setlength{\belowdisplayskip}{3pt}
@@ -293,9 +311,11 @@ $c_7$ & $0.81(32)$ & 1.56961 & 356.175 \\
 \bottomrule\end{tabular}
 \end{column}
 \begin{column}{0.35\textwidth}\centering
-\includegraphics[width=\linewidth,height=0.23\textheight,keepaspectratio,trim=780 551 5 113,clip]{A2Bfit_widerFT_eta_Asymptotic_P1.pdf}\\[-1mm]
-{\scriptsize $c_5$: asymptotic $c=0.240(89)$}\\[2mm]
-\includegraphics[width=\linewidth,height=0.23\textheight,keepaspectratio,trim=780 188 5 472,clip]{A2Bfit_widerFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+\includegraphics[width=\linewidth,height=0.17\textheight,keepaspectratio,trim=780 551 5 113,clip]{A2Bfit_widerFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\scriptsize $c_5$: asymptotic $c=0.240(89)$}\\[1mm]
+\includegraphics[width=\linewidth,height=0.17\textheight,keepaspectratio,trim=780 389 5 286,clip]{A2Bfit_widerFT_eta_Asymptotic_P1.pdf}\\[-1mm]
+{\scriptsize $c_6$: asymptotic $c=0.43(17)$}\\[1mm]
+\includegraphics[width=\linewidth,height=0.17\textheight,keepaspectratio,trim=780 188 5 472,clip]{A2Bfit_widerFT_eta_Asymptotic_P1.pdf}\\[-1mm]
 {\scriptsize $c_7$: asymptotic $c=0.81(32)$}
 \end{column}
 \end{columns}
@@ -307,14 +327,14 @@ $c_7$ & $0.81(32)$ & 1.56961 & 356.175 \\
 \end{frame}
 
 % Fitting methodology 17/32
-\begin{frame}{Sequential fixed-$\eta$ fits: isolate the width parameters}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: sequential fixed-$\eta$ fits isolate the width parameters}
 \begin{columns}[c]
 \begin{column}{0.55\textwidth}\centering
 \includegraphics[width=\linewidth]{LorentzianFixedA_P-1_b3.pdf}
 \end{column}
 \begin{column}{0.43\textwidth}\small
 \[
-F=\frac{4e^{-0.5\eta}}{[1+(c+d)b_L^2+db_T^2]^2}.
+\tAmp_{2B}^{\text{Re}}=\frac{4e^{-0.5\eta}}{[1+(c+d)b_L^2+db_T^2]^2}.
 \]
 \begin{itemize}
 \item Fix $a=4$, $j=2$, and the benchmark staple factor; fit $c,d$ separately on each $\eta$ slice.
@@ -326,7 +346,7 @@ F=\frac{4e^{-0.5\eta}}{[1+(c+d)b_L^2+db_T^2]^2}.
 \end{frame}
 
 % Fitting methodology 18/32
-\begin{frame}{Ten asymptotic candidates for $c(\eta)$}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: ten asymptotic candidates for $c(\eta)$}
 \centering\includegraphics[width=0.98\linewidth,height=0.72\textheight,keepaspectratio]{A2B_c_eta_AllAsymptoticModels_P1.pdf}
 
 \small Several forms describe the five measured staple slices similarly. The selected form is
@@ -334,7 +354,7 @@ $c_2(\eta)=c(1-k_1/\eta-k_2/\eta^2)$; selection also uses the transformed distri
 \end{frame}
 
 % Fitting methodology 19/32
-\begin{frame}{Real unpolarized amplitude: keep $d$ independent of $\eta$}
+\begin{frame}{$\tAmp_{2B}^{\text{Re}}$: keep $d$ independent of $\eta$}
 \begin{columns}[c]
 \begin{column}{0.56\textwidth}\centering
 \includegraphics[width=\linewidth,height=0.65\textheight,keepaspectratio]{A2B_d_eta_Independence_P1.pdf}
@@ -352,30 +372,30 @@ $c_2(\eta)=c(1-k_1/\eta-k_2/\eta^2)$; selection also uses the transformed distri
 \end{frame}
 
 % Fitting methodology 20/32
-\begin{frame}{Real Sivers amplitude: stability of $c$ and $d$}
+\begin{frame}{$\tAmp_{12B}^{\text{Re}}$: stability of $c$ and $d$}
 \begin{columns}[c]
 \begin{column}{0.49\textwidth}\centering\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{ReA12B_c_eta_Independence_P1.pdf}\end{column}
 \begin{column}{0.49\textwidth}\centering\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{ReA12B_d_eta_Independence_P1.pdf}\end{column}
 \end{columns}
 \small
-\[s_c=-0.0112(131),\qquad s_d=0.0052(48).\]
+\[\tAmp_{12B}^{\text{Re}}=\frac{-0.658\,e^{-0.4702\eta}}{[1+(c+d)b_L^2+db_T^2]^{2.0054}},\qquad s_c=-0.0112(131),\quad s_d=0.0052(48).\]
 \begin{itemize}
-\item Sequential fixed-$\eta$ fits use the benchmark numerator $-0.658e^{-0.4702\eta}$ and power $j=2.0054$.
+\item Sequential fixed-$\eta$ fits: $c$ and $d$ are fitted on each $\eta$ slice with the benchmark numerator and power fixed.
 \item Slice $\chi^2/\mathrm{DoF}$ ranges from $0.468$ to $0.860$.
 \item Both slopes are consistent with zero at about $1\sigma$; retain constant $c,d$.
 \end{itemize}
 \end{frame}
 
 % Fitting methodology 21/32
-\begin{frame}{Imaginary unpolarized amplitude: noisier width estimates}
+\begin{frame}{$\tAmp_{2B}^{\text{Im}}$: noisier width estimates}
 \begin{columns}[c]
 \begin{column}{0.49\textwidth}\centering\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{ImA2B_c_eta_Independence_P1.pdf}\end{column}
 \begin{column}{0.49\textwidth}\centering\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{ImA2B_d_eta_Independence_P1.pdf}\end{column}
 \end{columns}
 \small
-\[s_c=0.0765(350),\qquad s_d=-0.0316(219).\]
+\[\tAmp_{2B}^{\text{Im}}=\frac{0.267\,b_L\,e^{-0.4702\eta}}{[1+(c+d)b_L^2+db_T^2]^{1.108}},\qquad s_c=0.0765(350),\quad s_d=-0.0316(219).\]
 \begin{itemize}
-\item Slice fits use $0.267b_Le^{-0.4702\eta}$ and $j=1.108$; their $\chi^2/\mathrm{DoF}$ ranges from $0.645$ to $2.033$.
+\item Slice fits fix the numerator and power as above and fit $c$, $d$ on each $\eta$ slice; their $\chi^2/\mathrm{DoF}$ ranges from $0.645$ to $2.033$.
 \item The $c$ slope is about $2\sigma$ from zero; the $d$ slope is within $1.5\sigma$.
 \item The linear trend fits already have $\chi^2/\mathrm{DoF}<1$. Keep $c,d$ constant because further staple dependence would be poorly constrained.
 \end{itemize}
@@ -426,78 +446,46 @@ $c_2(\eta)=c(1-k_1/\eta-k_2/\eta^2)$; selection also uses the transformed distri
 \item The real amplitudes are even in $b_L$; the imaginary amplitude is odd.
 \item Share $f$ across the three models, while fitting their spatial parameters separately.
 \end{itemize}
-\end{frame}
-
-% Fitting methodology 25/32
-\begin{frame}{Why the common staple exponential cancels}
-\small
 \[
-\langle k_y\rangle_{TU}=-m_N
-\frac{\int d\nu\,\cos(x\nu)\tAmp_{12B}^{\text{Re}}}
-{\int d\nu\,[\cos(x\nu)\tAmp_{2B}^{\text{Re}}-\sin(x\nu)\tAmp_{2B}^{\text{Im}}]},\qquad\nu=b\cdot P.
+\langle \vect{k}_y \rangle_{TU} (x,b^2)= -\mN \frac{\int d(b\cdot P) \cos\!\left(x(b\cdot P)\right)\tAmp_{12B}^{\text{Re}}(\cdots)}{\int d(b\cdot P)\left[\cos\!\left(x(b\cdot P)\right)\tAmp_{2B}^{\text{Re}}(\cdots)-\sin\!\left(x(b\cdot P)\right)\tAmp_{2B}^{\text{Im}}(\cdots)\right]}\ .
 \]
-\[
-\tAmp_i=e^{-f\eta}G_i\quad\Longrightarrow\quad
-\langle k_y\rangle_{TU}=-m_N
-\frac{e^{-f\eta}\int d\nu\,\cos(x\nu)G_{12B}^{\text{Re}}}
-{e^{-f\eta}\int d\nu\,[\cos(x\nu)G_{2B}^{\text{Re}}-\sin(x\nu)G_{2B}^{\text{Im}}]}.
-\]
-\begin{itemize}
-\item At fixed $\eta$, $e^{-f\eta}$ is independent of the integration variable and cancels exactly.
-\item A simultaneous fit enforces the same $f$ for all three amplitudes.
-\item The longitudinal width $c(\eta)$ still depends on staple extent; canceling the exponential does not yet take $\eta\to\infty$.
-\end{itemize}
-\end{frame}
-
-% Fitting methodology 26/32
-\begin{frame}{Invariant-space integrands and the remaining staple limit}
-\small
-\[
-\langle k_y\rangle_{TU}=m_N
-\frac{\int d\nu\,\cos(x\nu)\,a'/D_{12B}^{\text{Re}}}
-{\int d\nu\,[\cos(x\nu)\,a/D_{2B}^{\text{Re}}-\sin(x\nu)\,a''\nu/(-P_L)/D_{2B}^{\text{Im}}]}.
-\]
-\begin{align*}
-D_{12B}^{\text{Re}}&=[1+c'\nu^2/P_L^2+d'b^2]^{j'},\\
-D_{2B}^{\text{Re}}&=[1+c(1-k_1/\eta-k_2/\eta^2)\nu^2/P_L^2+db^2]^j,\\
-D_{2B}^{\text{Im}}&=[1+c''\nu^2/P_L^2+d''b^2]^{j''}.
-\end{align*}
-\begin{itemize}
-\item Now take $c(\eta)\to c$ for the asymptotic staple result.
-\item With positive nonsingular denominators and nonzero positive longitudinal coefficients, the real tails are absolutely integrable for $j,j'>1/2$; the extra $\nu$ numerator requires $j''>1$ for absolute integrability of the imaginary amplitude.
-\end{itemize}
-\end{frame}
-
-% Fitting methodology 27/32
-\begin{frame}{Full Jackknife covariance and correlated fitting}
-\[
-\bar y_i=\frac1{N_{\rm JK}}\sum_{k=1}^{N_{\rm JK}}y_i^{(k)},\qquad
-C_{ij}=\frac{N_{\rm JK}-1}{N_{\rm JK}}\sum_{k=1}^{N_{\rm JK}}
-(y_i^{(k)}-\bar y_i)(y_j^{(k)}-\bar y_j).
-\]
-\[
-\boxed{\chi^2(\mathbf p)=\sum_{i,j}[\bar y_i-F_i(\mathbf p)]C^{-1}_{ij}[\bar y_j-F_j(\mathbf p)]}
-\]
-\begin{itemize}
-\item Stack points from all retained spatial coordinates, staple extents, and all three amplitudes.
-\item The same gauge configurations create correlations both between coordinates and between amplitude components.
-\item Retain the full covariance rather than treating those measurements as independent.
-\item Use \texttt{lsqfit} for nonlinear fitting and \texttt{gvar} for correlated Gaussian quantities.
-\end{itemize}
 \end{frame}
 
 % Fitting methodology 28/32
-\begin{frame}{From correlated data to the uncertainty on the Sivers shift}
-\begin{enumerate}
-\item Assemble the three amplitudes on the common retained grid at each momentum: $|\vect b|\ge3a$, $6\le\eta\le10$.
-\item Construct the Jackknife covariance and fit the three models jointly with a common $f$.
-\item Preserve parameter correlations when mapping the model to $(b\cdot P,b^2)$ and taking the staple limit.
-\item Evaluate the cosine and sine transforms, combine the unpolarized terms, and form the Sivers ratio.
-\item Carry the resampling uncertainty through the derived distributions and ratio; report Jackknife statistical bands.
-\end{enumerate}
-\begin{block}{Checks before interpreting the result}
-Fit quality, parameter stability, longitudinal decay, negative-$x$ behavior, and the Mellin-moment comparison must be assessed together.
-\end{block}
+\begin{frame}{Simultaneous fit with common $f$ at $P_L=-1$}
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \small
+  \begin{tabular}{|l|c|>{\raggedright\arraybackslash}p{0.36\textwidth}|}
+  \hline
+  Amplitude & Model Expression & Fitted Values \\
+  \hline
+  $\tAmp_{2B}^{\text{Re}}$ & $\displaystyle\frac{a e^{-f \eta}}{\left[1 + \left(d + c\left(1 - \frac{k_1}{\eta} - \frac{k_2}{\eta^2}\right)\right) b_L^2 + d b_T^2\right]^j}$ & $a=3.863(11)$, $c=0.336(40)$, $d=0.1630(74)$, $k_1=12.288(23)$, $k_2=-36.1965(45)$, $j=1.627(25)$, $f=0.4702(46)$ \\[3mm]
+  \hline
+  $\tAmp_{2B}^{\text{Im}}$ & $\displaystyle\frac{a b_L e^{-f \eta}}{\left[1 + (c + d) b_L^2 + d b_T^2\right]^j}$ & $a=0.267(13)$, $c=0.2253(69)$, $d=0.2205(66)$, $j=1.108(21)$, $f=0.4702(46)$ \\[3mm]
+  \hline
+  $\tAmp_{12B}^{\text{Re}}$ & $\displaystyle\frac{-a e^{-f \eta}}{\left[1 + (c + d) b_L^2 + d b_T^2\right]^j}$ & $a=0.658(22)$, $c=0.0773(46)$, $d=0.0747(43)$, $j=2.0054(90)$, $f=0.4702(46)$ \\[3mm]
+  \hline
+  \end{tabular}\\[3mm]
+  {\small $P_L=-1$, $b_{\min}\ge3$, $\eta\in[6,10]$. Global $\chi^2/\text{DoF}=1.85(10)$.}\\[2mm]
+  {\small Fit to all retained points and the three amplitudes at once, using the full Jackknife covariance matrix (\texttt{lsqfit}).}
+\end{frame}
+
+\begin{frame}{Numerical integration of the Fourier transforms at $P_L=-1$}
+  \centering
+  \renewcommand{\arraystretch}{1.8}
+  \resizebox{\linewidth}{!}{\begin{tabular}{|l|c|c|c|c|}
+  \hline
+  Integral & $[-\infty, \infty]$ & $[-1, 1]$ & $[-1, 0]$ & $[0, 1]$ \\
+  \hline
+  $\int dx\, \tAmp^{[x]\text{Re}}_{2B}$ & 0.889(24) & 0.780(29) & 0.390(14) & 0.390(14) \\
+  $\int dx\, (\tAmp^{[x]\text{Im}}_{2B})$ & -1(108)e-17 & 2(282)e-17 & 0.1223(58) & -0.1223(58) \\
+  $\int dx\, \tilde{f}_1^{(0)} = 2\int dx\, (\tAmp^{[x]\text{Re}}_{2B} - \tAmp^{[x]\text{Im}}_{2B})$ & 1.778(47) & 1.560(58) & 0.535(25) & 1.024(36) \\
+  $\int dx\, \tilde{f}_{1T}^{\perp(1)} = -2\int dx\, \tAmp^{[x]\text{Re}}_{12B}$ & 0.469(23) & 0.454(23) & 0.227(12) & 0.227(12) \\
+  $m_N \frac{\int dx\, \tilde{f}_{1T}^{\perp(1)}}{\int dx\, \tilde{f}_1^{(0)}}$ & 0.284(14) & 0.313(18) & 0.456(29) & 0.238(13) \\
+  \hline
+  \end{tabular}}\\[3mm]
+  {\small $P_L=-1$, $|b_T|=3a\approx0.34$ fm.}
 \end{frame}
 
 % Fitting methodology 29/32
@@ -533,48 +521,8 @@ Fit quality, parameter stability, longitudinal decay, negative-$x$ behavior, and
   \[ \tilde f_1^{(0)} = 2\big[\tAmp^{[x]\text{Re}}_{2B}-\tAmp^{[x]\text{Im}}_{2B}\big], \qquad \tilde f_{1T}^{\perp(1)} = -2\tAmp^{[x]\text{Re}}_{12B} \qquad (b^2=9a^2,\ \text{Jackknife bands}) \]
 \end{frame}
 
-% Fitting methodology 31/32
-\begin{frame}{Three-amplitude test of four separable model families}
-\small
-\[
-\tAmp_{2B}^{\text{Re}}=a_{\rm re}L_{\rm re}(\nu)T_{\rm re}(b)e^{-f\eta},\quad
-\tAmp_{2B}^{\text{Im}}=a_{\rm im}\nu L_{\rm im}(\nu)T_{\rm im}(b)e^{-f\eta},
-\]
-\[
-\tAmp_{12B}^{\text{Re}}=-a_{\rm Siv}L_{\rm Siv}(\nu)T_{\rm Siv}(b)e^{-f\eta},\qquad\nu=P\cdot b.
-\]
-\centering\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{lll}
-\toprule Family & Longitudinal profile $L(\nu)$ & Transverse profile $T(b)$ \\
-\midrule Exponential / exponential & $e^{-c|\nu|}$ & $e^{-d|b|}$ \\
-Exponential / power law & $e^{-c|\nu|}$ & $(1+db^2)^{-j}$ \\
-Gaussian / exponential & $e^{-c\nu^2}$ & $e^{-d|b|}$ \\
-Gaussian / power law & $e^{-c\nu^2}$ & $(1+db^2)^{-j}$ \\
-\bottomrule\end{tabular}
-\begin{itemize}
-\item Each amplitude has its own spatial parameters; $f$ is shared.
-\item Apply simultaneous Jackknife fits with the same cuts, now testing all three amplitudes rather than $\tAmp_{2B}^{\text{Re}}$ alone.
-\end{itemize}
-\end{frame}
-
-% Fitting methodology 32/32
-\begin{frame}{Separable models: fit quality alone does not select the model}
-\footnotesize\centering\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{lccccccc}
-\toprule & \multicolumn{4}{c}{$\chi^2/\mathrm{DoF}$ at $P_L$} & \multicolumn{3}{c}{Parameters at $P_L=-1$} \\
-Family & $-1$ & $-2$ & $-3$ & $-4$ & $c_{\rm im}$ & $c_{\rm Siv}$ & $a_{\rm im}$ \\
-\midrule
-Exp / exp & 1.406(92)&0.956(75)&0.622(61)&0.455(53)&0.0010(262)&0.045(23)&$-0.167(16)$\\
-Exp / power &1.286(89)&0.938(75)&0.623(61)&0.447(53)&0.0045(248)&0.028(24)&$-0.167(31)$\\
-Gauss / exp &2.389(121)&2.005(111)&0.945(76)&0.453(52)&0.568(171)&0.0038(69)&$0.050(121)$\\
-Gauss / power &2.316(120)&1.981(111)&0.948(76)&0.448(52)&0.602(48)&0.0016(61)&$0.168(92)$\\
-Coupled power &1.85(10)&1.197(85)&0.712(66)&0.434(51)&0.2253(69)&0.0773(46)&$0.267(13)$\\
-\bottomrule\end{tabular}
-\small
-\begin{itemize}
-\item Separable fits can have acceptable overall $\chi^2$, while a longitudinal width is consistent with zero or the imaginary normalization changes sign.
-\item $e^{-c|\nu|}$ is nonanalytic at the origin; multiplying by $\nu$ makes the odd profile differentiable once, but does not remove the nonanalyticity.
-\item The coupled denominator $[1+c\nu^2/P_L^2+db^2]^j$ provides a smooth longitudinal profile with the selected stable parameters.
-\end{itemize}
-\scriptsize Coefficients follow the thesis table's model conventions; separable fits use $\nu$, while the selected model is parameterized using $b_L$.
+\begin{frame}{The quantities of the $b^2=9a^2$ slice as functions of $x$ and $b^2/a^2$ at $P_L=-1$}
+  \centering
+  \includegraphics[height=0.7\textheight]{FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-1.pdf}\\
+  {\scriptsize The previous slide's quantities as functions of $x$ and $b^2/a^2\in[9,68]$ for $P_L=-1$.}
 \end{frame}
