@@ -28,38 +28,6 @@
   \]
 \end{frame}
 
-% Slide 21
-\begin{frame}{The Collins--Soper parameter $\zetahat$}
-  \quick
-  \begin{columns}[c]
-    \begin{column}{0.55\textwidth}
-      \[ \zetahat = \frac{v \cdot P}{\sqrt{|v^2|}\, \sqrt{P^2}} \]
-      \begin{itemize}
-        \item On the lattice the staple direction $v$ must be space-like ($v^2<0$), purely spatial ($v_0=0$).
-        \item The physical TMD limit needs $\zetahat\to\infty$ (light-like $v$).
-        \item Larger $\zetahat$ requires larger nucleon momentum $\vect P$.
-        \item We track the Sivers shift over several $\zetahat$ and \textbf{extrapolate}.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.43\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=1.1]
-        \fill[gray!12] (0,0) -- (2,2) -- (-2,2) -- cycle;
-        \draw[gray, dashed] (-2,-2) -- (2,2) node[above right, font=\scriptsize] {light cone};
-        \draw[gray, dashed] (2,-2) -- (-2,2);
-        \draw[-latex] (-2.2,0) -- (2.3,0) node[right] {$z$};
-        \draw[-latex] (0,-1.6) -- (0,2.3) node[above] {$t$};
-        \draw[-latex, very thick, blue] (0,0) -- (0.9,1.9) node[above, font=\small] {$P$};
-        \draw[-latex, very thick, badred] (0,0) -- (-1.9,0.3) node[left, font=\small] {$v$};
-        \draw[-latex, thick, badred!50, dashed] (0,0) -- (-1.6,1.35);
-        \node[badred, font=\scriptsize, align=right, anchor=north east, fill=white, inner sep=1pt] at (-0.9,-0.95) {$\zetahat\to\infty$: $v$ tilts\\toward the light cone};
-      \end{tikzpicture}
-      \\[1mm]
-      {\scriptsize Generic frame ($\zetahat$ is Lorentz invariant)}
-    \end{column}
-  \end{columns}
-\end{frame}
-
 % Slide 22
 \begin{frame}{Kinematic constraint to scan the full $\bvec\tcdot P$}
   \begin{itemize}
@@ -115,20 +83,6 @@
   \end{columns}
 \end{frame}
 
-% Slide 24
-\begin{frame}{Bounding lattice paths for each momentum}
-  \quick
-  \centering
-  \begin{tabular}{cc}
-    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-1_plot.pdf} &
-    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-2_plot.pdf} \\[-1mm]
-    {\scriptsize $P_L=-1$, $\zetahat=0.090772$} & {\scriptsize $P_L=-2$, $\zetahat=0.294367$} \\
-    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-3_plot.pdf} &
-    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-4_plot.pdf} \\[-1mm]
-    {\scriptsize $P_L=-3$, $\zetahat=0.539684$} & {\scriptsize $P_L=-4$, $\zetahat=0.785756$}
-  \end{tabular}
-\end{frame}
-
 % Slide 25
 \begin{frame}{Staple link paths at $P_L=-1$}
   \quick
@@ -147,6 +101,20 @@
       {\scriptsize Gauge-link step sequences used for interpolation ($\zetahat=0.090772$)}
     \end{column}
   \end{columns}
+\end{frame}
+
+% Slide 24
+\begin{frame}{Bounding lattice paths for each momentum}
+  \quick
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-1_plot.pdf} &
+    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-2_plot.pdf} \\[-1mm]
+    {\scriptsize $P_L=-1$, $\zetahat=0.090772$} & {\scriptsize $P_L=-2$, $\zetahat=0.294367$} \\
+    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-3_plot.pdf} &
+    \includegraphics[height=0.37\textheight]{v1_v2_withPath_forP-4_plot.pdf} \\[-1mm]
+    {\scriptsize $P_L=-3$, $\zetahat=0.539684$} & {\scriptsize $P_L=-4$, $\zetahat=0.785756$}
+  \end{tabular}
 \end{frame}
 
 % Slide 26
