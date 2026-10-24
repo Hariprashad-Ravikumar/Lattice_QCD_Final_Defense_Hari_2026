@@ -51,45 +51,16 @@
   \end{itemize}
 \end{frame}
 
-% Career and collaboration timeline, with the publication list from the thesis vita
-\begin{frame}{Milestones}
-  \centering
-  \resizebox{\linewidth}{!}{%
-  \begin{tikzpicture}[x=2.5cm, y=1cm, every node/.style={font=\footnotesize}]
-    % time axis: t in years, origin at 2021.5
-    \draw[-latex, thick] ({0.000},0) -- ({5.900},0);
-    \foreach \t/\l in {2022.0/2022, 2023.0/2023, 2024.0/2024, 2025.0/2025, 2026.0/2026, 2027.0/Jan 2027}{
-      \draw ({\t-2021.5},0.08) -- ({\t-2021.5},-0.08);
-      \node[below, font=\scriptsize] at ({\t-2021.5},-0.08) {\l};
-    }
-    \draw (0.17,0.08) -- (0.17,-0.08);
-    \node[below, font=\scriptsize, anchor=north east] at (0.30,-0.08) {Fall 2021};
-    % Engelhardt: summer 2022 to now
-    \fill[blue!25, rounded corners=2pt] ({1.000},3.3) rectangle ({5.300},3.75);
-    \node[anchor=west, text=blue!50!black] at ({1.050},3.52) {Dr.\ M.\ Engelhardt (NMSU): lattice QCD, TMDs};
-    \node[anchor=east] at ({0.950},3.52) {\includegraphics[height=0.8cm]{logo_NMSU.pdf}};
-    \node[anchor=west, font=\scriptsize] at ({5.320},3.52) {now};
-    % Ji: fall 2021 to spring 2026
-    \fill[red!20, rounded corners=2pt] ({0.170},2.5) rectangle ({5.000},2.95);
-    \node[anchor=west, text=red!50!black] at ({0.220},2.72) {Dr.\ Chueng Ji (NC State): conformal algebra};
-    % Los Alamos: spring 2025
-    \fill[green!30!black!25, rounded corners=2pt] ({3.500},1.7) rectangle ({4.000},2.15);
-    \node[anchor=east, align=right, text=green!30!black] at ({3.450},1.92) {Dr.\ R.\ Gupta, Dr.\ T.\ Bhattacharya: lattice QCD nEDM, NMC grant};
-    \node[anchor=west] at ({4.050},1.92) {\includegraphics[height=0.4cm]{logo_LANL.png}};
-    % Western Digital: summer 2026 intern, Jan 2027 full time
-    \fill[orange!30, rounded corners=2pt] ({5.000},0.9) rectangle ({5.250},1.35);
-    \node[anchor=east, align=right, text=orange!50!black] at ({4.950},1.12) {Modeling and simulation intern, summer 2026};
-    \draw[-latex, thick, orange!70!black] ({5.250},1.12) -- ({5.500},1.12);
-    \node[draw=orange!70!black, fill=orange!30, diamond, inner sep=1.5pt] at ({5.500},1.12) {};
-    \node[anchor=north east, text=orange!50!black, font=\small\bfseries] at (5.9,0.85) {FULL-TIME AI DATA SCIENTIST};
-    \node[anchor=north east] at (5.9,0.45) {\includegraphics[height=0.3cm]{logo_WesternDigital.png}};
-  \end{tikzpicture}}\\[1mm]
-  \raggedright
-  \tiny
+% Publication list from the thesis vita
+\begin{frame}{Publications}
+  \small
   \begin{enumerate}
     \item C.-R. Ji and H. Ravikumar, ``Interpolating conformal algebra in $(1+1)$ dimensions between the instant form and the light-front form of relativistic dynamics,'' Phys.\ Rev.\ D \textbf{113}, 096018 (2026).
+    \item[\vspace{2mm}]
     \item H. Ravikumar and C.-R. Ji, ``Interpolating conformal algebra in $(3+1)$ dimensions between the instant form and the light-front form of relativistic dynamics,'' arXiv:2609.36297 [hep-th] (2026).
+    \item[\vspace{2mm}]
     \item H. Ravikumar, M. Engelhardt, J. R. Green, S. Krieg, S. Meinel, J. Negele, A. Pochinsky, \textit{et al.}, ``Dependence of the Sivers TMD shift on quark longitudinal momentum fraction $x$ from lattice QCD,'' manuscript in preparation.
+    \item[\vspace{2mm}]
     \item H. Ravikumar, P.-O. Jubert, L. Xu, T. Tang, and R. Brockie, ``Multiple-write HAMR temperature and field map (THMap) and its relations to thermally activated switching processes,'' manuscript in preparation.
   \end{enumerate}
 \end{frame}
